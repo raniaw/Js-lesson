@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>js carousel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/script" language="javascript" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="scene">
+        <div class="carousel">
+            <div class="carousel__cell">
+                <img src="img/tiere-eurasisches-luchs.jpg" alt="Eurasisches Luchs" title="Eurasisches Luchs" sizes="" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-asiatische-dachs.jpg" alt="Asiatische Dachs" title="Asiatische Dachs" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-falken.jpg" alt="Falke" title="Falke" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-fuchs.jpg" alt="Fuchs" title="Fuchs" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-braunbaeren.jpg" alt="Braunbären" title="Braunbären" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-kragentrappe.jpg" alt="Kragentrappe" title="Kragentrappe" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-karakulschaf.jpg" alt="Karakulschaf" title="Karakulschaf" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-geier.jpg" alt="Geier" title="Geier" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-rebhuehner.jpg" alt="Rebhühner" title="Rebhühner" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-kropfgazelle.jpg" alt="Kropfgazelle" title="Kropfgazelle" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-rothirsche.jpg" alt="Rothirsche" title="Rothirsche" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-schneeleoparden.jpg" alt="Schneeleopard" title="Schneeleopard" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-tauben.jpg" alt="Tauben" title="Tauben" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-wildschwein.jpg" alt="Wildschwein" title="Wildschwein" srcset="">
+            </div>
+            <div class="carousel__cell">
+                <img src="img/tiere-wacholderdrossel.jpg" alt="Wacholderdrossel" title="Wacholderdrossel" srcset="">
+            </div>
+        </div>
+    </div>
+    <p>
+        <button class="previous-button">Previous</button>
+        <button class="next-button">Next</button>
+    </p>
+    <script>
+        var carousel = document.querySelector('.carousel');
+        var cellCount = 15;
+        var selectedIndex = 0;
+
+        function rotateCarousel() {
+            var angle = selectedIndex / cellCount * -360;
+            carousel.style.transform = 'translateZ(-1411px) rotateY(' + angle + 'deg)';
+            console.log(carousel.style.transform);
+        }
+
+        var prevButton = document.querySelector('.previous-button');
+        prevButton.addEventListener('click', function() {
+            selectedIndex--;
+            console.log(selectedIndex);
+            rotateCarousel();
+        });
+
+        var nextButton = document.querySelector('.next-button');
+        nextButton.addEventListener('click', function() {
+            selectedIndex++;
+            console.log(selectedIndex);
+            rotateCarousel();
+        });
+    </script>
+</body>
+
+</html>
