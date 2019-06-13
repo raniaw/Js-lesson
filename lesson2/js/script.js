@@ -14,7 +14,7 @@ document.write(linebreak);
 var date = new Date()
 var hour = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 console.log(hour);
-if (hour => 13) {
+if (hour <= 14) {
     alert("This time for lunch: " + hour);
 } else if (hour < 16.5) {
     alert("go to home");
