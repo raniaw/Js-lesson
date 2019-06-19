@@ -8,9 +8,10 @@ let hr = "<hr>";
 let colors = new Array("red", "white", "blue", "green", "yellow");
 let i = 0;
 var x = new Array();
+
 while (i <= 20) {
 
-    let x = document.createElement('DIV id="divs"');
+    let x = document.createElement("DIV");
     bgcolor = colorCreate();
     color = colorCreate();
     var t = document.createTextNode("bgcolor: " + bgcolor + " " + "color:" + color + " ");
@@ -37,15 +38,16 @@ x.forEach(divAusgabe);
  */
 function divAusgabe(value, index, array) {
     let c = 0;
-    for (let i = 0; i <= 6; i++) {
+    // for (let i = 0; i <= 6; i++) {
 
-        // while (c < i) {
-        document.getElementById("divs").innerHTML = value;
-
-        //     c++;
-        // }
-        // // document.write("<br>");
-    }
+    // while (c < i) {
+    document.getElementById("divs").innerHTML = value;
+    value = document.getElementById("divs").innerHTML;
+    // document.querySelector("#divs").style.
+    //     c++;
+    // }
+    // // document.write("<br>");
+    // }
 
 }
 

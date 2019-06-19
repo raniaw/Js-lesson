@@ -65,13 +65,40 @@
           console.log(whatDay(i) + ' is the day number ' + i);
           i++;
       }
-      ////////////////////////////////////////////////////////////////////////////
-      // Using objects (cars)
-      let car = { name: "bmw", year: "2018", color: "black" };
-      car.name //or
-      car.year //or
-      car.color //will call name/year/color.
-          //example using countries - alert a country specified in an [array]
+      ///////////////////////////////////////////////////////////////////////////////
+
+      function f(x) {
+          let s = x * x;
+          return (s);
+      }
+      console.log(f(7));
+      let intArr = [12, 13, 14];
+
+      function map(fun, array) {
+          let y = [];
+          for (let i = 0; i < array.length; i++) {
+              y[i] = fun(array[i]);
+              console.log((i + 1) + ": " + array[i] + " * " + array[i] + " = " + y[i]);
+          }
+      }
+      map(f, intArr);
+
+      /**
+       * 144 
+       * 169 
+       * 196
+       */
+      /**
+       * Using objects (cars)
+       */
+
+      let car = {
+          name: "BMW",
+          year: "2018",
+          color: "rot"
+      };
+      console.log("Ihr Auto ist \'" + car.name + "\' wurde am " + car.year + " gebaut, hat Farbe \'" + car.color + "\'."); //will call name/year/color.
+      //example using countries - alert a country specified in an [array]
       let countries = ["germany", "UK", "china", "italy", "spain"];
       for (let i = 0; i < countries.length; i++) {
           if (countries[i] == "spain") {
@@ -79,9 +106,18 @@
           }
       }
       //Exercise - Find which country the car is from
-      let car1 = { name: "BMW", country: "Germany" };
-      let car2 = { name: "Ford", country: "USA" };
-      let car3 = { name: "Fiat", country: "Italy" };
+      let car1 = {
+          name: "BMW",
+          country: "Germany"
+      };
+      let car2 = {
+          name: "Ford",
+          country: "USA"
+      };
+      let car3 = {
+          name: "Fiat",
+          country: "Italy"
+      };
       let cars = [car1, car2, car3];
 
       function findCarCountry(name) {
@@ -107,7 +143,7 @@
               }
           }
           if (found) {
-              console.log("Your Car is found: " + car);
+              console.log("Your Car: \'" + car + "\' is found");
           } else {
               console.log("Your Car: \'" + car + "\' is not found");
           }
