@@ -88,6 +88,8 @@
        * 169 
        * 196
        */
+
+      //
       /**
        * Using objects (cars)
        */
@@ -129,10 +131,14 @@
           }
           return country;
       }
-      console.log(findCarCountry("Fiat"));
-
       // in console - findCarCountry ("BWW") will print "Germany" etc.
+      console.log(findCarCountry("Fiat")); // Fiat -> Italy
+
+
       ////////////////////////////////////////////////////////////////////////////////
+
+      //
+
       let newCars = ["bmw", "ford", "ferrari"];
 
       function findYourCar(car) {

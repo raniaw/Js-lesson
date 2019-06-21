@@ -7,27 +7,47 @@ let hr = "<hr>";
 
 let colors = new Array("red", "white", "blue", "green", "yellow");
 let i = 0;
-var x = new Array();
+let x = new Array();
 
 while (i <= 20) {
 
-    let x = document.createElement("DIV");
+    x[i] = document.createElement("DIV");
     bgcolor = colorCreate();
     color = colorCreate();
     var t = document.createTextNode("bgcolor: " + bgcolor + " " + "color:" + color + " ");
     var groesse = groesseRnd();
     var boxRadius = brdRadius();
-
-    x[i].setAttribute("style", "margin: 5px; height: " + groesse + "px; width: " + groesse + "px; background-color:" + bgcolor + "; color:" + color + "; border-radius :" + boxRadius + "%;");
+    x[i].setAttribute("id", "DIV" + i);
+    x[i].setAttribute("style", "position:relative; left:0; top:0; float:left; display:flex; align-content:space-beetwen; wrap:wrap; margin: 15px; height: " + groesse + "px; width: " + groesse + "px; background:" + bgcolor + "; color:" + color + "; border-radius :" + boxRadius + "%;");
     x[i].appendChild(t);
+
     document.body.appendChild(x[i]);
+    console.log("X1: div" + i + " style: font-color: " + x[i].style.color);
+
     i++;
 }
+console.log("X: " + x);
 /**
- * div Ausgabe
+ * div Ausgabe auf console
  */
 x.forEach(divAusgabe);
+console.log(divAusgabe2);
+bgcolor = colorCreate();
+color = colorCreate();
+var t = document.createTextNode("bgcolor1: " + bgcolor + " " + "color:" + color + " ");
+var groesse = groesseRnd();
+var boxRadius = brdRadius();
+console.log("bgcolor1: " + bgcolor, " ", bgcolor, " ");
+console.log(document.getElementById("divs").style);
+document.querySelector("#divs").style = "margin: 5px; height: " + groesse + "px; width: " + groesse + "px; background-color:" + bgcolor + "; color:" + color + "; border-radius :" + boxRadius + "%;";
+console.log("#div: " + document.querySelector("#divs").style.color);
 
+var divs = document.querySelectorAll('#divs');
+
+[].forEach.call(divs, function(div) {
+    // do whatever
+    div.style = "float:left; margin: 5px; height: " + groesse + "px; width: " + groesse + "px; background-color:" + bgcolor + "; color:" + color + "; border-radius :" + boxRadius + "%;";
+});
 
 /** ********  Funktion divAusgabe *********
  * 
@@ -37,20 +57,31 @@ x.forEach(divAusgabe);
  * @param {*} array 
  */
 function divAusgabe(value, index, array) {
-    let c = 0;
-    // for (let i = 0; i <= 6; i++) {
-
-    // while (c < i) {
-    document.getElementById("divs").innerHTML = value;
-    value = document.getElementById("divs").innerHTML;
-    // document.querySelector("#divs").style.
-    //     c++;
-    // }
-    // // document.write("<br>");
-    // }
-
+    console.log("divausgabe1: " + document.getElementById("divs").style);
 }
 
+function divAusgabe2(value, index, array) {
+    let c = 0;
+    for (let i = 0; i <= 6; i++) {
+
+        while (c < i) {
+            bgcolor = colorCreate();
+            color = colorCreate();
+            var t = document.createTextNode("bgcolor1: " + bgcolor + " " + "color:" + color + " ");
+            var groesse = groesseRnd();
+            var boxRadius = brdRadius();
+            console.log("bgcolor1: " + bgcolor, " ", bgcolor, " ");
+            x[c].setAttribute("style", "margin: 5px; height: " + groesse + "px; width: " + groesse + "px; background-color:" + bgcolor + "; color:" + color + "; border-radius :" + boxRadius + "%;");
+            //document.getElementById("divs").style = x[c].style;
+            console.log(document.getElementById("divs").style);
+            document.querySelector("#divs").style = x[c].style;
+            console.log("#div-console-divAusgabe2: " + x[c] + document.querySelector("#divs").style.color);
+            c++;
+        }
+        // // document.write("<br>");
+    }
+
+}
 /**
  * 
  * @param {*} value 
@@ -114,36 +145,18 @@ function brdRadius() {
 }
 
 /**
- * Este Arrayasusgabe kommt nach den <p>
+ * var element = document.createElement('tagname');    
+ * element.className= "classname";
+ * element.id= "id";
  */
-// console.log(cars);
-// document.write(lbr + hr);
-// document.write("Erste Array: " + lbr + "Cars: " + cars + lbr);
+
 /**
- * Zweite Arrayausgabe kommt nach dem <p>
+ * var b = document.querySelector("button"); 
+ * b.setAttribute("name", "helloButton");
+ * b.setAttribute("disabled", "");
  */
-// document.write(lbr + hr + lbr + "Zweite Array: ");
-// for (var i = 0; i < cars.length; i++) {
-//     document.write(lbr + cars[i]);
-// }
 /**
- * Dritte Array ausgabe kommt oben inder Webseite wo <p id="cars">-platziert
+ * let div1 = document.getElementById('div1');
+ * let align = div1.getAttribute('align');
+ * alert(align); // Shows the value of align for the element with id="div1"
  */
-// document.write(lbr + hr);
-// document.write(lbr + "Dritte und vierte Arrays kommen oben in \<\"p\">" + lbr);
-// cars.forEach(myArrAusgabe);
-// document.getElementById("cars").innerHTML = txtArr;
-// document.getElementById("cars").style = "background:" + colorCreate() + "; color:" + colorCreate();
-// // document.getElementById("cars").style = ;
-// document.write(hr);
-// txtArr = "";
-// students.forEach(myArrAusgabeUl);
-// document.getElementById("students").innerHTML = txtArr;
-// document.getElementById("students").style = "background:" + colorCreate() + "; color:" + colorCreate();
-// txtArr = "";
-/**
- * Vierte Arrayausgabe student-list kommt oben inder Webseite wo <p id="student">-platziert
- */
-// document.write(lbr + "Vierte Array" + lbr);
-// document.write("Students: " + lbr + students + lbr);
-// document.write(lbr + hr);w
