@@ -6,7 +6,7 @@ let toDoList = ["Learn Javascript"];
 let userAnswer = prompt("Möchten Sie etwas machen oder lernen?");
 
 while (userAnswer != "nein") {
-    if (userAnswer == "aufgaben anzeigen") {
+    if (userAnswer == "list") {
         var pTag = document.createElement("p");
         pTag.setAttribute("id", "aufgAnz");
         document.body.appendChild(pTag);
@@ -26,7 +26,7 @@ while (userAnswer != "nein") {
             document.getElementById("list2" + i).innerHTML = toDoList[i];
         }
         //console.log(toDoList);
-    } else if (userAnswer == "neue aufgabe") {
+    } else if (userAnswer == "neue") {
         var pTag = document.createElement("p");
         pTag.setAttribute("id", "aufgNeu");
         document.body.appendChild(pTag);
@@ -67,11 +67,46 @@ while (userAnswer != "nein") {
         //     "AufgabenNr.: " + index + " Aufgabe: " + value;
         // });
 
+    } else if (userAnswer == "del") {
+        userAnswer = prompt("Wählen Sie bitte eine Anzahl für das Aufgabenlöschen", "wir haben " + toDoList.length + " Aufgaben auf der Liste");
+        if (userAnswer > toDoList.length) {
+            userAnswer = prompt("wir haben wenige Aufgaben auf der Liste..\nWählen Sie bitte eine Anzahl, die zur Azahl der Liste gehört", toDoList.length);
+            delTodo(userAnswer);
+        } else {
+            delTodo(userAnswer);
+        }
     }
+
     userAnswer = prompt("noch etwas");
 }
 console.log("app wurde geschlossen!!!");
 
+function delTodo(val) {
+    let index = val - 1;
+    toDoList.splice(index, 1);
+    console.log(toDoList);
+    var pTag = document.createElement("p");
+    pTag.setAttribute("id", "aufgAnz");
+    document.body.appendChild(pTag);
+    document.getElementById("aufgAnz").innerHTML = "Ganze Aufgaben-Liste: <br> ";
+    for (var i = 0; i < toDoList.length; i++) {
+
+        // var node = document.createElement("LI");
+        // var textnode = document.createTextNode("Water");
+        // node.appendChild(textnode);
+        // document.getElementById("myList").appendChild(node);
+        //document.body.appendChild(li);
+        ul = document.createElement("ul");
+        ul.setAttribute("id", "aufg2");
+        li = document.createElement("li");
+        li.setAttribute("id", "list2" + i);
+        document.body.appendChild(li);
+        document.getElementById("list2" + i).innerHTML = "";
+        document.getElementById("list2" + i).innerHTML = toDoList[i];
+    }
+
+
+}
 
 
 // var arr = [];

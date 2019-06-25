@@ -28,7 +28,6 @@ function auswahl(nummer) {
         case "3":
             alert("Vielen Dank!\nApp wurde geschlossen!!");
             console.log("app wurde geschlossen!!!");
-
             break;
         default:
             alert("Sie haben keine Auswahl getroffen;)\nApp wurde geschlossen!!");
@@ -46,7 +45,7 @@ function neueAufgabe() {
 
     let newToDo = prompt("Schreiben sie bitte Ihre neue Aufgaben");
     toDoList.push(newToDo);
-    console.log(toDoList);
+    printList();
     let yesNo = prompt("Weiter?\n\"1\" -> ja\n\"2\": -> nein");
 
     while (yesNo != "2") {
@@ -65,14 +64,25 @@ function neueAufgabe() {
 
         NodeList.prototype.forEach = Array.prototype.forEach;
 
-        var li_s = document.querySelectorAll('#list').forEach(function(el) {
-            console.log("forEach!");
-            for (let i = 0; i < toDoList.length; i++) {
-                el.innerHTML = toDoList[i];
-                console.log("foreach: " + toDoList[i]);
-            }
-        })
+        // var li_s = document.querySelectorAll('#list').forEach(function(el) {
+        //     console.log("forEach!");
+        //     for (let i = 0; i < toDoList.length; i++) {
+        //         el.innerHTML = toDoList[i];
+        //         console.log("foreach: " + toDoList[i]);
+        //     }
+        // })
+        ul = document.createElement("ul");
+        ul.setAttribute("id", "aufg3");
+        li = document.createElement("li");
+        document.body.appendChild(li);
+        li.setAttribute("id", "list");
+        let li_s = toDoList.forEach(function(el, index) {
 
+            console.log("forEach! el:  " + el);
+            document.querySelectorAll('#list').innerHTML = el;
+            console.log(document.querySelectorAll('#list').innerHTML = el);
+        })
+        console.log(li_s);
         yesNo = prompt("Weiter?\n\"1\" -> ja\n\"2\" -> nein");
         let newToDo = prompt("Schreiben sie bitte Ihre neue Aufgaben");
         toDoList.push(newToDo);
@@ -114,4 +124,11 @@ function ganzeListe() {
         document.body.appendChild(li);
         document.getElementById("list2" + i).innerHTML = toDoList[i];
     }
+}
+
+function printList() {
+    toDoList.forEach(function(el) {
+        console.log("forEach PrintList: " + el);
+
+    });
 }
