@@ -88,7 +88,6 @@ function inputPerson() {
 
 }
 
-
 function inputCars() {
     console.log(" input Cars : " + pCarsBrand + " " + pColorOfCars + " " + pYearBuilt);
     let carsObj = new CarsObj(pCarsBrand, pColorOfCars, pYearBuilt);
@@ -96,7 +95,6 @@ function inputCars() {
     document.getElementById("car").innerHTML = "Hier sind Daten von Ihre auto "
     document.getElementById("cars").innerHTML = carsObj.fullInfoCars + "<br>";
 }
-
 
 function inputDriver() {
     console.log("inputDriver");

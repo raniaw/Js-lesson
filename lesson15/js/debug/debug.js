@@ -24,6 +24,14 @@ function printPersonProps(obj) {
         document.write('<br>');
         document.write(keys + ": " + obj[keys]);
     }
+
+    Object.keys(obj).forEach(function(val, key) {
+        result1.innerHTML += "index[" + key + "] " + val + " " + obj[val] + "<br>";
+    });
+    for (var key in obj) {
+        result2.innerHTML += "for in: " + key + ' : ' + obj[key] + "<br>";
+    }
+
 }
 printPersonProps(person);
 
