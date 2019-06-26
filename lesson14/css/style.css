@@ -6,4 +6,21 @@
 body {
   font-family: sans-serif;
 }
+
+p {
+  font-size: 1em;
+}
+
+p span.red {
+  color: #ff0000;
+}
+
+p span.blue {
+  color: #0000ff;
+}
+
+p span.green {
+  color: #00ff00;
+  font-weight: bolder;
+}
 /*# sourceMappingURL=style.css.map */
