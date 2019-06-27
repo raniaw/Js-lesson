@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.light {
+  color: #f0ba08;
+  border: 1px solid #ff444d;
+  padding: 1em;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+.example {
+  color: #094e12;
+  padding: 5px;
+  width: 150px;
+  font-size: 15px;
+}
+
+.click {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bolder;
+  color: #070070;
+}
+/*# sourceMappingURL=style.css.map */
