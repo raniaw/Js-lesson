@@ -83,9 +83,6 @@ function myFunction() {
 
 }
 
-
-
-
 //setInterval(changeColor, 5000);
 
 function changeColor() {

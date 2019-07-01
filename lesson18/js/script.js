@@ -47,7 +47,29 @@ function changeColor() {
         console.log("c: " + c);
     }
     if (c < colors.length) {
-        body.style.background = colorCreate();
+        body.style.background = colorDarkCreate();
+        c++;
+        console.log(">c: " + c);
+    }
+    // for(c=0;c<colors.length;c++){
+    //     if(c==colors.length){
+    //         c=0;
+    //     }
+    //     body.style.background=colors[c];    
+    // }}
+
+    /////////////////////////////////////
+    let buttonText = document.getElementById("colors");
+    c = 0;
+}
+
+function changeColor2() {
+    if (c == colors.length) {
+        c = Math.floor(Math.random() * colors.length);
+        console.log("c: " + c);
+    }
+    if (c < colors.length) {
+        body.style.background = colorRedBlueCreate();
         c++;
         console.log(">c: " + c);
     }
@@ -99,6 +121,24 @@ function colorCreate() {
     var colRed = Math.floor(Math.random() * 256);
     var colBlue = Math.floor(Math.random() * 256);
     var colGreen = Math.floor(Math.random() * 256);
+    color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
+    return color;
+}
+
+function colorDarkCreate() {
+    var color;
+    var colRed = Math.floor(Math.random() * 100);
+    var colBlue = Math.floor(Math.random() * 100);
+    var colGreen = Math.floor(Math.random() * 100);
+    color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
+    return color;
+}
+
+function colorRedBlueCreate() {
+    var color;
+    var colRed = Math.floor(Math.random() * 256);
+    var colBlue = Math.floor(Math.random() * 256);
+    var colGreen = Math.floor(Math.random() * 0);
     color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
     return color;
 }
