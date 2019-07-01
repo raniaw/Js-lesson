@@ -3,6 +3,7 @@
   border: 1px solid #ff444d;
   padding: 1em;
   font-family: 'Hind Siliguri', sans-serif;
+  border-radius: 15px;
 }
 
 .example {
@@ -15,6 +16,15 @@
 .click {
   font-family: 'Quicksand', sans-serif;
   font-weight: bolder;
-  color: #070070;
+  font-size: 1.5em;
+}
+
+#h5 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+}
+
+#par {
+  font-family: 'Quicksand', sans-serif;
 }
 /*# sourceMappingURL=style.css.map */
