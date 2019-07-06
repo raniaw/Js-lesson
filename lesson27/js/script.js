@@ -23,7 +23,7 @@ function toggleShow() {
 function colorCreateDark() {
     var color;
     var max = 256;
-    var min = 40;
+    var min = 60;
     var colRed = Math.floor(Math.random() * max) - min;
     if (colRed < 0) {
         colRed = 0;

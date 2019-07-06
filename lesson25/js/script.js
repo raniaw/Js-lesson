@@ -6,6 +6,18 @@ for (person in people) {
 }
 document.getElementById("obj").innerHTML = txt;
 
+var dompteur = {
+    "name": "John",
+    "age": 31,
+    "pets": [
+        { "animal": "dog", "name": "Fido" },
+        { "animal": "cat", "name": "Felix" },
+        { "animal": "hamster", "name": "Lightning" }
+    ]
+}
+
+document.write("Dompteur " + dompteur.name + " ist " + dompteur.age + " Jahre alt. Er dressiert seinen " + dompteur.pets[2].animal + ", der heißt " + dompteur.pets[2].name);
+document.write("<br><br>");
 var cars = ['BMW', 'Volvo', 'Mini'];
 var x;
 
