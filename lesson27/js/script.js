@@ -23,7 +23,7 @@ function toggleShow() {
 function colorCreateDark() {
     var color;
     var max = 256;
-    var min = 80;
+    var min = 40;
     var colRed = Math.floor(Math.random() * max) - min;
     if (colRed < 0) {
         colRed = 0;
@@ -46,7 +46,7 @@ function colorCreateDark() {
 function colorCreatePastel() {
     var color;
     var max = 256;
-    var min = 160;
+    var min = 120;
     var colRed = Math.floor(Math.random() * max) + min;
     if (colRed > 255) {
         colRed = 255;
