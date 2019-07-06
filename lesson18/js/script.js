@@ -51,7 +51,6 @@ function changeColor() {
         c++;
         console.log(">c: " + c);
     }
-
     let buttonText = document.getElementById("colors");
     c = 0;
 }
@@ -205,8 +204,17 @@ function changeBtnStyle() {
 
 function brdRadius() {
     var grRndmin = Math.ceil(1);
+    //console.log(grRndmin);
     var grRndmax = Math.floor(50);
-    var grRnd = Math.floor(Math.random() * (grRndmax - grRndmin + 1)) + grRndmin;
-    console.log(grRnd);
+    var grRnd = Math.floor(Math.random() * grRndmax) + grRndmin;
+    //console.log(grRnd);
     return grRnd;
+}
+
+function classDelete() {
+    document.getElementById("div1").classList.remove("newStyle");
+}
+
+function classChange() {
+    document.getElementById("div1").classList.toggle("newClass");
 }
