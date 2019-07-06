@@ -50,8 +50,7 @@ var divs = document.querySelectorAll('#divs');
 });
 
 /** ********  Funktion divAusgabe *********
- * 
- * 
+ *
  * @param {*} value 
  * @param {*} index 
  * @param {*} array 
@@ -90,8 +89,6 @@ function divAusgabe2(value, index, array) {
  */
 function myArrAusgabe(value, index, array) {
     txtArr = txtArr + index + " " + value + "<br>";
-
-
 }
 /**
  * 

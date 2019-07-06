@@ -47,9 +47,9 @@ fruit.startsWith("aplle"); //false
 //////////////////////////////
 
 //substr use start and length
-console.log(fruit);
-console.log("with substr(5,10) : " + fruit.substr(5, 10)); // are round
-console.log("with slice(5,10) : " + fruit.slice(5, 10)); // are
+console.log("fruit: " + fruit);
+console.log("with fruit.substr(5,10) : " + fruit.substr(5, 10)); // are round
+console.log("with fruit. slice(5,10) : " + fruit.slice(5, 10)); // are
 
 //substring use start and end 
 console.log("fruit.substring(2)=" + fruit.substring(2)); // to the end of the string
@@ -58,10 +58,10 @@ console.log("fruit.substring(2,7)=" + fruit.substring(2, 7)); //
 //ple a
 
 // toUpperCase() 
-console.log(fruit.toUpperCase()); // APPLE ARE ROUND AND APPLES ARE JUICY
+console.log("fruit.toUpperCase(): " + fruit.toUpperCase()); // APPLE ARE ROUND AND APPLES ARE JUICY
 
 // to LowerCase()
-console.log(fruit.toLowerCase()); // apple are round and apples are juicy
+console.log("fruit.toLowerCase(): " + fruit.toLowerCase()); // apple are round and apples are juicy
 
 // trim() to remove the whitespaces 
 let food = "       Döner Apple Kepap banana";
@@ -71,10 +71,12 @@ console.log("Without whitespaces: " + food.trim());
 // toString to convert object to string 
 let colors = ["red", "green", "yellow", "gold"];
 console.log("colors: " + colors);
-console.log(colors.toString());
+console.log("colors.toString(): " + colors.toString());
 
 // Declare a variable with the value of "I can walk in the park all day!". Print the word "park" to the console.
 let text = "i can walk in the park all day!";
+
+convert(text);
 
 function convert(str) {
     let newArr = str.split(" ");
@@ -83,5 +85,5 @@ function convert(str) {
         newArr[i][0] = newArr[i].toUpperCase();
         console.log(newArr[i]);
     }
-    console.log(newArr);
+    console.log("convert newArr: " + newArr);
 }
