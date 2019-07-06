@@ -22,6 +22,7 @@
   background-color: coral;
   color: white;
   font-size: 25px;
+  color: black;
 }
 
 .newClass {
@@ -32,5 +33,15 @@
   font-size: 25px;
   color: navy;
   margin-bottom: 10px;
+}
+
+.anotherClass {
+  color: white;
+}
+
+.thirdClass {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25px;
 }
 /*# sourceMappingURL=style.css.map */

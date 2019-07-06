@@ -72,7 +72,6 @@ function addDrink(drink, index) {
         c++;
     }
     document.getElementById("ganzeListe").innerHTML = "Die Liste jetzt sieht so <b>\'" + x + "\'</b> aus<br>";
-
     return x;
 }
 //

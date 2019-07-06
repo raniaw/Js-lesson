@@ -1,3 +1,18 @@
+var txt = "";
+var people = { fname: "John", lname: "Doe", age: 25 };
+var person;
+for (person in people) {
+    txt += people[person] + " ";
+}
+document.getElementById("obj").innerHTML = txt;
+
+var cars = ['BMW', 'Volvo', 'Mini'];
+var x;
+
+for (x of cars) {
+    document.write(x + "<br >");
+}
+
 let str = "Hello World";
 console.log("str.length: " + str.length); // 11
 console.log("str[0]: " + str[0]); // H

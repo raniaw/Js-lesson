@@ -211,10 +211,25 @@ function brdRadius() {
     return grRnd;
 }
 
-function classDelete() {
+function addClass() {
+    document.getElementById("div1").classList.add("newStyle", "anotherClass", "thirdClass", "newClass");
+}
+
+function deleteClass() {
     document.getElementById("div1").classList.remove("newStyle");
 }
 
 function classChange() {
     document.getElementById("div1").classList.toggle("newClass");
+}
+
+function countClass() {
+    var x = document.getElementById("div1").classList.length;
+    document.getElementById("demo").innerHTML = x;
+}
+
+function documentClose() {
+    document.open();
+    document.write("<h1>Hello World</h1>");
+    document.close();
 }
