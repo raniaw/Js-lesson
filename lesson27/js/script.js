@@ -1,7 +1,11 @@
-// Get the button, and when the user clicks on it, execute myFunction
+// nach dem anklicken auf Button wird eine Funktion ausführen, um zu untermenü anzuzeigen
 document.getElementById("myBtn").onclick = function() { toggleShow() };
+//
+/**
+ * Function, um einen Class einzufügen und zu löschen
+ * hintergrunde werden nachdem anklicken bei button und bei der menü ändern
+ **/
 
-/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
 function toggleShow() {
     var x = document.getElementById("myDropdown").classList.toggle("show");
     console.log(x);
@@ -13,7 +17,9 @@ function toggleShow() {
         z[0].style.backgroundColor = colorCreatePastel();
     }
 }
-
+/**
+ * Funktion für die zufällige dunkle Farbeerstellung 
+ */
 function colorCreateDark() {
     var color;
     var max = 256;
@@ -34,7 +40,9 @@ function colorCreateDark() {
     console.log(color);
     return color;
 }
-
+/**
+ * Funktion für die zufällige helle(Pastel) Farbeerstellung
+ */
 function colorCreatePastel() {
     var color;
     var max = 256;
