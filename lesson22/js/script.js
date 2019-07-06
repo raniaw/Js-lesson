@@ -1,30 +1,37 @@
-function prepareWatches() {
+function getWatches() {
     let d = new Date()
     h = d.getHours();
     m = d.getMinutes();
     s = d.getSeconds();
     mil = d.getMilliseconds();
     watches = h + ":" + m + ":" + s + "." + mil;
-    document.getElementById("watches").innerHTML = watches;
+    return watches;
 }
 
 function showWatches() {
-    setInterval(prepareWatches, 1); // 500 milliseconds
+    setInterval(setWatches, 1); // 500 milliseconds
+
+}
+
+function setWatches() {
+    var setWatch = document.getElementById("watches").innerHTML = getWatches();
 }
 
 function setOnlyDate() {
-    let d = new Date();
-    let y = d.getFullYear();
-    let m = d.getMonth() + 1;
-    let day = d.getDay();
-    document.getElementById("out").innerHTML = y + "-" + m + "-" + day;
+    var setDate = getOnlyDate();
+    document.getElementById("out").innerHTML = setDate;
 }
 
 function getOnlyDate() {
     let d = new Date();
     let dateActuell = "" + d.getFullYear() + "-0" + (d.getMonth() + 1) + "-0" + d.getDay();
-    console.log("dateActuell: " + dateActuell);
+    //log("dateActuell: " + dateActuell);
     return dateActuell;
+}
+
+function setTimeStamp() {
+    var setTime = getTimeStamp();
+    document.getElementById("out").innerHTML = setTime;
 }
 
 function getTimeStamp() {
@@ -33,21 +40,30 @@ function getTimeStamp() {
     m = d.getMinutes(); // mm
     s = d.getSeconds(); // ss
     output = h + ":" + m + ":" + s;
-    document.getElementById("out").innerHTML = output;
+    return output;
+
+}
+
+function setUnixTime() {
+    document.getElementById("out").innerHTML = getUnixTime();
 }
 
 function getUnixTime() {
     let d = new Date();
     unix_time = d.getTime();
-    document.getElementById("out").innerHTML = unix_time;
+    return unix_time;
+}
+
+function setCurrentDate() {
+    document.getElementById("out").innerHTML = getCurrentDate();
 }
 
 function getCurrentDate() {
-    let d = new Date();
-    document.getElementById("out").innerHTML = d;
+    let dCurrent = new Date();
+    return dCurrent;
 }
 
-function getInputDate() {
+function setInputDate() {
     var value = getOnlyDate();
     var x = document.createElement("INPUT");
     x.setAttribute("type", "date");
