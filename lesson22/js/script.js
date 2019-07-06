@@ -12,12 +12,19 @@ function showWatches() {
     setInterval(prepareWatches, 1); // 500 milliseconds
 }
 
-function getOnlyDate() {
+function setOnlyDate() {
     let d = new Date();
     let y = d.getFullYear();
     let m = d.getMonth() + 1;
     let day = d.getDay();
-    document.getElementById("out").innerHTML = y + "." + m + "." + day;
+    document.getElementById("out").innerHTML = y + "-" + m + "-" + day;
+}
+
+function getOnlyDate() {
+    let d = new Date();
+    let dateActuell = "" + d.getFullYear() + "-0" + (d.getMonth() + 1) + "-0" + d.getDay();
+    console.log("dateActuell: " + dateActuell);
+    return dateActuell;
 }
 
 function getTimeStamp() {
@@ -38,4 +45,12 @@ function getUnixTime() {
 function getCurrentDate() {
     let d = new Date();
     document.getElementById("out").innerHTML = d;
+}
+
+function getInputDate() {
+    var value = getOnlyDate();
+    var x = document.createElement("INPUT");
+    x.setAttribute("type", "date");
+    x.setAttribute("value", value);
+    document.body.appendChild(x);
 }
