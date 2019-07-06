@@ -5,7 +5,9 @@ for (person in people) {
     txt += people[person] + " ";
 }
 document.getElementById("obj").innerHTML = txt;
-
+/**
+ * Object dompteur
+ */
 var dompteur = {
     "name": "John",
     "age": 31,
