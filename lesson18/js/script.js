@@ -51,14 +51,7 @@ function changeColor() {
         c++;
         console.log(">c: " + c);
     }
-    // for(c=0;c<colors.length;c++){
-    //     if(c==colors.length){
-    //         c=0;
-    //     }
-    //     body.style.background=colors[c];    
-    // }}
 
-    /////////////////////////////////////
     let buttonText = document.getElementById("colors");
     c = 0;
 }
@@ -70,6 +63,36 @@ function changeColor2() {
     }
     if (c < colors.length) {
         body.style.background = colorRedBlueCreate();
+        c++;
+        console.log(">c: " + c);
+    }
+
+    let buttonText = document.getElementById("colors");
+    c = 0;
+}
+
+function changeColor3() {
+    if (c == colors.length) {
+        c = Math.floor(Math.random() * colors.length);
+        console.log("c: " + c);
+    }
+    if (c < colors.length) {
+        body.style.background = colorRedGreenCreate();
+        c++;
+        console.log(">c: " + c);
+    }
+
+    let buttonText = document.getElementById("colors");
+    c = 0;
+}
+
+function changeColor4() {
+    if (c == colors.length) {
+        c = Math.floor(Math.random() * colors.length);
+        console.log("c: " + c);
+    }
+    if (c < colors.length) {
+        body.style.background = colorBlueGreenCreate();
         c++;
         console.log(">c: " + c);
     }
@@ -121,7 +144,7 @@ function colorCreate() {
     var colRed = Math.floor(Math.random() * 256);
     var colBlue = Math.floor(Math.random() * 256);
     var colGreen = Math.floor(Math.random() * 256);
-    color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     return color;
 }
 
@@ -130,15 +153,60 @@ function colorDarkCreate() {
     var colRed = Math.floor(Math.random() * 100);
     var colBlue = Math.floor(Math.random() * 100);
     var colGreen = Math.floor(Math.random() * 100);
-    color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     return color;
 }
 
 function colorRedBlueCreate() {
     var color;
     var colRed = Math.floor(Math.random() * 256);
-    var colBlue = Math.floor(Math.random() * 256);
     var colGreen = Math.floor(Math.random() * 0);
-    color = "rgb(" + colRed + "," + colBlue + "," + colGreen + ")";
+    var colBlue = Math.floor(Math.random() * 256);
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    console.log("red blue" + color);
     return color;
+}
+
+function colorRedGreenCreate() {
+    var color;
+    var colRed = Math.floor(Math.random() * 256);
+    var colGreen = Math.floor(Math.random() * 256);
+    var colBlue = Math.floor(Math.random() * 0);
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    console.log("red blue" + color);
+    return color;
+}
+
+function colorBlueGreenCreate() {
+    var color;
+    var colRed = Math.floor(Math.random() * 0);
+    var colGreen = Math.floor(Math.random() * 256);
+    var colBlue = Math.floor(Math.random() * 256);
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    console.log("red blue" + color);
+    return color;
+}
+
+function changeBtnStyle() {
+    var a = document.getElementsByTagName("BUTTON")[9];
+    var x = a.attributes.item(1).name;
+    var y = a.attributes.item(1).value;
+    document.getElementById("btnChange").innerHTML = y;
+    // if (y == "example") {
+    if (x == "class") {
+        //alert("Style of Button is changed");
+        a.setAttribute("class", "example2");
+        a.style.backgroundColor = colorCreate();
+        a.style.borderRadius = brdRadius() + "%";
+        document.getElementById("btnChange").innerHTML = "Button has new class \'" + a.attributes.item(1).value + "\' now";
+        // alert(a.attributes.item(1).name);
+    }
+}
+
+function brdRadius() {
+    var grRndmin = Math.ceil(1);
+    var grRndmax = Math.floor(50);
+    var grRnd = Math.floor(Math.random() * (grRndmax - grRndmin + 1)) + grRndmin;
+    console.log(grRnd);
+    return grRnd;
 }

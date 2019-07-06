@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+#shape {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */

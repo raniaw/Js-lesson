@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Events</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -26,6 +27,13 @@
        <button onclick="clearInterval()">stop changes</button> -->
         <button onclick="changeColor()">Dark Color</button><br>
         <button onclick="changeColor2()">Red Blue</button><br>
+        <button onclick="changeColor3()">Red Green</button><br>
+        <button onclick="changeColor4()">Blue Green</button><br>
+        <!-- beim klick auf  ändert sich sein style  -->
+        <div>
+            <button onclick="changeBtnStyle()" class="example">Change Style of Button</button>
+            <p id="btnChange"></p>
+        </div> <br>
         <button id="colors" onclick="changeColor1()">change text & body</button><br>
         <input type="text" id="name" onblur="showValu()">
         <p id="paragraph" onmouseover="over()" onmouseout="out()">
