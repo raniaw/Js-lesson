@@ -78,5 +78,21 @@ function typeChange() {
     btn.attributes.removeNamedItem("type");
     btn.setAttribute("type", "date");
     btn.setAttribute("value", "2017-10-24");
-
 }
+
+document.addEventListener("mousemove", randomCounter);
+
+function randomCounter() {
+    document.getElementById("rndCount").innerHTML = Math.random();
+}
+
+function removeHandler() {
+    document.removeEventListener("mousemove", randomCounter);
+}
+
+// function rnmNode() {
+//     var h = document.getElementsByTagName("h1")[0]
+//         .innerHTML = "Ersetzt";
+
+//     document.replaceChild(h, "p");
+// }

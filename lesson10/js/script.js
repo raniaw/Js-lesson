@@ -104,3 +104,31 @@ function addDrink(drink,place){
    console.log(drinklist.join());
 }
  */
+
+const onePerson = {
+    firstName: "Elena",
+    getFirstName: getFirstNameGlobal
+}
+
+const twoPerson = {
+    firstName: "Maja",
+    getFirstName: getFirstNameGlobal
+}
+
+function getFirstNameGlobal() {
+    return this.firstName;
+}
+
+document.getElementById("one").innerHTML = onePerson.getFirstName();
+document.getElementById("two").innerHTML = twoPerson.getFirstName();
+
+const threePerson = createPerson("Mascha", "Semjononva", 23);
+
+function createPerson(firstName, lastName, age) {
+    return {
+        firstName: firstName,
+        lastName: lastName,
+        age: age
+    };
+}
+document.getElementById("three").innerHTML = threePerson.firstName + " " + threePerson.lastName + " is " + threePerson.age + " years old";
