@@ -24,8 +24,9 @@ function setOnlyDate() {
 
 function getOnlyDate() {
     let d = new Date();
-    let dateActuell = "" + d.getFullYear() + "-0" + (d.getMonth() + 1) + "-0" + d.getDay();
-    //log("dateActuell: " + dateActuell);
+    //    console.log(d.getDay(), d.getDate());
+    let dateActuell = "" + d.getFullYear().toString() + "-0" + (d.getMonth() + 1).toString() + "-0" + d.getDate().toString() + " ";
+    console.log("dateActuell: " + dateActuell);
     return dateActuell;
 }
 
@@ -64,9 +65,10 @@ function getCurrentDate() {
 }
 
 function setInputDate() {
-    var value = getOnlyDate();
-    var x = document.createElement("INPUT");
+    let x = document.createElement("INPUT");
     x.setAttribute("type", "date");
+    let d = new Date();
+    var value = "" + d.getFullYear().toString() + "-0" + (d.getMonth() + 1).toString() + "-0" + d.getDate().toString() + "";
     x.setAttribute("value", value);
     document.body.appendChild(x);
 }
