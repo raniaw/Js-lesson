@@ -72,3 +72,11 @@ function setInputDate() {
     x.setAttribute("value", value);
     document.body.appendChild(x);
 }
+
+function typeChange() {
+    var btn = document.getElementsByTagName("INPUT")[0];
+    btn.attributes.removeNamedItem("type");
+    btn.setAttribute("type", "date");
+    btn.setAttribute("value", "2017-10-24");
+
+}
