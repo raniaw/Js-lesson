@@ -229,6 +229,29 @@ var mNumb = document.getElementById("pMap");
 mNumb.style.color = colorCreateDark();
 mNumb.innerHTML = mapsNumber;
 
+/**
+ * arrow function 
+ */
+
+let callMe = () => { console.log("callMe - arrow Function!"); }
+callMe();
+// if only one parameter
+let multOne = number => number * 2;
+
+// if more parameters
+let multTwo = (number) => {
+    return number * 2;
+}
+
+var aNumb = mNumber.map(multTwo);
+var arrNumb = document.getElementById("arrM");
+arrNumb.style.color = colorCreateDark();
+arrNumb.innerHTML = aNumb;
+
+
+
+
+
 
 
 /**
