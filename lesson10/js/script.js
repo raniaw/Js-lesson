@@ -122,7 +122,7 @@ function getFirstNameGlobal() {
 document.getElementById("one").innerHTML = onePerson.getFirstName();
 document.getElementById("two").innerHTML = twoPerson.getFirstName();
 
-const threePerson = createPerson("Mascha", "Semjononva", 23);
+const threePerson = createPerson("Mascha", "Semjonova", 23);
 
 function createPerson(firstName, lastName, age) {
     return {
@@ -132,3 +132,29 @@ function createPerson(firstName, lastName, age) {
     };
 }
 document.getElementById("three").innerHTML = threePerson.firstName + " " + threePerson.lastName + " is " + threePerson.age + " years old";
+
+const forPerson = printNames("Mischa", "Semjonov");
+console.log("ForPerson: " + forPerson); //undefined
+
+
+function printNames() {
+    Array.prototype.forEach.apply(arguments, [function(argument) {
+        console.log(argument);
+        var names = [];
+        names.push(argument);
+        document.getElementById("for").innerHTML = names;
+        return names;
+    }]);
+}
+printNames("murka");
+
+function printName(value) {
+    var value = value;
+    console.log(value);
+    const names1 = [];
+    for (var i = 0; i < value.length; i++) {
+        names1.push(value[i]);
+    }
+    return names1;
+}
+//document.getElementById("for").innerHTML = printName(forPerson);
