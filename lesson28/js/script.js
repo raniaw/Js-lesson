@@ -42,9 +42,14 @@ var persons = [{
         work: "IT-Security"
     },
     {
+        name: "Mansour",
+        work: "Webdeveloper engineer"
+    },
+    {
         name: "Rania",
         work: "Webdeveloper engineer"
     },
+
     {
         name: "Diana",
         work: "translator"
@@ -55,16 +60,44 @@ var persons = [{
     },
 
 ]
+console.log("Persons;");
 console.log(persons);
+
 var person = persons.find(function(employee) {
     return employee.work == "translator";
 });
 console.log("The person " + person.name + " is work as " + person.work);
-document.getElementById("findempl").innerHTML = "The person " + person.name + " is work as " + person.work;
+document.getElementById("findEmpl").innerHTML = "The person " + person.name + " is work as " + person.work;
 
 
+var personWeb = persons.reverse().find(function(employee) {
+    return employee.work == "Webdeveloper engineer";
+});
+var personWebIndex = persons.reverse().findIndex(function(employee) {
+    return employee.work == "Webdeveloper engineer";
+});
+console.log(personWebIndex);
+console.log("The person with index:" + personWebIndex + " " + personWeb.name + " is work as " + personWeb.work);
+var webDev = document.getElementById("findWeb");
+webDev.style.color = colorCreateDark();
+webDev.style.fontWeight = "bolder";
+webDev.innerHTML = "The person " + personWeb.name + " is work as " + personWeb.work;
 
+//filter all persons, they work as "Webdeveloper engineer"
+var personsWeb = persons.sort().reverse().filter(function(employee) {
+    return employee.work == "Webdeveloper engineer";
+});
+console.log(personsWeb);
 
+var allWebDev = document.getElementById("dev");
+for (var i = 0; i < personsWeb.length; i++) {
+    var item = personsWeb[i];
+    console.log(item.name);
+    var elLi = document.createElement("li");
+    elLi.value = item.name;
+    elLi.innerHTML = item.name + " work as " + item.work;
+    allWebDev.appendChild(elLi);
+}
 
 
 
