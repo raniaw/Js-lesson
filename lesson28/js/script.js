@@ -24,16 +24,18 @@ allcolors.splice(1, 1, "bluered", "grey");
 console.log("Allcolors:" + allcolors);
 console.log(newColors.concat(allcolors));
 
-var first = allcolors.find(findColor);
+
+var first = allcolors.find(function(value) {
+    return value == "darkred";
+});
 console.log("first:" + first);
 document.getElementById("find").innerHTML = first;
+var second = allcolors.find(findColor);
 
-function findColor(value, index, array) {
-    // if (value == "red") {
-    //     console.log("Find: " + value);
-    // }
-    return value == "darkred";
+function findColor(value) {
+    return value == "green";
 }
+console.log(second);
 
 
 
