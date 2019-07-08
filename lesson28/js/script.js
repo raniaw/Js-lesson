@@ -1,26 +1,39 @@
 var colors = ["red", "blue", "orange"];
 var colors2 = ["green", "yellow", "purple"];
-
 var allcolors = colors.concat(colors2);
+
 document.getElementById("colors").innerHTML = colors;
 document.getElementById("colors2").innerHTML = colors2;
 document.getElementById("concat").innerHTML = allcolors;
 
 document.getElementById("slice").innerHTML = allcolors.slice(1, 3);
 console.log(allcolors);
+
 document.getElementById("slice2").innerHTML = allcolors.slice(3, 5);
-console.log("Slice: " + allcolors.slice(3, 5));
-console.log(": " + allcolors);
+console.log("Slice: " + allcolors.slice(3, 5)); //Slice: green,yellow
+console.log(": " + allcolors); //: red,blue,orange,green,yellow,purple
+//insert between "orange" and "green"
 allcolors.splice(3, 0, "darkred", "darkgreen");
-console.log("all:" + allcolors);
+console.log("all:" + allcolors); //all:red,blue,orange,darkred,darkgreen,green,yellow,purple
 document.getElementById("splice").innerHTML = allcolors;
 console.log(allcolors);
+
 var newColors = ["white", "black"];
-allcolors.splice(1, 0, "bluered", "grey");
-console.log(allcolors);
+// delete "blue" insert  "bluered" and "grey"
+allcolors.splice(1, 1, "bluered", "grey");
+console.log("Allcolors:" + allcolors);
 console.log(newColors.concat(allcolors));
 
+var first = allcolors.find(findColor);
+console.log("first:" + first);
+document.getElementById("find").innerHTML = first;
 
+function findColor(value, index, array) {
+    // if (value == "red") {
+    //     console.log("Find: " + value);
+    // }
+    return value == "darkred";
+}
 
 
 
