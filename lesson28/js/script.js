@@ -2,9 +2,9 @@ var colors = ["red", "blue", "orange"];
 var colors2 = ["green", "yellow", "purple"];
 var allcolors = colors.concat(colors2);
 
-document.getElementById("colors").innerHTML = colors;
-document.getElementById("colors2").innerHTML = colors2;
-document.getElementById("concat").innerHTML = allcolors;
+document.getElementById("colors").innerHTML = "Colors = [" + colors + "];";
+document.getElementById("colors2").innerHTML = "Colors2 = [" + colors2 + "];";
+document.getElementById("concat").innerHTML = "All Colors joind together: " + allcolors;
 
 document.getElementById("slice").innerHTML = allcolors.slice(1, 3);
 console.log(allcolors);
@@ -24,23 +24,43 @@ allcolors.splice(1, 1, "bluered", "grey");
 console.log("Allcolors:" + allcolors);
 console.log(newColors.concat(allcolors));
 
-
 var first = allcolors.find(function(value) {
     return value == "darkred";
 });
 console.log("first:" + first);
 document.getElementById("find").innerHTML = first;
+//make the same function as above
 var second = allcolors.find(findColor);
 
 function findColor(value) {
     return value == "green";
 }
-console.log(second);
 
 
+var persons = [{
+        name: "Anna",
+        work: "IT-Security"
+    },
+    {
+        name: "Rania",
+        work: "Webdeveloper engineer"
+    },
+    {
+        name: "Diana",
+        work: "translator"
+    },
+    {
+        name: "Erik",
+        work: "media telecommumation designer"
+    },
 
-
-
+]
+console.log(persons);
+var person = persons.find(function(employee) {
+    return employee.work == "translator";
+});
+console.log("The person " + person.name + " is work as " + person.work);
+document.getElementById("findempl").innerHTML = "The person " + person.name + " is work as " + person.work;
 
 
 
