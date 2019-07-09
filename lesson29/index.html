@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>AccessKey</title>
+    <title>AccessKey and Arrow Function</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
@@ -11,14 +11,28 @@
 </head>
 
 <body>
-    <h1>AccessKey</h1>
+    <h1>AccessKey and Arrow Function</h1>
     <a id="gLink" href="https://Google.de" accesskey="g">Google (Key = "g")</a><br>
     <p>
-        Note: The shortcut is varying in different browsers: <br> IE, Chrome, Safari, Opera 15+: <b> [ALT] + accesskey </b><br> Opera prior version 15:<b> [SHIFT] [ESC] + accesskey </b><br> Firefox: <b>[ALT] [SHIFT] + accesskey </b><br>
+        Note: The shortcut is varying in different browsers: <br> IE, Chrome, Safari, Opera 15+: <b> [ALT] + accesskey
+        </b><br> Opera prior version 15:<b> [SHIFT] [ESC] + accesskey </b><br> Firefox: <b>[ALT] [SHIFT] + accesskey
+        </b><br>
     </p>
 
     <button id="bLink">click</button>
+    <button id="show">show</button>
+    <button id="show/hide">show/hide</button>
+    <button id="change">change IMG</button>
     <img src="img/java.jpg" alt="">
+    <br><br>
+    <div>
+        <button id="bgrBtnColor">Change BackgroundColor </button>
+        <button class="example">Change Style of Button</button>
+
+        <!-- <button onclick="changeBtnStyle()" class="example">Change Style of Button</button> -->
+        <p id="btnChange"></p>
+        <p id="size"></p>
+    </div>
     <script src="js/script.js"></script>
 </body>
 
