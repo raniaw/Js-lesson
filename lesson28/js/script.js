@@ -194,6 +194,7 @@ var countName = names.reduce(function(allName, name) {
     // counted.style.color = colorCreateDark();
     // counted.innerHTML = name + " " + allName[name];
     // allNames();
+
     return allName;
 }, {});
 console.log(countName);
@@ -201,21 +202,22 @@ var counted = document.getElementById("cntName");
 counted.style.color = colorCreateDark();
 counted.innerHTML = "Diana: " + countName.Diana;
 
+allNames(countName);
 
-// function allNames() {
-//     var ulNames = document.getElementById("names");
-//     for (var i = 0; i < allNames.length; i++) {
-//         var item = allNames[i];
-//         console.log(item.allNames[name]);
-//         let elLi = document.createElement("li");
-//         elLi.style.color = colorCreateDark();
-//         elLi.style.fontFamily = 'Great Vibes';
-//         elLi.style.fontSize = "1.8em";
-//         elLi.value = item.allNames[name];
-//         elLi.innerHTML = item.allNames[name] + " is " + item.name;
-//         ulNames.appendChild(elLi);
-//     }
-// }
+function allNames(countN) {
+    // var ulNames = document.getElementById("names");
+    for (var i = 0; i < countN.length; i++) {
+        var item = countN[i];
+        console.log("item" + item);
+        // let elLi = document.createElement("li");
+        // elLi.style.color = colorCreateDark();
+        // elLi.style.fontFamily = 'Great Vibes';
+        // elLi.style.fontSize = "1.8em";
+        // elLi.value = item.allNames[name];
+        // elLi.innerHTML = item.allNames[name] + " is " + item.name;
+        // ulNames.appendChild(elLi);
+    }
+}
 
 
 /**
