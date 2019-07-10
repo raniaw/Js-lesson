@@ -26,7 +26,6 @@ btnChildLi.addEventListener("click", () => {
         elLi.style.fontSize = "1.8em";
         elLi.style.fontWeight = "bolder";
         elLi.style.color = colorCreate();
-
         elLi.appendChild(txt);
         ul.appendChild(elLi);
     }
@@ -62,6 +61,7 @@ btnAddTodo.addEventListener("click", () => {
 
     var elLi = document.createElement("li");
     var todoL = document.querySelector("input").value;
+    var inTodo = document.getElementById("inTodo");
     var txt = document.createTextNode(todoL);
     elLi.style.fontFamily = 'Great Vibes';
     elLi.style.fontSize = "1.8em";
@@ -72,6 +72,8 @@ btnAddTodo.addEventListener("click", () => {
     elLi.appendChild(txt);
     elLi.addEventListener("click", elementEntfernen);
     ulTodo.appendChild(elLi);
+    inTodo.value = "";
+    inTodo.focus();
 
 });
 
