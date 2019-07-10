@@ -40,7 +40,6 @@ function validDiv() {
 
 }
 
-
 /**
  * 
  * 
@@ -59,11 +58,11 @@ function validPass() {
         }
 
         if (!(isNaN(pass))) {
-            throw pPass.innerHTML = "Your dont' write your password";
+            throw pPass.innerHTML = "Your didn't write your password";
         }
 
         if (pass.length < 6) {
-            throw pPass.innerHTML = "Your Password is too small";
+            throw pPass.innerHTML = "Your Password is too short";
         }
 
         if (pass.length >= 20) {
@@ -71,7 +70,7 @@ function validPass() {
         }
 
         // if (pass.match(/^[\\,\[,\],\{,\},\",\',ö,ä,ü,Ö,Ä,Ü,ß]+$/)) {
-        //     throw pPass.innerHTML = "Your Password is too small2";
+        //     throw pPass.innerHTML = "You don't should be character";
         // }
 
     } catch (err) {
@@ -129,12 +128,12 @@ btnPassValid.addEventListener("click", () => {
                 elLi.style.color = colorCreate();
                 elLi.appendChild(txt);
                 ulPass.appendChild(elLi);
-                throw txtV = "Your don't write your pass! ";
+                throw txtV = "Your didn't write your pass! ";
 
             }
 
             if (pass.length < 6) {
-                txtV = "Your Password is too small"
+                txtV = "Your Password is too short"
                 var elLi = document.createElement("li");
                 var txt = document.createTextNode(txtV);
                 elLi.style.fontFamily = 'Great Vibes';
@@ -143,7 +142,7 @@ btnPassValid.addEventListener("click", () => {
                 elLi.style.color = colorCreate();
                 elLi.appendChild(txt);
                 ulPass.appendChild(elLi);
-                throw txtV = "Your Password is too small";
+                throw txtV = "Your Password is too short";
             }
 
             if (pass.length >= 20) {

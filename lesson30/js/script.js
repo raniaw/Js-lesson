@@ -66,7 +66,7 @@ btnAddTodo.addEventListener("click", () => {
     elLi.style.fontFamily = 'Great Vibes';
     elLi.style.fontSize = "1.8em";
     elLi.style.fontWeight = "bolder";
-    elLi.style.color = colorCreate();
+    elLi.style.color = colorCreateDark();
 
     console.log(todoL);
     elLi.appendChild(txt);
