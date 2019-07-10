@@ -90,8 +90,9 @@ btnPassValid.addEventListener("click", () => {
         /**
          * if(!pass.match("[$!\"\:\[\]§%&]")) throw "No special characters provided";
          * if(!pass.match("[0-9A-Z]")) throw "No alphnumeric provided";
+        
+         * var format1 = /^[!@#$%^&§*()_+\-=\[\]{};':"\\|,.<>\/?]+$/;
          */
-        var format1 = /^[!@#$%^&§*()_+\-=\[\]{};':"\\|,.<>\/?]+$/;
         var format = /[!$@#$%^&§*()_+\-=\[\]{};':"\\|,.<>\/?öäüÖÄÜß]/;
         var char = "!$@#$%^&§*()_+\-=\[\]{};\':\"\\\|,.<>\/?öäüÖÄÜß";
         if (pass.match(format)) {
