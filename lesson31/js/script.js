@@ -13,3 +13,10 @@ try {
 } finally {
     console.log("Finally execute always");
 }
+
+function pressEnter(myEvent) {
+    if (myEvent.keyCode == 13)
+        alert("myEvent.keyCode");
+}
+
+var iEnt = document.getElementById("iEnt").addEventListener("keypress", pressEnter);
