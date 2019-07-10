@@ -69,10 +69,6 @@ function validPass() {
             throw pPass.innerHTML = "Your Password is too long";
         }
 
-        // if (pass.match(/^[\\,\[,\],\{,\},\",\',ö,ä,ü,Ö,Ä,Ü,ß]+$/)) {
-        //     throw pPass.innerHTML = "You don't should be character";
-        // }
-
     } catch (err) {
         console.error(err);
     }
@@ -116,7 +112,6 @@ btnPassValid.addEventListener("click", () => {
                 elLi.style.color = colorCreate();
                 elLi.appendChild(txt);
                 ulPass.appendChild(elLi);
-
             }
 
             if (pass == "") {
@@ -130,7 +125,6 @@ btnPassValid.addEventListener("click", () => {
                 elLi.appendChild(txt);
                 ulPass.appendChild(elLi);
                 throw txtV = "Your didn't write your pass! ";
-
             }
 
             if (pass.length < 6) {
