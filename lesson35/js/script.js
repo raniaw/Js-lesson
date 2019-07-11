@@ -7,7 +7,6 @@ var br = document.createElement("br");
 var ul = document.createElement("ul");
 var ulTodo = document.createElement("ul");
 
-
 body.appendChild(ul);
 body.appendChild(ulTodo);
 
@@ -55,8 +54,10 @@ btnChildLi.addEventListener("click", () => {
 console.log(body.childNodes.length);
 
 /**
+ * 
  * Nachdem Anklicken auf den Button kann man
  * einzeln ausgewähltes childNode zu löschen
+ * 
  */
 
 btnChildDel.addEventListener("click", () => {
@@ -66,7 +67,8 @@ btnChildDel.addEventListener("click", () => {
 console.log(btnAddTodo);
 
 /**
- * nachdem Anklicken auf dem Button,
+ * 
+ * Nachdem Anklicken auf dem Button,
  * wird der Text von Input-Feld aufgennomen.
  * Dieser Text wirs als List-childnode einzeln zeigen
  * Nachdem Anklicken auf den Childnode, 
@@ -117,26 +119,19 @@ btnAddCnt.addEventListener("click", () => {
 
 );
 /**
- * 
+ * Nachdem aklicken auf den Button 
+ * wird Div-Selector ausgewählt
+ * und da alle Inhalte löschen
  * 
  */
 
 btnDelCnt.addEventListener("click", () => {
-
 
     // for (var i = 1; i <= divCont.children.length; i++) {
     //     divCont.removeChild(divCont.children[i]);
     // }
     divCont.innerHTML = "";
 });
-// btnDelCnt.addEventListener("click", () => {
-//     console.log("btnDelCnt");
-//     // for (var i = 0; i < divCont.children.length; i++) {
-//     //     divCont.removeChild(divCont.children.childNodes[i]);
-//     // }
-//     //console.log(divCont);
-//    
-// });
 
 
 /**
