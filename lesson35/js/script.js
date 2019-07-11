@@ -1,16 +1,27 @@
 var body = document.getElementsByTagName("body")[0];
 var h1Header = document.createElement("h1");
+
 var text = document.createTextNode("ChildNode");
+var br = document.createElement("br");
+
 var ul = document.createElement("ul");
 var ulTodo = document.createElement("ul");
 
+
 body.appendChild(ul);
 body.appendChild(ulTodo);
+
+var divCont = document.getElementById("contDiv");
+var pImgInfo = document.getElementById("pImgInfo");
+var imgInfo = document.getElementById("idImg");
 
 var btnChild = document.getElementById("addChild");
 var btnChildLi = document.getElementById("addChildLi");
 var btnChildDel = document.getElementById("delChild");
 var btnAddTodo = document.getElementById("addTodo");
+var btnAddCnt = document.getElementById("addCnt");
+var btnDelCnt = document.getElementById("delCnt");
+var btnImgInfo = document.getElementById("btnImgInfo");
 
 //beim anklicken fügt einmal ein header ein
 btnChild.addEventListener("click", () => {
@@ -47,10 +58,10 @@ console.log(body.childNodes.length);
  * Nachdem Anklicken auf den Button kann man
  * einzeln ausgewähltes childNode zu löschen
  */
+
 btnChildDel.addEventListener("click", () => {
     ul.removeChild(ul.childNodes[0]);
-});
-var br = document.createElement("br");
+});;
 
 console.log(btnAddTodo);
 
@@ -83,6 +94,65 @@ btnAddTodo.addEventListener("click", () => {
     inTodo.value = "";
     inTodo.focus();
     // elLi.addEventListener("keypress", pressEnter)
+
+});
+
+/**
+ * Nachdem Anklicken auf den Button 
+ * werden Daten von der Liste in 
+ * div-content zeigen
+ */
+
+btnAddCnt.addEventListener("click", () => {
+
+        let childr = ulTodo.children;
+        console.log(childr);
+
+        for (var i = 0; i < childr.length; i++) {
+            var lTxt = "<br>" + childr[i].innerHTML;
+            divCont.innerHTML += lTxt;
+        }
+
+    }
+
+);
+/**
+ * 
+ * 
+ */
+
+btnDelCnt.addEventListener("click", () => {
+
+
+    // for (var i = 1; i <= divCont.children.length; i++) {
+    //     divCont.removeChild(divCont.children[i]);
+    // }
+    divCont.innerHTML = "";
+});
+// btnDelCnt.addEventListener("click", () => {
+//     console.log("btnDelCnt");
+//     // for (var i = 0; i < divCont.children.length; i++) {
+//     //     divCont.removeChild(divCont.children.childNodes[i]);
+//     // }
+//     //console.log(divCont);
+//    
+// });
+
+
+/**
+ * Nachdem Ancklicken auf den Button
+ * werden alle Attribute von 'img'-Selector 
+ * in 'p'-Selector anzeigen lassen
+ */
+
+btnImgInfo.addEventListener("click", () => {
+    let attr = imgInfo.attributes;
+    for (var i = 0; i < attr.length; i++) {
+        let attrInfo = [];
+        attrInfo += attr[i].name + " = \'" + attr[i].value + "\'" + "<br>";
+        console.log(attrInfo);
+        pImgInfo.innerHTML += attrInfo;
+    }
 
 });
 
@@ -137,7 +207,6 @@ function addClass(e) {
         elem.classList.add("changefont");
     }
 }
-
 
 /**
  * Funktion für die zufällige Größeerstellung des BorderRadius
