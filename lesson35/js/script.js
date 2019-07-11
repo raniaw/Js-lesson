@@ -12,19 +12,20 @@ var btnChildLi = document.getElementById("addChildLi");
 var btnChildDel = document.getElementById("delChild");
 var btnAddTodo = document.getElementById("addTodo");
 
-//beim anklicken fügt einmal ein header
+//beim anklicken fügt einmal ein header ein
 btnChild.addEventListener("click", () => {
     h1Header.appendChild(text);
     body.appendChild(h1Header);
 })
 
 /**
- *  wenn man anklickt fügt immer gleich 3 Li. 
+ *  wenn man anklickt fügt immer gleich 3 Li ein. 
  *  nachdem auf der List childnode anklickt,
  *  ruft eine Fnkt 'addClass',
- *  um neue Klasse zum ChildNode
+ *  um neuen Class zum List-ChildNode
  *  zu addieren
  */
+
 btnChildLi.addEventListener("click", () => {
     for (var i = 0; i < 3; i++) {
         var elLi = document.createElement("li");
@@ -47,7 +48,15 @@ var br = document.createElement("br");
 
 console.log(btnAddTodo);
 
-
+/**
+ * nachdem Anklicken auf dem Button,
+ * wird der Text von Input-Feld aufgennomen.
+ * Dieser Text wirs als List-childnode einzeln zeigen
+ * Nachdem Anklicken auf den Childnode, 
+ * wird eine Fktn 'delElement' aufrufen
+ * um dieses Childnode von der Liste zu löschen
+ * 
+ */
 btnAddTodo.addEventListener("click", () => {
 
     var elLi = document.createElement("li");
@@ -70,14 +79,16 @@ btnAddTodo.addEventListener("click", () => {
 });
 
 /**
- * nimmt gezielt ein Element  um zu löschen
+ * nimmt gezielt ein Element an, 
+ * um dieses Element zu löschen
  * 
  * The target property returns the element
  * that triggered the event, and not necessarily 
  * the eventlistener's element.
  * 
- *  * @param {} e 
+ *  @param {} e 
  */
+
 function delElement(e) {
     let elem = e.target;
     console.log(elem);
@@ -89,6 +100,7 @@ function delElement(e) {
         return false;
     }
 }
+
 /**
  * Addiert new Style-class zum Element
  * @param {*} e 
@@ -100,12 +112,11 @@ function addClass(e) {
     if (list != elem) {
         elem.classList.add("changefont");
     }
-
 }
 
 
 /**
- * Funktion für die zufällige Größeerstellung für borderRadius
+ * Funktion für die zufällige Größeerstellung des BorderRadius
  * 
  */
 
@@ -119,10 +130,10 @@ function brdRadius() {
 }
 
 
-
 /**
  * Funktion für die zufällige dunkle Farbeerstellung 
  */
+
 function colorCreateDark() {
     var color;
     var max = 256;
@@ -144,7 +155,7 @@ function colorCreateDark() {
     return color;
 }
 /**
- * Funktion für die zufällige helle(Pastel) Farbeerstellung
+ * Funktion für die zufällige helle-(Pastel)Farbeerstellung
  */
 function colorCreatePastel() {
     var color;
@@ -167,6 +178,9 @@ function colorCreatePastel() {
     return color;
 }
 
+/**
+ * Funktion für die zufällige Farbeerstellung
+ */
 
 function colorCreate() {
     var color;
