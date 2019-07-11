@@ -28,9 +28,11 @@ btnChild.addEventListener("click", () => {
 
 btnChildLi.addEventListener("click", () => {
     for (var i = 0; i < 3; i++) {
+
         var elLi = document.createElement("li");
         var txt = document.createTextNode("List : " + i);
         var attr = document.createAttribute("id", "addCls");
+
         elLi.setAttributeNode(attr);
         elLi.appendChild(txt);
         ul.appendChild(elLi);
@@ -41,6 +43,10 @@ btnChildLi.addEventListener("click", () => {
 
 console.log(body.childNodes.length);
 
+/**
+ * Nachdem Anklicken auf den Button kann man
+ * einzeln ausgewähltes childNode zu löschen
+ */
 btnChildDel.addEventListener("click", () => {
     ul.removeChild(ul.childNodes[0]);
 });
@@ -57,6 +63,7 @@ console.log(btnAddTodo);
  * um dieses Childnode von der Liste zu löschen
  * 
  */
+
 btnAddTodo.addEventListener("click", () => {
 
     var elLi = document.createElement("li");
@@ -75,8 +82,25 @@ btnAddTodo.addEventListener("click", () => {
     ulTodo.appendChild(elLi);
     inTodo.value = "";
     inTodo.focus();
+    // elLi.addEventListener("keypress", pressEnter)
 
 });
+
+/**
+ * Diese Fnkt dient dazu, 
+ * dass nach dem keypress "Enter"
+ * wird eine bestimmte Fnkt afrufufen
+ * bzw. etwas passieren
+ * 
+ * @param {*} myEvent 
+ */
+
+function pressEnter(myEvent) {
+    if (myEvent.keyCode == 13) {
+        // addToDo();
+        // hier etwas machen
+    }
+}
 
 /**
  * nimmt gezielt ein Element an, 
@@ -129,7 +153,6 @@ function brdRadius() {
     return grRnd;
 }
 
-
 /**
  * Funktion für die zufällige dunkle Farbeerstellung 
  */
@@ -154,9 +177,11 @@ function colorCreateDark() {
     console.log(color);
     return color;
 }
+
 /**
  * Funktion für die zufällige helle-(Pastel)Farbeerstellung
  */
+
 function colorCreatePastel() {
     var color;
     var max = 256;
