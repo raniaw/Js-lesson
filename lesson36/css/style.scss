@@ -1,0 +1,37 @@
+#colorChange {
+    width: 100px;
+    height: 100px;
+}
+
+.newClass {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.altClass {
+    margin: 5px;
+    width: 150px;
+    height: 200px;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.fa {
+    cursor: pointer;
+}
+
+.fa:hover {
+    color: red;
+}
+
+.btnAlt {
+    padding: 10px;
+}
+
+.btnNew {
+    padding: 15px;
+    border-radius: 20px
+}
