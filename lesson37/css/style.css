@@ -10,41 +10,41 @@
   position: fixed;
   z-index: 1;
   left: 50%;
-  bottom: 30px;
+  bottom: 50%;
   font-size: 17px;
 }
 
 #popUp.show {
   visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-          animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadeIn 2.0s, fadeOut 0.5s linear 2.5s;
+          animation: fadeIn 2.0s, fadeOut 0.5s linear 2.5s;
 }
 
-@-webkit-keyframes fadein {
+@-webkit-keyframes fadeIn {
   from {
     bottom: 0;
     opacity: 0;
   }
   to {
-    bottom: 30px;
+    bottom: 50%;
     opacity: 1;
   }
 }
 
-@keyframes fadein {
+@keyframes fadeIn {
   from {
     bottom: 0;
     opacity: 0;
   }
   to {
-    bottom: 30px;
+    bottom: 50%;
     opacity: 1;
   }
 }
 
-@-webkit-keyframes fadeout {
+@-webkit-keyframes fadeOut {
   from {
-    bottom: 30px;
+    bottom: 50%;
     opacity: 1;
   }
   to {
@@ -53,9 +53,9 @@
   }
 }
 
-@keyframes fadeout {
+@keyframes fadeOut {
   from {
-    bottom: 30px;
+    bottom: 50%;
     opacity: 1;
   }
   to {
