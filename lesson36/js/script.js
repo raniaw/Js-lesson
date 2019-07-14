@@ -5,8 +5,29 @@ let btnBorder = document.getElementById("btnBorder");
 var divColorChange = document.getElementById("colorChange");
 var divButtonChange = document.getElementById("borderChange");
 var divToggleClass = document.getElementById("divToggleClass");
+var divBtn = document.getElementById("divBtn");
 var iCnt = document.getElementsByClassName("fa-thumbs-up");
 var butChangeStyle = document.querySelectorAll("button")[1];
+var btns = divBtn.getElementsByClassName("btn");
+console.log(btns);
+console.log(btns.length);
+
+function btnClassRepl() {
+    for (var i = 0; i < btns.length; i++) {
+        console.log("for schleife: " + btns.length);
+        btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            console.log("1:" + current[0].className);
+            //console.log(this.className);;
+            current[0].className = current[0].className.replace(" active", "");
+            // console.log("2:" + current.className);
+            this.className += " active"
+                // console.log(this.className);;
+        });
+    }
+}
+btnClassRepl();
+
 console.log(divToggleClass);
 
 divButtonChange.style.width = "100px";
@@ -58,7 +79,20 @@ iCnt[0].addEventListener("", () => {
 iCnt[0].addEventListener("click", () => {
     iCnt[0].classList.toggle("fa-thumbs-down");
 })
+var acc = document.getElementsByClassName("accordion");
+var i;
 
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active1");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
 
 function changeBorderDiv() {
     divButtonChange.style.borderRadius = "50px";
