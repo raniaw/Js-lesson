@@ -8,16 +8,15 @@ function compToFirstChild(x, y) {
     document.getElementById("fChild").innerHTML = z;
 }
 
-function compToLastChild(x, y) {
-    var lChild1 = document.getElementById(x).lastChild;
-    console.log("item1:" + lChild1);
-    var lChild2 = document.getElementById(y).lastChild;
-    console.log("item2:" + lChild2);
-    var a = lChild1.isEqualNode(lChild2);
-    console.log("a: " + a);
-    document.getElementById("lChild").innerHTML = a;
-}
-
+// function compToLastChild(x, y) {
+//     var lChild1 = document.getElementById(x).lastChild;
+//     console.log("item1:" + lChild1);
+//     var lChild2 = document.getElementById(y).lastChild;
+//     console.log("item2:" + lChild2);
+//     var a = lChild1.isEqualNode(lChild2);
+//     console.log("a: " + a);
+//     document.getElementById("lChild").innerHTML = a;
+// }
 
 function changeBorderDiv() {
     divButtonChange.style.borderRadius = "50px";
