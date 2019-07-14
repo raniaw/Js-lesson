@@ -1,13 +1,32 @@
+// function compToFirstChild(x, y) {
+//     var fChild1 = document.getElementById(x).firstChild;
+//     console.log("item1:" + fChild1);
+//     var fChild2 = document.getElementById(y).firstChild;
+//     console.log("item2:" + fChild2);
+//     var z = fChild1.isEqualNode(fChild2);
+//     console.log("z: " + z);
+//     document.getElementById("fChild").innerHTML = z;
+// }
+
 function compToFirstChild(x, y) {
-    var fChild1 = document.getElementById(x).firstChild;
+    var fChild1 = document.getElementById(x).firstElementChild.innerHTML;
     console.log("item1:" + fChild1);
-    var fChild2 = document.getElementById(y).firstChild;
+    var fChild2 = document.getElementById(y).firstElementChild.innerHTML;
     console.log("item2:" + fChild2);
-    var z = fChild1.isEqualNode(fChild2);
+    var z = (fChild1 === fChild2);
     console.log("z: " + z);
     document.getElementById("fChild").innerHTML = z;
 }
 
+function compToLastChild(x, y) {
+    var fChild1 = document.getElementById(x).lastElementChild.innerHTML;
+    console.log("item1:" + fChild1);
+    var fChild2 = document.getElementById(y).lastElementChild.innerHTML;
+    console.log("item2:" + fChild2);
+    var z = (fChild1 === fChild2);
+    console.log("z: " + z);
+    document.getElementById("fChild").innerHTML = z;
+}
 // function compToLastChild(x, y) {
 //     var lChild1 = document.getElementById(x).lastChild;
 //     console.log("item1:" + lChild1);
