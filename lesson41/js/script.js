@@ -263,17 +263,17 @@ Animal.prototype.isSchwimmen = () => {
 }
 
 
-var pCat = new Animal("Katze");
-pCat.setName = "Kathi";
-pCat.setColor = "schwarz-weiß";
-pCats.innerHTML = "Meine Katze heißt " + pCat.getName +
-    ". Die Farbe ihres Fells ist " + pCat.getName + ". Sie liebt " + pCat.schmusen();
+var aCat = new Animal("Katze");
+aCat.setName = "Kathi";
+aCat.setColor = "schwarz-weiß";
+pCats.innerHTML = "Meine Katze heißt " + aCat.getName +
+    ". Die Farbe ihres Fells ist " + aCat.getName + ". Sie liebt " + aCat.schmusen();
 
-var pDog = new Animal("Hund");
-pDog.setName = "Charli";
-pDog.setColor = "schwarz";
-pDogs.innerHTML = "Mein Hund heißt " + pDog.getName +
-    ". Er ist " + pDog.getColor + ". Er " + pDog.bellen() + " laut und mag " + pDog.laufen() + ".";
+var aDog = new Animal("Hund");
+aDog.setName = "Charli";
+aDog.setColor = "schwarz";
+pDogs.innerHTML = "Mein Hund heißt " + aDog.getName +
+    ". Er ist " + aDog.getColor + ". Er " + aDog.bellen() + " laut und mag " + aDog.laufen() + ".";
 
 class Bird extends Animal {
     constructor(animal, ) {
@@ -293,26 +293,26 @@ class SeaAnimal extends Animal {
 SeaAnimal.prototype.isLeuchten = () => {
     return true;
 }
-var pPinguin = new Bird("Pinguin");
-pPinguin.setName = "Pinguin";
-pPinguin.isFlugfaehig = false;
-pPinguin.isSchwimmen = true;
+var aPinguin = new Bird("Pinguin");
+aPinguin.setName = "Pinguin";
+aPinguin.isFlugfaehig = false;
+aPinguin.isSchwimmen = true;
 
-animlLaufSchwimFliegKrabb(pPinguin);
+animlLaufSchwimFliegKrabb(aPinguin);
 
-var flFische = new SeaAnimal("FliegendeFische");
-flFische.setName = "Exocoetidae - FIsch";
-flFische.isFlugfaehig = true;
-flFische.isSchwimmen = true;
+var aFlFische = new SeaAnimal("FliegendeFische");
+aFlFische.setName = "Exocoetidae - FIsch";
+aFlFische.isFlugfaehig = true;
+aFlFische.isSchwimmen = true;
 
-animlLaufSchwimFliegKrabb(flFische);
+animlLaufSchwimFliegKrabb(aFlFische);
 
-var krabe = new SeaAnimal("Krabbe");
-krabe.setName = "Krabe";
-krabe.isKrabbeln = true;
-krabe.isSchwimmen = false;
+var aKrabe = new SeaAnimal("Krabbe");
+aKrabe.setName = "Krabe";
+aKrabe.isKrabbeln = true;
+aKrabe.isSchwimmen = false;
 
-animlLaufSchwimFliegKrabb(krabe);
+animlLaufSchwimFliegKrabb(aKrabe);
 
 
 /**
