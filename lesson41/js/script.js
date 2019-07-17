@@ -310,6 +310,7 @@ animlLaufSchwimFliegKrabb(flFische);
 var krabe = new SeaAnimal("Krabbe");
 krabe.setName = "Krabe";
 krabe.isKrabbeln = true;
+krabe.isSchwimmen = false;
 
 animlLaufSchwimFliegKrabb(krabe);
 
@@ -321,14 +322,14 @@ animlLaufSchwimFliegKrabb(krabe);
 function animlLaufSchwimFliegKrabb(animal) {
 
     if ((!animal.isFlugfaehig && animal.isSchwimmen)) {
-        pAnRunShw.innerText = animal.getName + " kann nicht " + animal.fliegen() +
-            ". Er kann nur " + animal.laufen() + " und " + animal.schwimmen();
+        pAnRunShw.innerText = `${animal.getName} kann nicht ${animal.fliegen()} Er kann nur ${animal.laufen()} und ${animal.schwimmen()}`;
     }
     if (animal.isFlugfaehig && animal.isSchwimmen) {
-        pAnFlShw.innerText = animal.getName + " kann " + animal.schwimmen() + " sowohl auch " + animal.fliegen();
+        pAnFlShw.innerText = `${animal.getName} kann ${animal.schwimmen()} sowohl auch ${animal.fliegen()}`;
     }
     if (animal.isKrabbeln) {
-        pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
+        // pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
+        pAnCrab.innerText = `${animal.getName} kann ${animal.krabbeln()}`;
     }
 
 }
