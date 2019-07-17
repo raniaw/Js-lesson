@@ -30,7 +30,7 @@ body.appendChild(pAnCrab);
 body.appendChild(pAnLight);
 
 /**
- * Object person
+ * Class User
  */
 class User {
     constructor(username, ip) {
@@ -89,10 +89,6 @@ class Owner extends Admin {
     }
 }
 const o = new Owner("BillGates", "9.9.9.9", "All", 20);
-
-
-
-
 
 
 
