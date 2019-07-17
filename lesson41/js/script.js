@@ -7,6 +7,8 @@ var pEmpl = document.createElement("p");
 var pGet = document.createElement("p");
 var pSet = document.createElement("p");
 var pPSG = document.createElement("p");
+var pCats = document.createElement("p");
+var pDogs = document.createElement("p");
 
 body.appendChild(pInfo);
 body.appendChild(pInfo2);
@@ -15,6 +17,8 @@ body.appendChild(pEmpl);
 body.appendChild(pGet);
 body.appendChild(pSet);
 body.appendChild(pPSG);
+body.appendChild(pCats);
+body.appendChild(pDogs);
 
 /**
  * Object person
@@ -148,7 +152,6 @@ pGet.innerHTML = "Früher hat er in " + langSG1.getLang + " gewohnt";
 langSG1.setLang = "Japan";
 pSet.innerHTML = "Jetzt er wohnnt er in " + langSG1.getLang;
 
-
 function Student(name, age, city, university, language, usd, changeRate) {
     this.name = name;
     this.age = age;
@@ -200,6 +203,45 @@ persSG1.setName = "Jemand";
 persSG1.setAge = 45;
 persSG1.setLang = "wonders";
 pPSG.innerHTML = persSG1.getName + " ist " + persSG1.getAge + " wohnt " + persSG1.getLang;
+
+/**
+ * Class Pet
+ * Property
+ * name,
+ * color
+ * 
+ */
+class Animal {
+    constructor(animal) {
+        this.animal = animal;
+    }
+    set setColor(color) {
+        this.color = color;
+    }
+    get getColor() {
+        return this.color;
+    }
+    set setName(name) {
+        this.name = name;
+    }
+    get getName() {
+        console.log(this.name);
+        return this.name;
+    }
+}
+
+var pCat = new Animal("Katze");
+Animal.prototype.schmusen = () => {
+    return "schmusen";
+}
+pCat.setName = "Kathi";
+pCat.setColor = "schwarz-weiß";
+pCats.innerHTML = "Meine Katze heißt " + pCat.getName + ". Die Farbe ihres Fells ist " + pCat.getName + ". Sie liebt " + pCat.schmusen();
+
+var pDog = new Animal("Hund");
+pDog.setName = "Charli";
+pDog.setColor = "schwarz";
+pDogs.innerHTML = "Mein Hund heißt " + pDog.getName + ". Er ist " + pDog.getColor;
 
 
 
