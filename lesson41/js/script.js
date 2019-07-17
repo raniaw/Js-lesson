@@ -181,7 +181,6 @@ let student2 = new Student("Leo", "22", "Berlin", "Uni Berlin", "English", 5500,
 console.log(student1.studentInfo());
 console.log(student2.studentInfo());
 
-
 /**
  * Class PersonSetGet
  */
@@ -322,13 +321,14 @@ animlLaufSchwimFliegKrabb(aKrabe);
 
 
 /**
- * Eine finction um zu beschreiben, was ein Tier machen kann
+ * Eine function um zu beschreiben, was ein Tier machen kann
  * @param {*} animal 
  */
 function animlLaufSchwimFliegKrabb(animal) {
 
     if ((!animal.isFlugfaehig && animal.isSchwimmen)) {
-        pAnRunShw.innerText = `${animal.getName} kann nicht ${animal.fliegen()} Er kann nur ${animal.laufen()} und ${animal.schwimmen()}`;
+        pAnRunShw.innerText = `${animal.getName} kann nicht ${animal.fliegen()} 
+        Er kann nur ${animal.laufen()} und ${animal.schwimmen()}`;
     }
     if (animal.isFlugfaehig && animal.isSchwimmen) {
         pAnFlShw.innerText = `${animal.getName} kann ${animal.schwimmen()} sowohl auch ${animal.fliegen()}`;
@@ -338,7 +338,7 @@ function animlLaufSchwimFliegKrabb(animal) {
         pAnCrab.innerText = `${animal.getName} kann ${animal.krabbeln()}`;
     }
     if (animal.isLeuchten == true) {
-        // pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
+        // pAnLight.innerText = animal.getName + " kann " + animal.leuchten();
         pAnLight.innerText = `${animal.getName} kann ${animal.leuchten()}`;
     }
 
