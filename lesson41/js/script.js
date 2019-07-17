@@ -12,6 +12,7 @@ var pDogs = document.createElement("p");
 var pAnRunShw = document.createElement("p");
 var pAnFlShw = document.createElement("p");
 var pAnCrab = document.createElement("p");
+var pAnLight = document.createElement("p");
 
 
 body.appendChild(pInfo);
@@ -26,6 +27,7 @@ body.appendChild(pDogs);
 body.appendChild(pAnRunShw);
 body.appendChild(pAnFlShw);
 body.appendChild(pAnCrab);
+body.appendChild(pAnLight);
 
 /**
  * Object person
@@ -255,13 +257,15 @@ Animal.prototype.fliegen = () => {
 Animal.prototype.krabbeln = () => {
     return "krabbeln";
 }
+Animal.prototype.leuchten = () => {
+    return "leuchten";
+}
 Animal.prototype.isKrabbeln = () => {
     return true;
 }
 Animal.prototype.isSchwimmen = () => {
     return true;
 }
-
 
 var aCat = new Animal("Katze");
 aCat.setName = "Kathi";
@@ -276,7 +280,7 @@ pDogs.innerHTML = "Mein Hund heißt " + aDog.getName +
     ". Er ist " + aDog.getColor + ". Er " + aDog.bellen() + " laut und mag " + aDog.laufen() + ".";
 
 class Bird extends Animal {
-    constructor(animal, ) {
+    constructor(animal) {
         super(animal);
     }
 }
@@ -304,6 +308,7 @@ var aFlFische = new SeaAnimal("FliegendeFische");
 aFlFische.setName = "Exocoetidae - FIsch";
 aFlFische.isFlugfaehig = true;
 aFlFische.isSchwimmen = true;
+aFlFische.isKrabbeln = false;
 
 animlLaufSchwimFliegKrabb(aFlFische);
 
@@ -311,12 +316,13 @@ var aKrabe = new SeaAnimal("Krabbe");
 aKrabe.setName = "Krabe";
 aKrabe.isKrabbeln = true;
 aKrabe.isSchwimmen = false;
+aKrabe.isLeuchten = false;
 
 animlLaufSchwimFliegKrabb(aKrabe);
 
 
 /**
- * Eine finction um zu beschreiben was ist Tier machen kann
+ * Eine finction um zu beschreiben, was ein Tier machen kann
  * @param {*} animal 
  */
 function animlLaufSchwimFliegKrabb(animal) {
@@ -327,9 +333,13 @@ function animlLaufSchwimFliegKrabb(animal) {
     if (animal.isFlugfaehig && animal.isSchwimmen) {
         pAnFlShw.innerText = `${animal.getName} kann ${animal.schwimmen()} sowohl auch ${animal.fliegen()}`;
     }
-    if (animal.isKrabbeln) {
+    if (animal.isKrabbeln == true) {
         // pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
         pAnCrab.innerText = `${animal.getName} kann ${animal.krabbeln()}`;
+    }
+    if (animal.isLeuchten == true) {
+        // pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
+        pAnLight.innerText = `${animal.getName} kann ${animal.leuchten()}`;
     }
 
 }
