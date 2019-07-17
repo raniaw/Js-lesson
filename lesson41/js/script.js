@@ -9,6 +9,10 @@ var pSet = document.createElement("p");
 var pPSG = document.createElement("p");
 var pCats = document.createElement("p");
 var pDogs = document.createElement("p");
+var pAnRunShw = document.createElement("p");
+var pAnFlShw = document.createElement("p");
+var pAnCrab = document.createElement("p");
+
 
 body.appendChild(pInfo);
 body.appendChild(pInfo2);
@@ -19,6 +23,9 @@ body.appendChild(pSet);
 body.appendChild(pPSG);
 body.appendChild(pCats);
 body.appendChild(pDogs);
+body.appendChild(pAnRunShw);
+body.appendChild(pAnFlShw);
+body.appendChild(pAnCrab);
 
 /**
  * Object person
@@ -205,7 +212,7 @@ persSG1.setLang = "wonders";
 pPSG.innerHTML = persSG1.getName + " ist " + persSG1.getAge + " wohnt " + persSG1.getLang;
 
 /**
- * Class Pet
+ * Class Animal
  * Property
  * name,
  * color
@@ -230,19 +237,107 @@ class Animal {
     }
 }
 
-var pCat = new Animal("Katze");
+Animal.prototype.laufen = () => {
+    return "laufen";
+}
 Animal.prototype.schmusen = () => {
     return "schmusen";
 }
+Animal.prototype.bellen = () => {
+    return "bellt";
+}
+Animal.prototype.schwimmen = () => {
+    return "schwimmen";
+}
+Animal.prototype.fliegen = () => {
+    return "fliegen";
+}
+Animal.prototype.krabbeln = () => {
+    return "krabbeln";
+}
+Animal.prototype.isKrabbeln = () => {
+    return true;
+}
+Animal.prototype.isSchwimmen = () => {
+    return true;
+}
+
+
+var pCat = new Animal("Katze");
 pCat.setName = "Kathi";
 pCat.setColor = "schwarz-weiß";
-pCats.innerHTML = "Meine Katze heißt " + pCat.getName + ". Die Farbe ihres Fells ist " + pCat.getName + ". Sie liebt " + pCat.schmusen();
+pCats.innerHTML = "Meine Katze heißt " + pCat.getName +
+    ". Die Farbe ihres Fells ist " + pCat.getName + ". Sie liebt " + pCat.schmusen();
 
 var pDog = new Animal("Hund");
 pDog.setName = "Charli";
 pDog.setColor = "schwarz";
-pDogs.innerHTML = "Mein Hund heißt " + pDog.getName + ". Er ist " + pDog.getColor;
+pDogs.innerHTML = "Mein Hund heißt " + pDog.getName +
+    ". Er ist " + pDog.getColor + ". Er " + pDog.bellen() + " laut und mag " + pDog.laufen() + ".";
 
+class Bird extends Animal {
+    constructor(animal, ) {
+        super(animal);
+    }
+}
+
+Bird.prototype.isFlugfaehig = () => {
+    return true;
+}
+
+class SeaAnimal extends Animal {
+    constructor(animal, ) {
+        super(animal);
+    }
+}
+SeaAnimal.prototype.isLeuchten = () => {
+    return true;
+}
+var pPinguin = new Bird("Pinguin");
+pPinguin.setName = "Pinguin";
+pPinguin.isFlugfaehig = false;
+pPinguin.isSchwimmen = true;
+
+animlLaufSchwimFliegKrabb(pPinguin);
+
+var flFische = new SeaAnimal("FliegendeFische");
+flFische.setName = "Exocoetidae - FIsch";
+flFische.isFlugfaehig = true;
+flFische.isSchwimmen = true;
+
+animlLaufSchwimFliegKrabb(flFische);
+
+var krabe = new SeaAnimal("Krabbe");
+krabe.setName = "Krabe";
+krabe.isKrabbeln = true;
+
+animlLaufSchwimFliegKrabb(krabe);
+
+
+/**
+ * Eine finction um zu beschreiben was ist Tier machen kann
+ * @param {*} animal 
+ */
+function animlLaufSchwimFliegKrabb(animal) {
+
+    if ((!animal.isFlugfaehig && animal.isSchwimmen)) {
+        pAnRunShw.innerText = animal.getName + " kann nicht " + animal.fliegen() +
+            ". Er kann nur " + animal.laufen() + " und " + animal.schwimmen();
+    }
+    if (animal.isFlugfaehig && animal.isSchwimmen) {
+        pAnFlShw.innerText = animal.getName + " kann " + animal.schwimmen() + " sowohl auch " + animal.fliegen();
+    }
+    if (animal.isKrabbeln) {
+        pAnCrab.innerText = animal.getName + " kann " + animal.krabbeln();
+    }
+
+}
+
+
+
+/**
+ * Funktion für die zufällige dunkle Farbeerstellung
+ */
 
 
 function colorCreateDark() {
