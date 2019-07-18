@@ -33,6 +33,34 @@ class Rectangle {
     }
 }
 
+class RoundRect extends Rectangle {
+    constructor(width, height, color, bordRad) {
+        super(width, height, color);
+        this.bordRad = bordRad;
+    }
+    createRound() {
+        var att = document.createAttribute("id"); // Neue attribute "id" erstellen
+        att.value = "myDiv"; // Value für Id attribute setzen
+        dRect.setAttributeNode(att);
+        var newDiv = document.createElement("div");
+        dRect.appendChild(newDiv);
+        dRect.style.width = screen.width;
+        dRect.style.height = screen.availHeight;
+        dRect.style.backgroundColor = colorCreatePastel();
+        newDiv.style.width = this.width + "px";
+        newDiv.style.height = this.height + "px";
+        newDiv.style.backgroundColor = this.color;
+        newDiv.style.borderRadius = this.bordRad + "px";
+
+    }
+}
+
+var rRound = new RoundRect("100", "100", colorCreateDark(), "50");
+rRound.createRound();
+
+var rRound2 = new RoundRect("200", "30", colorCreateDark(), "10");
+rRound2.createRound();
+
 /**
  * var rect1 = new Rectangle();
  * rect1.width = "100px";
@@ -53,6 +81,16 @@ function createButton() {
     color = document.getElementById("color").value;
     var buttonCr = new Rectangle(width, height, color);
     buttonCr.create();
+}
+
+function createRoundButton() {
+
+    width = document.getElementById("width").value;
+    height = document.getElementById("height").value;
+    color = document.getElementById("color").value;
+    bordRadius = document.getElementById("borderRad").value;
+    var roundButton = new RoundRect(width, height, color, bordRadius);
+    roundButton.createRound();
 }
 //createButton();
 
