@@ -17,19 +17,20 @@ class Rectangle {
         this.width = width;
         this.height = height;
         this.color = color;
-    }
-    create() {
         var att = document.createAttribute("id"); // Neue attribute "id" erstellen
         att.value = "myDiv"; // Value für Id attribute setzen
         dRect.setAttributeNode(att);
-        var newDiv = document.createElement("div");
-        dRect.appendChild(newDiv);
+        this.newDiv = document.createElement("div");
+
+    }
+    create() {
+        dRect.appendChild(this.newDiv);
         dRect.style.width = screen.width;
         dRect.style.height = screen.availHeight;
         dRect.style.backgroundColor = colorCreatePastel();
-        newDiv.style.width = this.width + "px";
-        newDiv.style.height = this.height + "px";
-        newDiv.style.backgroundColor = this.color;
+        this.newDiv.style.width = this.width + "px";
+        this.newDiv.style.height = this.height + "px";
+        this.newDiv.style.backgroundColor = this.color;
     }
 }
 
@@ -39,18 +40,8 @@ class RoundRect extends Rectangle {
         this.bordRad = bordRad;
     }
     createRound() {
-        var att = document.createAttribute("id"); // Neue attribute "id" erstellen
-        att.value = "myDiv"; // Value für Id attribute setzen
-        dRect.setAttributeNode(att);
-        var newDiv = document.createElement("div");
-        dRect.appendChild(newDiv);
-        dRect.style.width = screen.width;
-        dRect.style.height = screen.availHeight;
-        dRect.style.backgroundColor = colorCreatePastel();
-        newDiv.style.width = this.width + "px";
-        newDiv.style.height = this.height + "px";
-        newDiv.style.backgroundColor = this.color;
-        newDiv.style.borderRadius = this.bordRad + "px";
+        this.create();
+        this.newDiv.style.borderRadius = this.bordRad + "%";
 
     }
 }
@@ -79,8 +70,32 @@ function createButton() {
     width = document.getElementById("width").value;
     height = document.getElementById("height").value;
     color = document.getElementById("color").value;
-    var buttonCr = new Rectangle(width, height, color);
-    buttonCr.create();
+    if (width == null || width == "" || width == "0" || isNaN(width)) {
+        var pErr = document.getElementById("errW");
+        pErr.innerHTML = "false input for 'Width'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else if (height == null || height == "" || height == "0" || isNaN(height)) {
+        var pErr = document.getElementById("errH");
+        pErr.innerHTML = "false input for 'Height'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else if (color == null || color == "" || !(isNaN(color))) {
+        var pErr = document.getElementById("errC");
+        pErr.innerHTML = "false input for 'Color'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+
+    } else {
+        var pErr = document.getElementById("errC").innerHTML = "";
+        var pErr = document.getElementById("errW").innerHTML = "";
+        var pErr = document.getElementById("errH").innerHTML = "";
+        var pErr = document.getElementById("errR").innerHTML = "";
+        var buttonCr = new Rectangle(width, height, color);
+        buttonCr.create();
+
+    }
+
 }
 
 function createRoundButton() {
@@ -89,10 +104,53 @@ function createRoundButton() {
     height = document.getElementById("height").value;
     color = document.getElementById("color").value;
     bordRadius = document.getElementById("borderRad").value;
-    var roundButton = new RoundRect(width, height, color, bordRadius);
-    roundButton.createRound();
+    // errOut(width, "errW", createRound());
+    if (width == null || width == "" || width == "0" || isNaN(width)) {
+        var pErr = document.getElementById("errW");
+        pErr.innerHTML = "false input for 'Width'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else if (height == null || height == "" || height == "0" || isNaN(height)) {
+        var pErr = document.getElementById("errH");
+        pErr.innerHTML = "false input for 'Height'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else if (color == null || color == "" || !(isNaN(color))) {
+        var pErr = document.getElementById("errC");
+        pErr.innerHTML = "false input for 'Color'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else if (bordRadius == null || bordRadius == "" || bordRadius == "0" || isNaN(bordRadius)) {
+        var pErr = document.getElementById("errR");
+        pErr.innerHTML = "false input for 'Radius'";
+        pErr.style.color = "red";
+        pErr.style.fontSize = "12px";
+    } else {
+        var pErr = document.getElementById("errC").innerHTML = "";
+        var pErr = document.getElementById("errW").innerHTML = "";
+        var pErr = document.getElementById("errH").innerHTML = "";
+        var pErr = document.getElementById("errR").innerHTML = "";
+        var roundButton = new RoundRect(width, height, color, bordRadius);
+        roundButton.createRound();
+
+    }
 }
 //createButton();
+
+function errOut(item, idErr, funct) {
+    var idErr = "";
+    idErr = idErr;
+    if (item == null || item == "" || item == "0") {
+        var pErr = document.getElementById(idErr);
+        pErr.innerHTML = "Input is null";
+        pErr.style.color = "red";
+    } else {
+        var pErr = document.getElementById(idErr).innerHTML = "";
+        var roundButton = new RoundRect(width, height, color, bordRadius);
+        roundButton = funct;
+    }
+}
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
