@@ -212,7 +212,7 @@ function brdRadius() {
     var grRndmin = Math.ceil(1);
     //console.log(grRndmin);
     var grRndmax = Math.floor(50);
-    var grRnd = Math.floor(Math.random() * grRndmax) + grRndmin;
+    var grRnd = Math.floor(Math.random() * grRnd(max - min)) + grRndmin;
     //console.log(grRnd);
     return grRnd;
 }
@@ -225,15 +225,15 @@ function colorCreateDark() {
     var color;
     var max = 256;
     var min = 60;
-    var colRed = Math.floor(Math.random() * max) - min;
+    var colRed = Math.floor(Math.random() * (max - min)) - min;
     if (colRed < 0) {
         colRed = 0;
     }
-    var colBlue = Math.floor(Math.random() * max) - min;
+    var colBlue = Math.floor(Math.random() * (max - min)) - min;
     if (colBlue < 0) {
         colBlue = 0;
     }
-    var colGreen = Math.floor(Math.random() * max) - min;
+    var colGreen = Math.floor(Math.random() * (max - min)) - min;
     if (colGreen < 0) {
         colGreen = 0;
     }
@@ -250,15 +250,15 @@ function colorCreatePastel() {
     var color;
     var max = 256;
     var min = 120;
-    var colRed = Math.floor(Math.random() * max) + min;
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
     if (colRed > 255) {
         colRed = 255;
     }
-    var colBlue = Math.floor(Math.random() * max) + min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
     if (colBlue > 255) {
         colBlue = 255;
     }
-    var colGreen = Math.floor(Math.random() * max) + min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
     if (colGreen > 255) {
         colGreen = 255;
     }
