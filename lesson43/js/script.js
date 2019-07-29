@@ -162,17 +162,11 @@ function colorCreateDark() {
     var max = 160;
     var min = 0;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
-    if (colRed < 0) {
-        colRed = 0;
-    }
+
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    if (colBlue < 0) {
-        colBlue = 0;
-    }
+
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
-    if (colGreen < 0) {
-        colGreen = 0;
-    }
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;
@@ -186,17 +180,11 @@ function colorCreatePastel() {
     var max = 256;
     var min = 180;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
-    if (colRed > 255) {
-        colRed = 255;
-    }
+
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    if (colBlue > 255) {
-        colBlue = 255;
-    }
+
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
-    if (colGreen > 255) {
-        colGreen = 255;
-    }
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;

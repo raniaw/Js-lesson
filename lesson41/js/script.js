@@ -409,17 +409,11 @@ function colorCreatePastel() {
     var max = 256;
     var min = 120;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
-    if (colRed > 255) {
-        colRed = 255;
-    }
+
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    if (colBlue > 255) {
-        colBlue = 255;
-    }
+
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
-    if (colGreen > 255) {
-        colGreen = 255;
-    }
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;
