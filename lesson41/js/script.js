@@ -390,11 +390,11 @@ function colorCreateDark() {
     var color;
     var max = 106;
     var min = 0;
-    var colRed = Math.floor(Math.random() * (max - min) + min);
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
 
-    var colBlue = Math.floor(Math.random() * (max - min) + min);
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
 
-    var colGreen = Math.floor(Math.random() * (max - min) + min);
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
 
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);

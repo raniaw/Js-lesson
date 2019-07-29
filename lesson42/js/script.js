@@ -103,15 +103,15 @@ function colorCreateDark() {
     var color;
     var max = 256;
     var min = 60;
-    var colRed = Math.floor(Math.random() * (max - min)) - min;
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
     if (colRed < 0) {
         colRed = 0;
     }
-    var colBlue = Math.floor(Math.random() * (max - min)) - min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
     if (colBlue < 0) {
         colBlue = 0;
     }
-    var colGreen = Math.floor(Math.random() * (max - min)) - min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
     if (colGreen < 0) {
         colGreen = 0;
     }
