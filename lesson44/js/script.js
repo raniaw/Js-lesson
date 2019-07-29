@@ -32,8 +32,15 @@ var obj = {
     "Test": ["hello"]
 };
 
+pBook.innerHTML = "";
 pBook.innerHTML = book.bookInfo();
 pJson.innerHTML = JSON.stringify(obj, null, 4);
+
+
+
+
+
+
 
 
 
