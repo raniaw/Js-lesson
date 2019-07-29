@@ -55,17 +55,30 @@ body.appendChild(hTitle);
 body.appendChild(dImg);
 body.appendChild(dImgSl);
 
-var imgs = [
-    { img: "img1", src: "https://picsum.photos/id/13/400/400" },
-    { img: "img2", src: "https://picsum.photos/id/259/400/400" },
-    { img: "img3", src: "https://picsum.photos/id/559/400/400" }
+var imgs = [{
+        img: "img1",
+        src: "https://picsum.photos/id/13/400/400"
+    },
+    {
+        img: "img2",
+        src: "https://picsum.photos/id/259/400/400"
+    },
+    {
+        img: "img3",
+        src: "https://picsum.photos/id/559/400/400"
+    }
 
 ]
 
-var imgSls = [
-    { src: "https://picsum.photos/id/180/400/400" },
-    { src: "https://picsum.photos/id/11/400/400" },
-    { src: "https://picsum.photos/id/211/400/400" }
+var imgSls = [{
+        src: "https://picsum.photos/id/180/400/400"
+    },
+    {
+        src: "https://picsum.photos/id/11/400/400"
+    },
+    {
+        src: "https://picsum.photos/id/211/400/400"
+    }
 
 ]
 
@@ -135,17 +148,9 @@ function colorCreateDark() {
     var max = 106;
     var min = 0;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
-    if (colRed < 0) {
-        colRed = 0;
-    }
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    if (colBlue < 0) {
-        colBlue = 0;
-    }
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
-    if (colGreen < 0) {
-        colGreen = 0;
-    }
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;
@@ -159,17 +164,9 @@ function colorCreatePastel() {
     var max = 256;
     var min = 200;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
-    if (colRed > 255) {
-        colRed = 255;
-    }
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    if (colBlue > 255) {
-        colBlue = 255;
-    }
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
-    if (colGreen > 255) {
-        colGreen = 255;
-    }
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;
