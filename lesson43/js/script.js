@@ -159,17 +159,17 @@ function errOut(item, idErr, funct) {
 
 function colorCreateDark() {
     var color;
-    var max = 256;
-    var min = 60;
-    var colRed = Math.floor(Math.random() * (max - min)) - min;
+    var max = 160;
+    var min = 0;
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
     if (colRed < 0) {
         colRed = 0;
     }
-    var colBlue = Math.floor(Math.random() * (max - min)) - min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
     if (colBlue < 0) {
         colBlue = 0;
     }
-    var colGreen = Math.floor(Math.random() * (max - min)) - min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
     if (colGreen < 0) {
         colGreen = 0;
     }
@@ -184,7 +184,7 @@ function colorCreateDark() {
 function colorCreatePastel() {
     var color;
     var max = 256;
-    var min = 120;
+    var min = 180;
     var colRed = Math.floor(Math.random() * (max - min)) + min;
     if (colRed > 255) {
         colRed = 255;

@@ -1,5 +1,5 @@
 var body = document.getElementsByTagName("body")[0];
-
+var hInfo = document.createElement("h2");
 var pInfo = document.createElement("p");
 var pInfo2 = document.createElement("p");
 var carObj = document.createElement("p");
@@ -13,8 +13,9 @@ var pAnRunShw = document.createElement("p");
 var pAnFlShw = document.createElement("p");
 var pAnCrab = document.createElement("p");
 var pAnLight = document.createElement("p");
+var pCounter = document.createElement("p");
 
-
+body.appendChild(hInfo);
 body.appendChild(pInfo);
 body.appendChild(pInfo2);
 body.appendChild(carObj);
@@ -28,6 +29,10 @@ body.appendChild(pAnRunShw);
 body.appendChild(pAnFlShw);
 body.appendChild(pAnCrab);
 body.appendChild(pAnLight);
+body.appendChild(pCounter);
+
+hInfo.innerHTML = "JS Object Class Getter Setter Prototype Vererbung";
+hInfo.style.color = colorCreateDark();
 
 /**
  * Object person
@@ -80,7 +85,7 @@ auto.model = "500";
 auto.color = "weiß";
 auto.year = 2019;
 
-carObj.innerHTML = "Auto: " + auto.type + "<br> Model: " + auto.model + "<br> ist " + auto.color + ". Baujahr: " + auto.year;
+carObj.innerHTML = "Auto: " + auto.type + "<br>Model: " + auto.model + "<br>ist " + auto.color + ". Baujahr: " + auto.year;
 
 /**
  * Function Employee
@@ -94,7 +99,7 @@ function Employee(name, salary, job) {
     this.salary = salary;
     this.job = job;
     this.emplInfo = () => {
-        return "Employee: " + this.name + " " + "<br> Salary: " + this.salary + "<br> Job: " + this.job;
+        return "Employee: " + this.name + " " + "<br>Salary: " + this.salary + "<br> Job: " + this.job;
     }
 }
 
@@ -344,6 +349,36 @@ function animlLaufSchwimFliegKrabb(animal) {
 
 }
 
+var oCount = { counter: 0 };
+
+// Define Setters and Getters
+Object.defineProperty(oCount, "reset", {
+    get: function() { this.counter = 0; }
+});
+Object.defineProperty(oCount, "increment", {
+    get: function() { this.counter++; }
+});
+Object.defineProperty(oCount, "decrement", {
+    get: function() { this.counter--; }
+});
+Object.defineProperty(oCount, "add", {
+    set: function(value) { this.counter += value; }
+});
+Object.defineProperty(oCount, "subtract", {
+    set: function(value) { this.counter -= value; }
+});
+
+// Play with counter:
+oCount.reset;
+oCount.add = 15;
+oCount.subtract = 1;
+oCount.increment;
+oCount.decrement;
+
+pCounter.style.color = colorCreateDark();
+pCounter.style.fontSize = "1.5em";
+pCounter.style.fontWeight = "bolder";
+pCounter.innerHTML = "Counter: " + oCount.counter;
 
 
 /**
@@ -353,20 +388,14 @@ function animlLaufSchwimFliegKrabb(animal) {
 
 function colorCreateDark() {
     var color;
-    var max = 256;
-    var min = 60;
-    var colRed = Math.floor(Math.random() * (max - min)) - min;
-    if (colRed < 0) {
-        colRed = 0;
-    }
-    var colBlue = Math.floor(Math.random() * (max - min)) - min;
-    if (colBlue < 0) {
-        colBlue = 0;
-    }
-    var colGreen = Math.floor(Math.random() * (max - min)) - min;
-    if (colGreen < 0) {
-        colGreen = 0;
-    }
+    var max = 106;
+    var min = 0;
+    var colRed = Math.floor(Math.random() * (max - min) + min);
+
+    var colBlue = Math.floor(Math.random() * (max - min) + min);
+
+    var colGreen = Math.floor(Math.random() * (max - min) + min);
+
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
     console.log(color);
     return color;
