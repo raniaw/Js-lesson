@@ -1,10 +1,30 @@
 var body = document.getElementsByTagName("body")[0];
+
+var h2 = document.createElement("h2");
+h2.style.color = colorCreateDark();
+h2.innerHTML = "Classes";
+
 var dRect = document.createElement("div");
+var ulParent = document.createElement("ul");
+
+var pRect = document.createElement("p");
+var pRAr = document.createElement("p");
+
 var attr = dRect.attributes;
-console.log(attr);
+var attP = document.createAttribute("id"); // Neue attribute "id" erstellen
+attP.value = "parent"; // Value für Id attribute setzen
+
+ulParent.setAttributeNode(attP);
+
+var colorD = colorCreateDark();
 
 
+body.appendChild(h2);
 body.appendChild(dRect);
+body.appendChild(pRect);
+body.appendChild(pRAr);
+body.appendChild(ulParent);
+
 
 /**
  * class Rectangle 
@@ -23,6 +43,10 @@ class Rectangle {
         this.newDiv = document.createElement("div");
 
     }
+
+    get area() {
+        return this.height * this.width;
+    }
     create() {
         dRect.appendChild(this.newDiv);
         dRect.style.width = screen.width;
@@ -34,23 +58,75 @@ class Rectangle {
     }
 }
 
-class RoundRect extends Rectangle {
-    constructor(width, height, color, bordRad) {
-        super(width, height, color);
-        this.bordRad = bordRad;
+var rect = new Rectangle(120, 100, colorCreatePastel());
+pRect.style.color = colorD;
+pRAr.style.color = colorD;
+pRect.innerHTML = "Rectangle with Width " + rect.width + " and with Height " + rect.height + " has the area"
+pRAr.innerHTML = rect.area;
+
+
+class BaseItem {
+    constructor(text) {
+        this.text = text;
     }
-    createRound() {
-        this.create();
-        this.newDiv.style.borderRadius = this.bordRad + "%";
+    draw() {
+
+        let li = document.createElement("li");
+        var txtLi = document.createTextNode(this.text);
+        li.style.fontSize = "1.8em";
+        li.style.color = colorCreateDark();
+        li.appendChild(txtLi);
+        ulParent.appendChild(li)
 
     }
 }
 
-var rRound = new RoundRect("100", "100", colorCreateDark(), "50");
-rRound.createRound();
+var liTxt = new BaseItem("my text");
+liTxt.draw();
 
-var rRound2 = new RoundRect("200", "30", colorCreateDark(), "10");
-rRound2.createRound();
+class StyleItem extends BaseItem {
+    constructor(text, style) {
+        super(text);
+        this.style = style;
+    }
+    draw() {
+
+            let li = document.createElement("li");
+            var txtLi = document.createTextNode(this.text);
+            li.setAttribute('style', this.style);
+            li.appendChild(txtLi);
+            ulParent.appendChild(li);
+
+        }
+        // neuer Text setzen
+    set content(text) {
+        this.text = text;
+    }
+
+}
+
+var txt2 = new StyleItem("my txt2", "font-size: 1.2em; font-family: 'Jura'");
+txt2.draw();
+txt2.content = "Neuer text für my txt2";
+txt2.draw();
+
+// class RoundRect extends Rectangle {
+//     constructor(width, height, color, bordRad) {
+//         super(width, height, color);
+//         this.bordRad = bordRad;
+//     }
+//     createRound() {
+//         this.create();
+//         this.newDiv.style.borderRadius = this.bordRad + "%";
+
+//     }
+// }
+
+// var rRound = new RoundRect("100", "100", colorCreateDark(), "50");
+// rRound.createRound();
+
+// var rRound2 = new RoundRect("200", "30", colorCreateDark(), "10");
+// rRound2.createRound();
 
 /**
  * var rect1 = new Rectangle();
@@ -59,12 +135,12 @@ rRound2.createRound();
  * rect1.color = colorCreateDark();
  */
 //gleiche wie oben
-var rect1 = new Rectangle("100", "100", colorCreateDark());
+var rect1 = new Rectangle("120", "100", colorCreateDark());
 //Rectangle ertellen
 rect1.create();
-var button1 = new Rectangle("230", "50", colorCreateDark());
-button1.create();
-
+//var button1 = new Rectangle("230", "50", colorCreateDark());
+//button1.create();
+/**
 function createButton() {
 
     width = document.getElementById("width").value;
@@ -135,6 +211,7 @@ function createRoundButton() {
 
     }
 }
+
 //createButton();
 
 function errOut(item, idErr, funct) {
@@ -151,6 +228,7 @@ function errOut(item, idErr, funct) {
     }
 }
 
+ */
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung

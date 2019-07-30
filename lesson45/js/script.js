@@ -13,6 +13,7 @@ hTitle.innerHTML = "JS Image - Slider";
 
 var color = colorCreateDark();
 var bgColor = colorCreatePastel();
+//img.setAttribute('class','einblenden');
 
 imgSl.style.borderRadius = "30px";
 imgSl.style.padding = "10px";
