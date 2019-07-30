@@ -10,7 +10,7 @@ var ulParent = document.createElement("ul");
 var pRect = document.createElement("p");
 var pRAr = document.createElement("p");
 
-var attr = dRect.attributes;
+var attR = dRect.attributes;
 var attP = document.createAttribute("id"); // Neue attribute "id" erstellen
 attP.value = "parent"; // Value für Id attribute setzen
 
@@ -44,7 +44,7 @@ class Rectangle {
 
     }
 
-    get area() {
+    get getArea() {
         return this.height * this.width;
     }
     create() {
@@ -61,9 +61,20 @@ class Rectangle {
 var rect = new Rectangle(120, 100, colorCreatePastel());
 pRect.style.color = colorD;
 pRAr.style.color = colorD;
-pRect.innerHTML = "Rectangle with Width " + rect.width + " and with Height " + rect.height + " has the area"
-pRAr.innerHTML = rect.area;
+pRect.innerHTML = "Rectangle with Width \"" + rect.width + "\" and with Height \"" + rect.height + "\" has the area"
+pRAr.innerHTML = rect.getArea;
 
+
+/**
+ * var rect1 = new Rectangle();
+ * rect1.width = "100px";
+ * rect1.height = "100px";
+ * rect1.color = colorCreateDark();
+ */
+
+var rect1 = new Rectangle("120", "100", colorCreateDark());
+//Rectangle ertellen
+rect1.create();
 
 class BaseItem {
     constructor(text) {
@@ -91,15 +102,22 @@ class StyleItem extends BaseItem {
     }
     draw() {
 
-            let li = document.createElement("li");
-            var txtLi = document.createTextNode(this.text);
-            li.setAttribute('style', this.style);
-            li.appendChild(txtLi);
-            ulParent.appendChild(li);
+        let li = document.createElement("li");
+        var txtLi = document.createTextNode(this.text);
+        li.setAttribute('style', this.style);
+        li.appendChild(txtLi);
+        ulParent.appendChild(li);
 
+    }
+    get getItemStyle() {
+            return this.style;
+        }
+        // neue Style setzen
+    set setStyle(style) {
+            this.style = style;
         }
         // neuer Text setzen
-    set content(text) {
+    set setContent(text) {
         this.text = text;
     }
 
@@ -107,8 +125,46 @@ class StyleItem extends BaseItem {
 
 var txt2 = new StyleItem("my txt2", "font-size: 1.2em; font-family: 'Jura'");
 txt2.draw();
-txt2.content = "Neuer text für my txt2";
+txt2.setContent = "Neuer Text für my txt2";
 txt2.draw();
+txt2.setStyle = "font-family: 'Syncopate'; font-size: 1em; color: purple ";
+txt2.draw();
+
+
+/**
+ * Funktion für die zufällige dunkle Farbeerstellung
+ */
+
+function colorCreateDark() {
+    var color;
+    var max = 160;
+    var min = 0;
+
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
+
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    console.log(color);
+    return color;
+}
+/**
+ * Funktion für die zufällige helle-(Pastel)Farbeerstellung
+ */
+
+function colorCreatePastel() {
+    var color;
+    var max = 256;
+    var min = 180;
+
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
+
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    console.log(color);
+    return color;
+}
 
 // class RoundRect extends Rectangle {
 //     constructor(width, height, color, bordRad) {
@@ -128,18 +184,9 @@ txt2.draw();
 // var rRound2 = new RoundRect("200", "30", colorCreateDark(), "10");
 // rRound2.createRound();
 
-/**
- * var rect1 = new Rectangle();
- * rect1.width = "100px";
- * rect1.height = "100px";
- * rect1.color = colorCreateDark();
- */
-//gleiche wie oben
-var rect1 = new Rectangle("120", "100", colorCreateDark());
-//Rectangle ertellen
-rect1.create();
 //var button1 = new Rectangle("230", "50", colorCreateDark());
 //button1.create();
+
 /**
 function createButton() {
 
@@ -229,39 +276,3 @@ function errOut(item, idErr, funct) {
 }
 
  */
-
-/**
- * Funktion für die zufällige dunkle Farbeerstellung
- */
-
-
-function colorCreateDark() {
-    var color;
-    var max = 160;
-    var min = 0;
-
-    var colRed = Math.floor(Math.random() * (max - min)) + min;
-    var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    var colGreen = Math.floor(Math.random() * (max - min)) + min;
-
-    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
-    console.log(color);
-    return color;
-}
-/**
- * Funktion für die zufällige helle-(Pastel)Farbeerstellung
- */
-
-function colorCreatePastel() {
-    var color;
-    var max = 256;
-    var min = 180;
-
-    var colRed = Math.floor(Math.random() * (max - min)) + min;
-    var colBlue = Math.floor(Math.random() * (max - min)) + min;
-    var colGreen = Math.floor(Math.random() * (max - min)) + min;
-
-    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
-    console.log(color);
-    return color;
-}

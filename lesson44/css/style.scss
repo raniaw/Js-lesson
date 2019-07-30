@@ -13,3 +13,11 @@ li,
 div {
     font-family: 'Jura', sans-serif;
 }
+
+li:before {
+    content: "♥";
+    margin-left: -35px;
+    /* Insert content that looks like bullets */
+    padding-right: 10px;
+    /* Or a color you prefer */
+}
