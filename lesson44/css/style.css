@@ -1,4 +1,3 @@
-@charset "UTF-8";
 body {
   white-space: pre;
 }
@@ -16,10 +15,17 @@ div {
 }
 
 li:before {
-  content: "♥";
+  content: "\02766 \027BA";
   margin-left: -35px;
   /* Insert content that looks like bullets */
   padding-right: 10px;
+  /* Or a color you prefer */
+}
+
+li:after {
+  content: "\027BA \02766";
+  /* Insert content that looks like bullets */
+  padding-left: 10px;
   /* Or a color you prefer */
 }
 /*# sourceMappingURL=style.css.map */

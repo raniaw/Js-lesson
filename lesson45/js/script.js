@@ -85,24 +85,28 @@ var imgSls = [{
 
 var time = 5000;
 var i = 0;
+var y = 0;
 
 img.src = imgs[i].src;
-imgSl.src = imgSls[i].src;
+imgSl.src = imgSls[y].src;
+
 
 function imgPrv() {
+
+    //img.src = imgs[i].src;
     //    img.removeAttribute('class', 'einblenden');
     removeClass();
-    console.log(img);
+
     i--;
     if (i < 0) {
         i = 2;
     }
-
-    img.src = imgs[i].src;
     addClass();
+    img.src = imgs[i].src;
+    console.log(i);
+
     //  img.setAttribute('class', 'einblenden');
-    console.log(imgs[i].src);
-    console.log(img);
+
 }
 
 function imgNxt() {
@@ -113,27 +117,30 @@ function imgNxt() {
     }
 
     addClass();
+    console.log(i);
     img.src = imgs[i].src;
-    console.log(imgs[i].src);
+
 }
 
 function changeImg() {
-    if (i < imgSls.length) {
+    if (y < imgSls.length) {
 
-        imgSl.src = imgSls[i].src;
-        i++;
+        imgSl.src = imgSls[y].src;
+        y++;
 
     } else {
-        i = 0;
+        y = 0;
     }
 }
 
 function removeClass() {
     img.removeAttribute('class', 'einblenden');
+    console.log(img);
 }
 
 function addClass() {
     img.setAttribute('class', 'einblenden');
+    console.log(img);
 }
 setInterval(changeImg, time);
 document.getElementById('btnPrv').addEventListener("click", imgPrv);

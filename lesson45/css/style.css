@@ -14,13 +14,13 @@ div {
 .einblenden {
   -webkit-animation-name: einblenden;
           animation-name: einblenden;
-  -webkit-animation-duration: 3.5s;
-          animation-duration: 3.5s;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
 }
 
 @-webkit-keyframes einblenden {
   from {
-    opacity: .4;
+    opacity: .3;
   }
   to {
     opacity: 1;
@@ -29,7 +29,7 @@ div {
 
 @keyframes einblenden {
   from {
-    opacity: .4;
+    opacity: .3;
   }
   to {
     opacity: 1;

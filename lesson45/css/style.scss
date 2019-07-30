@@ -15,12 +15,12 @@ div {
 
 .einblenden {
     animation-name: einblenden;
-    animation-duration: 3.5s;
+    animation-duration: 4.5s;
 }
 
 @keyframes einblenden {
     from {
-        opacity: .4
+        opacity: .3
     }
     to {
         opacity: 1

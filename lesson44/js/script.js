@@ -82,6 +82,7 @@ for (let i in objPerson) {
     li.style.fontFamily = 'Great Vibes';
     li.style.fontSize = "2.5em";
     li.style.color = colorCreateDark();
+    document.querySelectorAll('li:before').style = "font-size: 45px; color:red; content:\0273E";
     li.appendChild(txtLi);
     ulPerson.appendChild(li);
 
