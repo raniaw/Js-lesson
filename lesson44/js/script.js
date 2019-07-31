@@ -79,10 +79,10 @@ for (let i in objPerson) {
     attPersLi.value = "persLi";
     li.setAttributeNode(attPersLi);
     li.style.listStyleType = " ";
+    li.style.fontSize = "2em";
     li.style.fontFamily = 'Great Vibes';
-    li.style.fontSize = "2.5em";
     li.style.color = colorCreateDark();
-    document.querySelectorAll('li:before').style = "font-size: 45px; color:red; content:\0273E";
+    document.querySelectorAll('li:before').style = " color:red; content:\0273E";
     li.appendChild(txtLi);
     ulPerson.appendChild(li);
 

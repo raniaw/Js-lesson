@@ -34,7 +34,7 @@ btnRight.style.borderRadius = "20px";
 btnRight.style.padding = "10px";
 btnRight.style.margin = "10px";
 
-var txtPrv = document.createTextNode('previos');
+var txtPrv = document.createTextNode('previous');
 btnLeft.appendChild(txtPrv);
 btnLeft.style.width = "100px";
 
@@ -95,13 +95,13 @@ function imgPrv() {
 
     //img.src = imgs[i].src;
     //    img.removeAttribute('class', 'einblenden');
-    removeClass();
+    removeClass(imgs);
 
     i--;
     if (i < 0) {
         i = 2;
     }
-    addClass();
+    addClass(imgs);
     img.src = imgs[i].src;
     console.log(i);
 
@@ -115,7 +115,6 @@ function imgNxt() {
     if (i >= imgs.length) {
         i = 0;
     }
-
     addClass();
     console.log(i);
     img.src = imgs[i].src;
@@ -133,12 +132,14 @@ function changeImg() {
     }
 }
 
-function removeClass() {
+function removeClass(imgs) {
+    img.src = imgs[i].src;
     img.removeAttribute('class', 'einblenden');
     console.log(img);
 }
 
-function addClass() {
+function addClass(imgs) {
+    img.src = imgs[i].src;
     img.setAttribute('class', 'einblenden');
     console.log(img);
 }
