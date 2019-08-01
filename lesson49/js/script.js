@@ -1,7 +1,11 @@
 var body = document.getElementsByTagName("body")[0];
+
 var h2F = document.createElement("h2");
 var h2Filt = document.createElement("h2");
 var h2Map = document.createElement("h2");
+var h2Sort = document.createElement("h2");
+var h2Reduce = document.createElement("h2");
+
 var ulArr1 = document.createElement("ul");
 var ulArr2 = document.createElement("ul");
 var ulRetail = document.createElement("ul");
@@ -9,20 +13,13 @@ var ulEightiesComp = document.createElement("ul");
 var ulNameMap = document.createElement("ul");
 var ulYearsComp = document.createElement("ul");
 var ulSqrt = document.createElement("ul");
-
-
+var ulSortStartComp = document.createElement("ul");
 var pCarDrive = document.createElement("p");
 var pCarDriveSort = document.createElement("p");
+var pSumAges = document.createElement("p");
 
-
-
-var pPatt4 = document.createElement("p");
 var pPatt5 = document.createElement("p");
-var pRes1 = document.createElement("p");
-var pRes2 = document.createElement("p");
-var pRes3 = document.createElement("p");
-var pRes4 = document.createElement("p");
-var pRes5 = document.createElement("p");
+
 
 h2F.style.color = colorCreateDark();
 h2F.style.fontWeight = "bold";
@@ -30,6 +27,10 @@ h2Filt.style.color = colorCreateDark();
 h2Filt.style.fontWeight = "bold";
 h2Map.style.color = colorCreateDark();
 h2Map.style.fontWeight = "bold";
+h2Sort.style.color = colorCreateDark();
+h2Sort.style.fontWeight = "bold";
+h2Reduce.style.color = colorCreateDark();
+h2Reduce.style.fontWeight = "bold";
 pCarDrive.style.color = colorCreateDark();
 pCarDrive.style.fontWeight = "bold";
 pCarDriveSort.style.color = colorCreateDark();
@@ -44,32 +45,14 @@ ulYearsComp.style.color = colorCreateDark();
 ulYearsComp.style.fontWeight = "bold";
 ulSqrt.style.color = colorCreateDark();
 ulSqrt.style.fontWeight = "bold";
+ulSortStartComp.style.color = colorCreateDark();
+ulSortStartComp.style.fontWeight = "bold";
+pSumAges.style.color = colorCreateDark();
+pSumAges.style.fontWeight = "bold";
 
-pPatt4.style.color = colorCreateDark();
-pPatt4.style.fontWeight = "bold";
 pPatt5.style.color = colorCreateDark();
 pPatt5.style.fontWeight = "bold";
 
-pRes1.style.color = colorCreateDark();
-pRes1.style.fontWeight = "bold";
-pRes1.style.fontFamily = 'Great Vibes';
-pRes1.style.fontSize = "1.5em";
-pRes2.style.color = colorCreateDark();
-pRes2.style.fontWeight = "bold";
-pRes2.style.fontFamily = 'Great Vibes';
-pRes2.style.fontSize = "1.5em";
-pRes3.style.color = colorCreateDark();
-pRes3.style.fontWeight = "bold";
-pRes3.style.fontFamily = 'Great Vibes';
-pRes3.style.fontSize = "1.5em";
-pRes4.style.color = colorCreateDark();
-pRes4.style.fontWeight = "bold";
-pRes4.style.fontFamily = 'Great Vibes';
-pRes4.style.fontSize = "1.5em";
-pRes5.style.color = colorCreateDark();
-pRes5.style.fontWeight = "bold";
-pRes5.style.fontFamily = 'Great Vibes';
-pRes5.style.fontSize = "1.5em";
 
 body.appendChild(h2F);
 body.appendChild(ulArr1);
@@ -83,17 +66,20 @@ body.appendChild(h2Map);
 body.appendChild(ulNameMap);
 body.appendChild(ulYearsComp);
 body.appendChild(ulSqrt);
+body.appendChild(h2Sort);
+body.appendChild(ulSortStartComp);
+body.appendChild(h2Reduce);
+body.appendChild(pSumAges);
 
-body.appendChild(pRes3);
-body.appendChild(pPatt4);
-body.appendChild(pRes4);
 body.appendChild(pPatt5);
-body.appendChild(pRes5);
 
 
 h2F.innerHTML = "Array.forEach()";
 h2Filt.innerHTML = "Array.filter()";
 h2Map.innerHTML = "Array.map()";
+h2Sort.innerHTML = "Array.sort()";
+h2Reduce.innerHTML = "Array.reduce()";
+
 
 const companies = [{
         name: "Company One",
@@ -151,7 +137,7 @@ const companies = [{
     }
 ];
 
-const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+const ages = [33, 12, 20, 2, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 0, 1, 64, 32];
 /**
  * Ausgabe NAmens des Companies
  */
@@ -188,7 +174,7 @@ var carDrive = [];
 
 // for (let i = 0; i < ages.length; i++) {
 //     let li = document.createElement("li");
-//     if (ages[i] >= 21) {
+//     if (ages[i] >= 5) {
 //         var txtLi = document.createTextNode(ages[i]);
 //         li.style.fontSize = "1.5em";
 //         li.style.color = colorCreateDark();
@@ -201,7 +187,7 @@ var carDrive = [];
 /// gleiche  wie oben
 // ages.forEach((age) => {
 //     let li = document.createElement("li");
-//     if (age >= 21) {
+//     if (age >= 5) {
 //         var txtLi = document.createTextNode(age);
 //         li.style.fontSize = "1.5em";
 //         li.style.color = colorCreateDark();
@@ -214,7 +200,7 @@ var carDrive = [];
 /// gleiche  wie oben
 carDrive = ages.filter((age) => {
     let li = document.createElement("li");
-    if (age >= 21) {
+    if (age >= 5) {
         var txtLi = document.createTextNode(age);
         li.style.fontSize = "1em";
         li.style.color = colorCreateDark();
@@ -229,13 +215,15 @@ carDrive = ages.filter((age) => {
 
 console.log(carDrive);
 
-pCarDrive.innerHTML = "Car drive =[" + carDrive + "]";
+pCarDrive.innerHTML = "Car drive unsort =[" + carDrive + "]";
 /**
  * Die Daten von 'carDrive' werden zuerst
  * for der Ausgabe  sortiert
  */
-carDrive.sort();
-pCarDriveSort.innerHTML = "Car drive sortiert : " + carDrive + "";
+carDrive.sort((a, b) => {
+    return a - b;
+});
+pCarDriveSort.innerHTML = "Car drive sortiert   -> mit  carDrive.sort() : " + carDrive + "";
 
 var retailComp = [];
 retailComp = companies.filter((company) => {
@@ -298,7 +286,30 @@ agesSqrt = ages.map((age) => {
     ulSqrt.appendChild(li);
 });
 
+var sortNameComp = [];
+sortNameComp = companies.sort((comp1, comp2) => (comp1.start > comp2.start ? 1 : -1));
+console.log(sortNameComp);
+sortNameComp.map((company) => {
+    let li = document.createElement("li");
+    var txtLi = document.createTextNode(company.name + " is  started " + company.start);
+    li.style.color = colorCreateDark();
+    li.style.fontFamily = 'Great Vibes';
+    li.style.fontSize = "1.5em";
+    li.appendChild(txtLi);
+    ulSortStartComp.appendChild(li);
+});
 
+let ageSum = 0;
+for (let i = 0; i < ages.length; i++) {
+    ageSum = ageSum + ages[i];
+    console.log("Summe: " + ageSum);
+}
+
+let ageSum2 = ages.reduce((total, age) => {
+    return total + age;
+})
+console.log(ageSum2)
+pSumAges.innerHTML = "Sum from ages: " + ageSum2;
 
 
 /**
