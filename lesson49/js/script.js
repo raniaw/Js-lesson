@@ -1,11 +1,15 @@
 var body = document.getElementsByTagName("body")[0];
+var h2F = document.createElement("h2");
+var h2Filt = document.createElement("h2");
+var h2Map = document.createElement("h2");
 var ulArr1 = document.createElement("ul");
 var ulArr2 = document.createElement("ul");
 var pCarDrive = document.createElement("p");
 var pCarDriveSort = document.createElement("p");
 var ulRetail = document.createElement("ul");
+var ulEightiesComp = document.createElement("ul");
+var ulNameMap = document.createElement("ul");
 
-var pPatt1 = document.createElement("p");
 var pPatt2 = document.createElement("p");
 var pPatt3 = document.createElement("p");
 var pPatt4 = document.createElement("p");
@@ -16,16 +20,22 @@ var pRes3 = document.createElement("p");
 var pRes4 = document.createElement("p");
 var pRes5 = document.createElement("p");
 
-
+h2F.style.color = colorCreateDark();
+h2F.style.fontWeight = "bold";
+h2Filt.style.color = colorCreateDark();
+h2Filt.style.fontWeight = "bold";
+h2Map.style.color = colorCreateDark();
+h2Map.style.fontWeight = "bold";
 pCarDrive.style.color = colorCreateDark();
 pCarDrive.style.fontWeight = "bold";
 pCarDriveSort.style.color = colorCreateDark();
 pCarDriveSort.style.fontWeight = "bold";
 ulRetail.style.color = colorCreateDark();
 ulRetail.style.fontWeight = "bold";
-
-pPatt1.style.color = colorCreateDark();
-pPatt1.style.fontWeight = "bold";
+ulEightiesComp.style.color = colorCreateDark();
+ulEightiesComp.style.fontWeight = "bold";
+ulNameMap.style.color = colorCreateDark();
+ulNameMap.style.fontWeight = "bold";
 
 pPatt2.style.color = colorCreateDark();
 pPatt2.style.fontWeight = "bold";
@@ -57,14 +67,16 @@ pRes5.style.fontWeight = "bold";
 pRes5.style.fontFamily = 'Great Vibes';
 pRes5.style.fontSize = "1.5em";
 
-
+body.appendChild(h2F);
 body.appendChild(ulArr1);
+body.appendChild(h2Filt);
 body.appendChild(ulArr2);
 body.appendChild(pCarDrive);
 body.appendChild(pCarDriveSort);
 body.appendChild(ulRetail);
-
-body.appendChild(pPatt1);
+body.appendChild(ulEightiesComp);
+body.appendChild(h2Map);
+body.appendChild(ulNameMap);
 
 body.appendChild(pRes1);
 body.appendChild(pPatt2);
@@ -77,6 +89,9 @@ body.appendChild(pPatt5);
 body.appendChild(pRes5);
 
 
+h2F.innerHTML = "Array.forEach()";
+h2Filt.innerHTML = "Array.filter()";
+h2Map.innerHTML = "Array.map()";
 
 const companies = [{
         name: "Company One",
@@ -224,18 +239,46 @@ var retailComp = [];
 retailComp = companies.filter((company) => {
     let li = document.createElement("li");
     if (company.category == 'Retail') {
-        var txtLi = document.createTextNode("Company: " + company.name + " is " + company.category);
+        var txtLi = document.createTextNode(company.name + " is " + company.category);
         li.style.fontSize = "1.5em";
         li.style.color = colorCreateDark();
         li.style.fontFamily = 'Great Vibes';
         li.appendChild(txtLi);
         ulRetail.appendChild(li);
         retailComp.push(company.category);
-        return true;
+
     }
 });
 
 
+var eightiescomp = [];
+eightiescomp = companies.filter((company) => {
+    let li = document.createElement("li");
+    if (company.start >= 1980 && company.end < 1990) {
+        var txtLi = document.createTextNode(company.name + " started: " + company.start + " and ended: " + company.end);
+        li.style.fontSize = "1.5em";
+        li.style.color = colorCreateDark();
+        li.style.fontFamily = 'Great Vibes';
+        li.appendChild(txtLi);
+        ulEightiesComp.appendChild(li);
+        eightiescomp.push(company.category);
+
+    }
+});
+
+var nameComp = [];
+nameComp = companies.map((company) => {
+    let li = document.createElement("li");
+    var txtLi = document.createTextNode(company.name);
+    li.style.fontSize = "1em";
+    li.style.color = colorCreateDark();
+    li.appendChild(txtLi);
+    li.style.fontFamily = 'Syncopate';
+    li.style.fontWeight = 'bold';
+    ulNameMap.appendChild(li);
+    nameComp.push(company.name);
+
+});
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
@@ -253,7 +296,6 @@ function colorCreateDark() {
     // console.log(color);
     return color;
 }
-
 
 
 /**
