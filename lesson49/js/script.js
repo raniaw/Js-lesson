@@ -14,12 +14,11 @@ var ulNameMap = document.createElement("ul");
 var ulYearsComp = document.createElement("ul");
 var ulSqrt = document.createElement("ul");
 var ulSortStartComp = document.createElement("ul");
+
 var pCarDrive = document.createElement("p");
 var pCarDriveSort = document.createElement("p");
 var pSumAges = document.createElement("p");
-
-var pPatt5 = document.createElement("p");
-
+var pTotalsYearsComp = document.createElement("p");
 
 h2F.style.color = colorCreateDark();
 h2F.style.fontWeight = "bold";
@@ -49,10 +48,8 @@ ulSortStartComp.style.color = colorCreateDark();
 ulSortStartComp.style.fontWeight = "bold";
 pSumAges.style.color = colorCreateDark();
 pSumAges.style.fontWeight = "bold";
-
-pPatt5.style.color = colorCreateDark();
-pPatt5.style.fontWeight = "bold";
-
+pTotalsYearsComp.style.color = colorCreateDark();
+pTotalsYearsComp.style.fontWeight = "bold";
 
 body.appendChild(h2F);
 body.appendChild(ulArr1);
@@ -70,16 +67,13 @@ body.appendChild(h2Sort);
 body.appendChild(ulSortStartComp);
 body.appendChild(h2Reduce);
 body.appendChild(pSumAges);
-
-body.appendChild(pPatt5);
-
+body.appendChild(pTotalsYearsComp);
 
 h2F.innerHTML = "Array.forEach()";
 h2Filt.innerHTML = "Array.filter()";
 h2Map.innerHTML = "Array.map()";
 h2Sort.innerHTML = "Array.sort()";
 h2Reduce.innerHTML = "Array.reduce()";
-
 
 const companies = [{
         name: "Company One",
@@ -137,9 +131,9 @@ const companies = [{
     }
 ];
 
-const ages = [33, 12, 20, 2, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 0, 1, 64, 32];
+const ages = [33, 12, 20, 2, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 4, 1, 64, 32];
 /**
- * Ausgabe NAmens des Companies
+ * Ausgabe Namens des Companies
  */
 
 // for (let i = 0; i < companies.length; i++) {
@@ -214,8 +208,8 @@ carDrive = ages.filter((age) => {
 });
 
 console.log(carDrive);
-
 pCarDrive.innerHTML = "Car drive unsort =[" + carDrive + "]";
+
 /**
  * Die Daten von 'carDrive' werden zuerst
  * for der Ausgabe  sortiert
@@ -237,7 +231,6 @@ retailComp = companies.filter((company) => {
         ulRetail.appendChild(li);
     }
 });
-
 
 var eightiescomp = [];
 eightiescomp = companies.filter((company) => {
@@ -311,6 +304,11 @@ let ageSum2 = ages.reduce((total, age) => {
 console.log(ageSum2)
 pSumAges.innerHTML = "Sum from ages: " + ageSum2;
 
+let totalYearsComp = companies.reduce((total, company) => total + (company.end - company.start), 0);
+console.log(totalYearsComp);
+pTotalsYearsComp.innerHTML = "Total Years from all companies: " + totalYearsComp + " years";
+
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
@@ -328,7 +326,6 @@ function colorCreateDark() {
     // console.log(color);
     return color;
 }
-
 
 /**
  * Funktion für die zufällige helle-(Pastel)Farbeerstellung
