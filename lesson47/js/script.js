@@ -23,7 +23,6 @@ body.appendChild(pY);
 body.appendChild(pServResp);
 
 
-
 function doSomeThings(callback) {
     callback();
 }
