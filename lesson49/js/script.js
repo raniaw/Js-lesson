@@ -4,14 +4,18 @@ var h2Filt = document.createElement("h2");
 var h2Map = document.createElement("h2");
 var ulArr1 = document.createElement("ul");
 var ulArr2 = document.createElement("ul");
-var pCarDrive = document.createElement("p");
-var pCarDriveSort = document.createElement("p");
 var ulRetail = document.createElement("ul");
 var ulEightiesComp = document.createElement("ul");
 var ulNameMap = document.createElement("ul");
+var ulYearsComp = document.createElement("ul");
+var ulSqrt = document.createElement("ul");
 
-var pPatt2 = document.createElement("p");
-var pPatt3 = document.createElement("p");
+
+var pCarDrive = document.createElement("p");
+var pCarDriveSort = document.createElement("p");
+
+
+
 var pPatt4 = document.createElement("p");
 var pPatt5 = document.createElement("p");
 var pRes1 = document.createElement("p");
@@ -36,11 +40,11 @@ ulEightiesComp.style.color = colorCreateDark();
 ulEightiesComp.style.fontWeight = "bold";
 ulNameMap.style.color = colorCreateDark();
 ulNameMap.style.fontWeight = "bold";
+ulYearsComp.style.color = colorCreateDark();
+ulYearsComp.style.fontWeight = "bold";
+ulSqrt.style.color = colorCreateDark();
+ulSqrt.style.fontWeight = "bold";
 
-pPatt2.style.color = colorCreateDark();
-pPatt2.style.fontWeight = "bold";
-pPatt3.style.color = colorCreateDark();
-pPatt3.style.fontWeight = "bold";
 pPatt4.style.color = colorCreateDark();
 pPatt4.style.fontWeight = "bold";
 pPatt5.style.color = colorCreateDark();
@@ -77,11 +81,9 @@ body.appendChild(ulRetail);
 body.appendChild(ulEightiesComp);
 body.appendChild(h2Map);
 body.appendChild(ulNameMap);
+body.appendChild(ulYearsComp);
+body.appendChild(ulSqrt);
 
-body.appendChild(pRes1);
-body.appendChild(pPatt2);
-body.appendChild(pRes2);
-body.appendChild(pPatt3);
 body.appendChild(pRes3);
 body.appendChild(pPatt4);
 body.appendChild(pRes4);
@@ -245,8 +247,6 @@ retailComp = companies.filter((company) => {
         li.style.fontFamily = 'Great Vibes';
         li.appendChild(txtLi);
         ulRetail.appendChild(li);
-        retailComp.push(company.category);
-
     }
 });
 
@@ -261,8 +261,6 @@ eightiescomp = companies.filter((company) => {
         li.style.fontFamily = 'Great Vibes';
         li.appendChild(txtLi);
         ulEightiesComp.appendChild(li);
-        eightiescomp.push(company.category);
-
     }
 });
 
@@ -276,9 +274,32 @@ nameComp = companies.map((company) => {
     li.style.fontFamily = 'Syncopate';
     li.style.fontWeight = 'bold';
     ulNameMap.appendChild(li);
-    nameComp.push(company.name);
+});
+
+var yearsComp = [];
+yearsComp = companies.map((company) => {
+    let li = document.createElement("li");
+    var txtLi = document.createTextNode(company.name + " is " + [company.end - company.start] + " years old");
+    li.style.fontSize = "1.5em";
+    li.style.color = colorCreateDark();
+    li.style.fontFamily = 'Great Vibes';
+    li.appendChild(txtLi);
+    ulYearsComp.appendChild(li);
 
 });
+
+var agesSqrt = [];
+agesSqrt = ages.map((age) => {
+    let li = document.createElement("li");
+    var txtLi = document.createTextNode("Sqrt from " + age + " is: " + Math.sqrt(age));
+    li.style.fontSize = "1em";
+    li.style.color = colorCreateDark();
+    li.appendChild(txtLi);
+    ulSqrt.appendChild(li);
+});
+
+
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
