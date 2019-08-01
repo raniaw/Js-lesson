@@ -112,11 +112,11 @@ patt3();
 
 function patt4() {
     var str = "LLLooolli Visit 2010007000$ 447646464€ Schooolllllsss";
-    var patt = /[0-9]+(\$|\€)/i;
-    var patt1 = /\d+(\$|\€)/i;
+    var patt = /[0-9]+(\$|\€)/g;
+    var txtPatt1 = /\d+(\$|\€)/g;
     var result = str.match(patt);
     pTxt4.innerHTML = "Text: " + str;
-    pPatt4.innerHTML = "pattern: " + patt + "<br> and the same " + patt1 + "<br>'\d\' is -> digit";
+    pPatt4.innerHTML = "pattern: " + patt + "<br> and the same " + txtPatt1 + "<br>'\d\' is -> digit";
     pRes4.innerHTML = "Result: " + result;
 }
 patt4();
