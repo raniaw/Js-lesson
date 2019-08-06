@@ -4,22 +4,36 @@ var dBody = document.createElement("div");
 var dLoc = document.createElement("div");
 var btnLoc = document.createElement("button");
 var btnRel = document.createElement("button");
+var btnBack = document.createElement("button");
+var btnForw = document.createElement("button");
 var pExs = document.createElement("p");
 var pTxt = document.createElement("p");
 var pTxt1 = document.createElement("p");
 var pTxt2 = document.createElement("p");
-
 var pFirst = document.createElement("p");
 var pSecond = document.createElement("p");
+var a = document.createElement("a");
 var ulDocum = document.createElement("ul");
 var ulBody = document.createElement("ul");
+
+
 
 btnLoc.setAttribute("value", "location");
 btnLoc.innerHTML = "location";
 btnLoc.setAttribute("id", "loc");
+
 btnRel.setAttribute("value", "reload");
 btnRel.innerHTML = "reload";
 btnRel.setAttribute("id", "rel");
+btnBack.setAttribute("value", "back");
+btnBack.innerHTML = "back";
+
+btnForw.innerHTML = "forward";
+btnForw.setAttribute("id", "forw");
+a.setAttribute("href", "https://www.google.de");
+a.innerHTML = "Google";
+
+
 var attDocum = document.createAttribute("id"); // Neue attribute "id" erstellen
 attDocum.value = "docum";
 
@@ -38,10 +52,14 @@ dExs.appendChild(pFirst);
 dExs.appendChild(pSecond);
 dExs.appendChild(pTxt);
 dExs.appendChild(pTxt1);
+dExs.appendChild(a);
 
 dLoc.appendChild(ulDocum);
+
 dLoc.appendChild(btnLoc);
 dLoc.appendChild(btnRel);
+dLoc.appendChild(btnBack);
+dLoc.appendChild(btnForw);
 dBody.appendChild(ulBody);
 
 body.appendChild(dExs);
@@ -68,14 +86,18 @@ btnLoc.addEventListener("click", function() {
 btnRel.addEventListener("click", function() {
     window.location.reload();
 });
-
+btnBack.addEventListener("click", function() {
+    window.history.back();
+});
+btnForw.addEventListener("click", function() {
+    window.history.forward();
+});
 
 pFirst.innerHTML = "firstElement";
 pSecond.innerHTML = "secondElement";
 pTxt.innerHTML = " Paragraph";
 pTxt1.innerHTML = " Paragraph";
 pTxt2.innerHTML = " Paragraph";
-
 
 
 /**
