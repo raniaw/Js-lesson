@@ -1,0 +1,113 @@
+var body = document.getElementsByTagName("body")[0];
+var dExs = document.createElement("div");
+var dBody = document.createElement("div");
+var dLoc = document.createElement("div");
+var btnLoc = document.createElement("button");
+var btnRel = document.createElement("button");
+var pExs = document.createElement("p");
+var pTxt = document.createElement("p");
+var pTxt1 = document.createElement("p");
+var pTxt2 = document.createElement("p");
+
+var pFirst = document.createElement("p");
+var pSecond = document.createElement("p");
+var ulDocum = document.createElement("ul");
+var ulBody = document.createElement("ul");
+
+btnLoc.setAttribute("value", "location");
+btnLoc.innerHTML = "location";
+btnLoc.setAttribute("id", "loc");
+btnRel.setAttribute("value", "reload");
+btnRel.innerHTML = "reload";
+btnRel.setAttribute("id", "rel");
+var attDocum = document.createAttribute("id"); // Neue attribute "id" erstellen
+attDocum.value = "docum";
+
+var attClText = document.createAttribute("class"); // Neue attribute "id" erstellen
+attClText.value = "text";
+
+ulBody.style.listStyleType = "none";
+ulDocum.setAttributeNode(attDocum);
+ulDocum.style.listStyleType = "none";
+
+pTxt.setAttribute("class", "text");
+pTxt1.setAttribute("class", "text");
+
+dExs.appendChild(pExs);
+dExs.appendChild(pFirst);
+dExs.appendChild(pSecond);
+dExs.appendChild(pTxt);
+dExs.appendChild(pTxt1);
+
+dLoc.appendChild(ulDocum);
+dLoc.appendChild(btnLoc);
+dLoc.appendChild(btnRel);
+dBody.appendChild(ulBody);
+
+body.appendChild(dExs);
+body.appendChild(dBody);
+body.appendChild(dLoc);
+
+var matches = document.getElementsByClassName("text");
+
+for (i = 0; i < matches.length; i++) {
+    matches[i].style.fontFamily = "Great Vibes";
+    matches[i].style.fontSize = "1.5em";
+
+}
+let letzte = matches[matches.length - 1];
+letzte.style.backgroundColor = colorCreatePastel();
+let vorLetzte = document.createElement("p");
+
+btnLoc.addEventListener("click", function() {
+    vorLetzte.innerHTML = window.location.hostname;
+    dExs.insertBefore(vorLetzte, letzte);
+
+});
+
+btnRel.addEventListener("click", function() {
+    window.location.reload();
+});
+
+
+pFirst.innerHTML = "firstElement";
+pSecond.innerHTML = "secondElement";
+pTxt.innerHTML = " Paragraph";
+pTxt1.innerHTML = " Paragraph";
+pTxt2.innerHTML = " Paragraph";
+
+
+
+/**
+ * Funktion für die zufällige dunkle Farbeerstellung
+ */
+
+function colorCreateDark() {
+    var color;
+    var max = 106;
+    var min = 0;
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
+
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    // console.log(color);
+    return color;
+}
+
+/**
+ * Funktion für die zufällige helle-(Pastel)Farbeerstellung
+ */
+
+function colorCreatePastel() {
+    var color;
+    var max = 256;
+    var min = 200;
+    var colRed = Math.floor(Math.random() * (max - min)) + min;
+    var colBlue = Math.floor(Math.random() * (max - min)) + min;
+    var colGreen = Math.floor(Math.random() * (max - min)) + min;
+
+    color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
+    // console.log(color);
+    return color;
+}
