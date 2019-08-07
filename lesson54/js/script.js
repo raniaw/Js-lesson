@@ -87,7 +87,9 @@ btnRel.addEventListener("click", function() {
     window.location.reload();
 });
 btnBack.addEventListener("click", function() {
-    window.history.back();
+    //window.history.back();
+    //drei seiten zurück
+    window.history.go(-3);
 });
 btnForw.addEventListener("click", function() {
     window.history.forward();
