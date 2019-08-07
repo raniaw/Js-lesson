@@ -1,0 +1,29 @@
+// body {
+//     white-space: pre;
+// }
+h1,
+h3 {
+    font-family: 'Syncopate', sans-serif;
+}
+
+p,
+li,
+div {
+    font-family: 'Jura', sans-serif;
+}
+
+p.prom::after {
+    content: ' \1F61E';
+}
+
+p.prom2::after {
+    content: '  \1F3BB  \1F60D';
+}
+
+p.user::after {
+    content: ' \1F64A';
+}
+
+p.user2::after {
+    content: ' \1F647';
+}

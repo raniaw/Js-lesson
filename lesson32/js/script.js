@@ -15,8 +15,6 @@ function validate() {
 }
 /**
  * 
- * 
- * 
  */
 
 function validDiv() {
