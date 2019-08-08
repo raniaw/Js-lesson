@@ -24,6 +24,7 @@ btnValid.addEventListener("click", function() {
     ageValid();
     phoneValid();
     zipValid();
+    sexValid();
 })
 
 
@@ -146,10 +147,15 @@ function zipValid() {
 
 function sexValid() {
     txtSex = sex.value;
-    if (txtSex.match("")) {
+    if (txtSex.match("^[A-Za-z]")) {
+        if (txtSex.match("^[(W|w)omen|(M|man]")) {
+            pSex.innerHTML = "";
+        }
 
     } else {
-
+        pSex.innerHTML = "Number, special charcter are not allow ";
+        pSex.style.color = "red";
+        pSex.focus();
     }
 
 }
