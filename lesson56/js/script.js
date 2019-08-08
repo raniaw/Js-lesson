@@ -32,7 +32,7 @@ function fName() {
     var txtFn = fname.value;
     if (txtFn.length > 2) {
         if (txtFn.match("^[A-Z]")) {
-            console.log(txtFn);
+            //    console.log(txtFn);
             pFname.innerHTML = "";
 
         } else {
@@ -53,7 +53,7 @@ function lName() {
     var txtLn = lname.value;
     if (txtLn.length > 2) {
         if (txtLn.match("^[A-Z]")) {
-            console.log(txtLn);
+            //      console.log(txtLn);
             pLname.innerHTML = "";
 
         } else {
@@ -72,10 +72,10 @@ function lName() {
 
 function eMail() {
     var txtEmail = email.value;
-    console.log(txtEmail);
+    //console.log(txtEmail);
     var pattern = /^[\w-.]+@[\w-]+\.[a-z]{2,3}$/i;
     if (txtEmail.match(pattern)) {
-        console.log(txtEmail);
+        // console.log(txtEmail);
         pEmail.innerHTML = "";
     } else {
         pEmail.innerHTML = "Your Mail is not valid";
@@ -87,10 +87,10 @@ function eMail() {
 
 function ageValid() {
     var txtAge = age.value;
-    console.log(txtAge);
+    //console.log(txtAge);
     if (txtAge.match("^[0-9]")) {
         if (txtAge >= 14 && txtAge <= 99) {
-            console.log("match:" + txtAge);
+            //      console.log("match:" + txtAge);
             pAge.innerHTML = "";
         } else {
             pAge.innerHTML = "Your should be between 14 and 99 old years, letter and special character are not allow";
@@ -110,7 +110,7 @@ function ageValid() {
 
 function phoneValid() {
     var txtPhone = phone.value;
-    console.log(txtPhone);
+    //console.log(txtPhone);
     if (txtPhone.match("^[0-9]")) {
         if (txtPhone.length == 10) {
             pPhone.innerHTML = "";
