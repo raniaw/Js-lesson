@@ -92,14 +92,14 @@ function ageValid() {
             console.log("match:" + txtAge);
             pAge.innerHTML = "";
         } else {
-            pAge.innerHTML = "Your should be between 14 and 99 old years";
+            pAge.innerHTML = "Your should be between 14 and 99 old years, letter and special character are not allow";
             pAge.style.color = "red";
             age.value = "";
             age.focus();
         }
 
     } else {
-        pAge.innerHTML = "Write please number";
+        pAge.innerHTML = "Write please number, letter and special character are not allow";
         pAge.style.color = "red";
         age.value = "";
         age.focus();
