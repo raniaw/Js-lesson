@@ -85,8 +85,23 @@ for (let i = 0; i < itemList.children.length; i++) {
 itemList.firstElementChild.textContent = "Item child new text";
 itemList.lastElementChild.style.fontWeight = "bolder";
 
-console.log();
+console.log(itemList.nextSibling);
+console.log(itemList.children[0].nextElementSibling);
 
+itemList.children[0].nextElementSibling.textContent = "next ElementSibling";
+
+itemList.children[5].previousElementSibling.textContent = "previosElementSibling";
+itemList.children[5].nextElementSibling.textContent = "nextElementSibling";
+
+//create div-element
+var dEl = document.createElement("div");
+dEl.className = "card card-body";
+dEl.setAttribute("myAttr", "My new Attribute");
+
+//create TextNode
+var txtNode = document.createTextNode("Here is new TextNode for div");
+dEl.appendChild(txtNode);
+console.log(dEl);
 
 
 /**
