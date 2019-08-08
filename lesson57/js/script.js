@@ -68,6 +68,15 @@ for (let i = 0; i < even.length; i++) {
 let itemList = document.querySelector("#items");
 itemList.parentNode.style.backgroundColor = colorCreatePastel();
 
+console.log(itemList.parentNode);
+console.log(itemList.parentNode.parentNode);
+console.log(itemList.parentNode.parentNode.parentNode);
+console.log(itemList.parentNode.parentNode.parentNode.parentNode);
+
+//itemList.parentNode.parentNode.remove();
+
+itemList.parentNode.parentNode.style.borderBottom = "4px solid " + colorCreatePastel();
+
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
  */

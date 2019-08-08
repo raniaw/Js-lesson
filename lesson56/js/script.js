@@ -117,10 +117,12 @@ function phoneValid() {
         } else {
             pPhone.innerHTML = "Must be 10 character long";
             pPhone.style.color = "red";
+            phone.focus();
         }
     } else {
         pPhone.innerHTML = "Write please only number";
         pPhone.style.color = "red";
+        phone.focus();
     }
 }
 
@@ -133,15 +135,18 @@ function zipValid() {
             } else {
                 pZip.innerHTML = "Must be 5 character long ";
                 pZip.style.color = "red";
+                zip.focus();
             }
         } else {
             pZip.innerHTML = "Letter and  special charcter are not allow ";
             pZip.style.color = "red";
+            zip.focus();
         }
 
     } else {
         pZip.innerHTML = "Letter, special charcter and number '0' are not allow ";
         pZip.style.color = "red";
+        zip.focus();
     }
 }
 
@@ -153,13 +158,13 @@ function sexValid() {
         } else {
             pSex.innerHTML = "write your please your sex women or man";
             pSex.style.color = "red";
-            pSex.focus();
+            sex.focus();
         }
 
     } else {
         pSex.innerHTML = "Number, special charcter are not allow ";
         pSex.style.color = "red";
-        pSex.focus();
+        sex.focus();
     }
 
 }
