@@ -94,7 +94,6 @@ var pRes29 = document.createElement("p");
 var pRes30 = document.createElement("p");
 
 
-
 pTxt1.style.color = colorCreateDark();
 pTxt1.style.fontWeight = "bold";
 pTxt2.style.color = colorCreateDark();
@@ -131,6 +130,26 @@ pTxt17.style.color = colorCreateDark();
 pTxt17.style.fontWeight = "bold";
 pTxt18.style.color = colorCreateDark();
 pTxt18.style.fontWeight = "bold";
+pTxt19.style.color = colorCreateDark();
+pTxt19.style.fontWeight = "bold";
+pTxt20.style.color = colorCreateDark();
+pTxt20.style.fontWeight = "bold";
+pTxt21.style.color = colorCreateDark();
+pTxt21.style.fontWeight = "bold";
+pTxt22.style.color = colorCreateDark();
+pTxt22.style.fontWeight = "bold";
+pTxt23.style.color = colorCreateDark();
+pTxt23.style.fontWeight = "bold";
+pTxt24.style.color = colorCreateDark();
+pTxt24.style.fontWeight = "bold";
+pTxt25.style.color = colorCreateDark();
+pTxt25.style.fontWeight = "bold";
+pTxt26.style.color = colorCreateDark();
+pTxt26.style.fontWeight = "bold";
+pTxt27.style.color = colorCreateDark();
+pTxt27.style.fontWeight = "bold";
+pTxt28.style.color = colorCreateDark();
+pTxt28.style.fontWeight = "bold";
 
 
 pPatt1.style.color = colorCreateDark();
@@ -169,7 +188,24 @@ pPatt17.style.color = colorCreateDark();
 pPatt17.style.fontWeight = "bold";
 pPatt18.style.color = colorCreateDark();
 pPatt18.style.fontWeight = "bold";
-
+pPatt19.style.color = colorCreateDark();
+pPatt19.style.fontWeight = "bold";
+pPatt20.style.color = colorCreateDark();
+pPatt20.style.fontWeight = "bold";
+pPatt21.style.color = colorCreateDark();
+pPatt21.style.fontWeight = "bold";
+pPatt22.style.color = colorCreateDark();
+pPatt22.style.fontWeight = "bold";
+pPatt23.style.color = colorCreateDark();
+pPatt23.style.fontWeight = "bold";
+pPatt24.style.color = colorCreateDark();
+pPatt24.style.fontWeight = "bold";
+pPatt25.style.color = colorCreateDark();
+pPatt25.style.fontWeight = "bold";
+pPatt26.style.color = colorCreateDark();
+pPatt26.style.fontWeight = "bold";
+pPatt27.style.color = colorCreateDark();
+pPatt27.style.fontWeight = "bold";
 
 pRes1.style.color = colorCreateDark();
 pRes1.style.fontWeight = "bold";
@@ -612,7 +648,7 @@ function patt18() {
 
 }
 patt18();
-//
+
 function patt19() {
     var str = "n l nn lLl nnn lll"
     var patt = /l+/g; //global, + -> more zeichen
