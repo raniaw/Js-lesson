@@ -76,6 +76,18 @@ console.log(itemList.parentNode.parentNode.parentNode.parentNode);
 //itemList.parentNode.parentNode.remove();
 
 itemList.parentNode.parentNode.style.borderBottom = "4px solid " + colorCreatePastel();
+console.log(itemList.childNodes);
+console.log(itemList.children);
+for (let i = 0; i < itemList.children.length; i++) {
+    itemList.children[i].style.borderBottom = 2 * i + "px dotted " + colorCreateDark();
+}
+
+itemList.firstElementChild.textContent = "Item child new text";
+itemList.lastElementChild.style.fontWeight = "bolder";
+
+console.log();
+
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
