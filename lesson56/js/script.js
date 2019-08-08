@@ -148,8 +148,12 @@ function zipValid() {
 function sexValid() {
     txtSex = sex.value;
     if (txtSex.match("^[A-Za-z]")) {
-        if (txtSex.match("^[(W|w)omen|(M|man]")) {
+        if (txtSex.match("^[(W|w)omen|M|man)]")) {
             pSex.innerHTML = "";
+        } else {
+            pSex.innerHTML = "write your please your sex women or man";
+            pSex.style.color = "red";
+            pSex.focus();
         }
 
     } else {
