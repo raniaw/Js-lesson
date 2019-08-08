@@ -2,16 +2,22 @@ var body = document.getElementsByTagName("body")[0];
 var dExs = document.createElement("div");
 var dBody = document.createElement("div");
 var dLoc = document.createElement("div");
+
 var btnLoc = document.createElement("button");
 var btnRel = document.createElement("button");
 var btnBack = document.createElement("button");
 var btnForw = document.createElement("button");
+
+var btnCheckInt = document.createElement("button");
+
 var pExs = document.createElement("p");
 var pTxt = document.createElement("p");
 var pTxt1 = document.createElement("p");
 var pTxt2 = document.createElement("p");
 var pFirst = document.createElement("p");
 var pSecond = document.createElement("p");
+var pBrowser = document.createElement("p");
+
 var a = document.createElement("a");
 var ulDocum = document.createElement("ul");
 var ulBody = document.createElement("ul");
@@ -33,6 +39,7 @@ btnForw.setAttribute("id", "forw");
 a.setAttribute("href", "https://www.google.de");
 a.innerHTML = "Google";
 
+btnCheckInt.innerHTML = "check Internet"
 
 var attDocum = document.createAttribute("id"); // Neue attribute "id" erstellen
 attDocum.value = "docum";
@@ -60,11 +67,15 @@ dLoc.appendChild(btnLoc);
 dLoc.appendChild(btnRel);
 dLoc.appendChild(btnBack);
 dLoc.appendChild(btnForw);
+
+
+dBody.appendChild(pBrowser);
+dBody.appendChild(btnCheckInt);
 dBody.appendChild(ulBody);
 
 body.appendChild(dExs);
-body.appendChild(dBody);
 body.appendChild(dLoc);
+body.appendChild(dBody);
 
 var matches = document.getElementsByClassName("text");
 
@@ -100,6 +111,57 @@ pSecond.innerHTML = "secondElement";
 pTxt.innerHTML = " Paragraph";
 pTxt1.innerHTML = " Paragraph";
 pTxt2.innerHTML = " Paragraph";
+
+
+
+
+
+
+var str = "browser";
+str += "<div>Browser CodeName: " + navigator.appCodeName + "</div>";
+str += "<div>Browser Name: " + navigator.appName + "</div>";
+str += "<div>Browser Version: " + navigator.appVersion + "</div>";
+str += "<div>Cookies Enabled: " + navigator.cookieEnabled + "</div>";
+str += "<div>Browser Language: " + navigator.language + "</div>";
+str += "<div>Platform: " + navigator.platform + "</div>";
+str += "<div>User-agent header: " + navigator.userAgent + "</div>";
+//str += "<div>GeoLocation current position: " + navigator.geolocation.getCurrentPosition(success, error, options) + "</div>";
+
+pBrowser.innerHTML = str;
+
+
+btnCheckInt.addEventListener("click", function() {
+    checkInternet();
+});
+
+
+function checkInternet() {
+
+    if (navigator.onLine) {
+        alert("you are online :)");
+    } else {
+        alert("you are offline :( ");
+    }
+}
+
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+
+// function success(pos) {
+//     var crd = pos.coords;
+
+//     console.log('Your current position is:');
+//     console.log(`Latitude : ${crd.latitude}`);
+//     console.log(`Longitude: ${crd.longitude}`);
+//     console.log(`More or less ${crd.accuracy} meters.`);
+// }
+
+// function error(err) {
+//     console.warn(`ERROR(${err.code}): ${err.message}`);
+// }
 
 
 /**

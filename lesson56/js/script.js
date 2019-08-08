@@ -22,6 +22,8 @@ btnValid.addEventListener("click", function() {
     lName();
     eMail();
     ageValid();
+    phoneValid();
+    zipValid();
 })
 
 
@@ -105,7 +107,36 @@ function ageValid() {
 }
 
 
+function phoneValid() {
+    var txtPhone = phone.value;
+    console.log(txtPhone);
+    if (txtPhone.match("^[0-9]")) {
+        if (txtPhone.length == 10) {
+            pPhone.innerHTML = "";
+        } else {
+            pPhone.innerHTML = "Must be at least 10 character long";
+            pPhone.style.color = "red";
+        }
+    } else {
+        pPhone.innerHTML = "Write please only number";
+        pPhone.style.color = "red";
+    }
+}
 
+function zipValid() {
+    var txtZip = zip.value;
+    if (txtZip.match("^[0-9]")) {
+        if (txtZip.length == 5) {
+            pZip.innerHTML = "";
+        } else {
+            pZip.innerHTML = "Must be at least 5 character long";
+            pZip.style.color = "red";
+        }
+    } else {
+        pZip.innerHTML = "Write please only number";
+        pZip.style.color = "red";
+    }
+}
 
 
 
