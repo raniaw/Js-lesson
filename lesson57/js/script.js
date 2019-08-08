@@ -97,12 +97,19 @@ itemList.children[5].nextElementSibling.textContent = "nextElementSibling";
 var dEl = document.createElement("div");
 dEl.className = "card card-body";
 dEl.setAttribute("myAttr", "My new Attribute");
+dEl.style.backgroundColor = colorCreatePastel();
 
 //create TextNode
-var txtNode = document.createTextNode("Here is new TextNode for div");
+var txtNode = document.createTextNode("Here is new TextNode for new div");
 dEl.appendChild(txtNode);
 console.log(dEl);
 
+//insert div.element zu div
+var dMain = document.getElementById("main");
+console.log(dMain);
+var dContainer = document.querySelectorAll(".container");
+console.log(dContainer[1]);
+dContainer[1].insertBefore(dEl, dMain);
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
