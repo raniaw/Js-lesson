@@ -1,19 +1,21 @@
 var body = document.getElementsByTagName("body")[0];
-
+//iunput
 var fname = document.getElementById("fname");
 var lname = document.getElementById("lname");
 var email = document.getElementById("email");
 var age = document.getElementById("age");
+var phone = document.getElementById("phone");
 var zip = document.getElementById("zip");
 var sex = document.getElementById("sex");
-var phone = document.getElementById("phone");
 var btnValid = document.getElementById("valid");
-
+//paragraph for exception-output
 var pFname = document.getElementById("pFname");
 var pLname = document.getElementById("pLname");
 var pEmail = document.getElementById("pEmail");
 var pAge = document.getElementById("pAge");
 var pPhone = document.getElementById("pPhone");
+var pZip = document.getElementById("pZip");
+var pSex = document.getElementById("pSex");
 
 btnValid.addEventListener("click", function() {
     fName();
