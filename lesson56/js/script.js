@@ -114,7 +114,7 @@ function phoneValid() {
         if (txtPhone.length == 10) {
             pPhone.innerHTML = "";
         } else {
-            pPhone.innerHTML = "Must be at least 10 character long";
+            pPhone.innerHTML = "Must be 10 character long";
             pPhone.style.color = "red";
         }
     } else {
@@ -125,37 +125,34 @@ function phoneValid() {
 
 function zipValid() {
     var txtZip = zip.value;
-    if (txtZip.match("^[0-9]")) {
-        if (txtZip.length == 5) {
-            pZip.innerHTML = "";
+    if (txtZip.match("^[1-9]")) {
+        if (txtZip.match("[0-9]$")) {
+            if (txtZip.length == 5) {
+                pZip.innerHTML = "";
+            } else {
+                pZip.innerHTML = "Must be 5 character long ";
+                pZip.style.color = "red";
+            }
         } else {
-            pZip.innerHTML = "Must be at least 5 character long";
+            pZip.innerHTML = "Letter and  special charcter are not allow ";
             pZip.style.color = "red";
         }
+
     } else {
-        pZip.innerHTML = "Write please only number";
+        pZip.innerHTML = "Letter, special charcter and number '0' are not allow ";
         pZip.style.color = "red";
     }
 }
 
+function sexValid() {
+    txtSex = sex.value;
+    if (txtSex.match("")) {
 
+    } else {
 
-// var pPatt1 = document.createElement("p");
-// var pPatt2 = document.createElement("p");
-// var pPatt3 = document.createElement("p");
-// var pPatt4 = document.createElement("p");
-// var pPatt5 = document.createElement("p");
-// var pPatt6 = document.createElement("p");
-// var pPatt7 = document.createElement("p");
-// var pPatt8 = document.createElement("p");
-// var pPatt9 = document.createElement("p");
+    }
 
-
-
-// body.appendChild(pTxt1);
-// body.appendChild(pPatt1);
-// body.appendChild(pRes1);
-// body.appendChild(pTxt2);
+}
 
 
 // function patt1() {
