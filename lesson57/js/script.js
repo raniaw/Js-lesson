@@ -98,6 +98,8 @@ var dEl = document.createElement("div");
 dEl.className = "card card-body";
 dEl.setAttribute("myAttr", "My new Attribute");
 dEl.style.backgroundColor = colorCreatePastel();
+dEl.style.fontFamily = "Satisfy";
+dEl.style.fontSize = "2.2em";
 
 //create TextNode
 var txtNode = document.createTextNode("Here is new TextNode for new div");
@@ -110,6 +112,17 @@ console.log(dMain);
 var dContainer = document.querySelectorAll(".container");
 console.log(dContainer[1]);
 dContainer[1].insertBefore(dEl, dMain);
+
+//new li-element
+var liNewEl = document.createElement("li");
+liNewEl.className = "list-group-item";
+liNewEl.style.fontFamily = "Lexend Zetta";
+liNewEl.style.fontSize = "1.5em";
+var txtNodeLi = document.createTextNode("new Li-Element");
+liNewEl.appendChild(txtNodeLi);
+var liEl = document.querySelectorAll(".list-group-item");
+var ulElem = document.querySelector("#items");
+ulElem.insertBefore(liNewEl, liEl[0]);
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
@@ -142,4 +155,4 @@ function colorCreatePastel() {
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
 
     return color;
-}
+};
