@@ -7,7 +7,7 @@ console.log(document.all);
 console.log(document.title);
 console.log(document.body);
 console.log(document.all[20]);
-console.log(document.all[10].textContent = "Title changed. Here is 'JS DOM'");
+//console.log(document.all[10].textContent = "Title changed. Here is 'JS DOM'");
 console.log(document.forms[0]);
 console.log(document.images);
 //console.log(document.images[0].src = "https://www.wildpark-schwarze-berge.de/wp-content/uploads/Wildes-Eichhoernchen-im-Wildpark-Schwarze-Berge-15.jpg");
@@ -123,6 +123,25 @@ liNewEl.appendChild(txtNodeLi);
 var liEl = document.querySelectorAll(".list-group-item");
 var ulElem = document.querySelector("#items");
 ulElem.insertBefore(liNewEl, liEl[0]);
+
+//
+var dOutput = document.getElementById("output");
+
+var dBox = document.getElementById("box");
+dBox.style.backgroundColor = colorCreatePastel();
+
+var btn1 = document.getElementById("btn1");
+//btn1.addEventListener("dblclick", btnClick);//doppelclick
+btn1.addEventListener("click", btnClick);
+
+function btnClick(e) {
+    var headerId = document.querySelector("#header-title");
+    console.log(headerId);
+    headerId.textContent = "Text changed after click";
+    console.log(e);
+    console.log(e.target.classList);
+    dOutput.innerHTML = e.target.classList;
+}
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
