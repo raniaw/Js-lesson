@@ -1,0 +1,16 @@
+table,
+th,
+tr,
+td {
+    margin: 10px;
+    border: 1px solid blue;
+    padding: 10px;
+}
+
+h2 {
+    color: blue;
+}
+
+h2#title::before {
+    content: '\1F6D2';
+}
