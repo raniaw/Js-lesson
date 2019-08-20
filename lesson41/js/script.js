@@ -110,7 +110,7 @@ pEmpl.innerHTML = emplPers1.emplInfo();
 
 
 /**
- * Object Object PersonGetL
+ *  Object PersonGetL
  */
 var personGetL = {
     firstName: "John",
@@ -122,7 +122,7 @@ var personGetL = {
 }
 
 /**
- * Object Object PersonSetL
+ * Object PersonSetL
  */
 var personSetL = {
     firstName: "John",
@@ -133,7 +133,7 @@ var personSetL = {
     }
 };
 /**
- * Object Object PersonGetSetL
+ * Object  PersonGetSetL
  */
 var personGetSetL = {
     firstName: "John",

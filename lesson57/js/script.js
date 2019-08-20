@@ -1,5 +1,6 @@
 var body = document.getElementsByTagName("body")[0];
 
+
 console.log(document.title);
 document.title = "welcome";
 console.log(document.doctype);

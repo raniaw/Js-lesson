@@ -1,9 +1,13 @@
 table,
 th,
-tr,
-td {
+tr {
   margin: 10px;
   border: 1px solid blue;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid darkgreen;
   padding: 10px;
 }
 
