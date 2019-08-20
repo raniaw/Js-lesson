@@ -1,22 +1,7 @@
-table,
-th,
-tr {
-    margin: 10px;
-    border: 1px solid blue;
-    padding: 10px;
+#myDiv1 {
+    height: 100px;
 }
 
-table,
-tr {
-    width: 600px;
-}
-
-td {
-    width: 25%;
-    border: 1px solid darkgreen;
-    padding: 10px;
-}
-
-h2#title::before {
-    content: '\1F6D2';
+#myDiv {
+    height: 100px;
 }

@@ -4,12 +4,18 @@ var dElement = document.getElementById("myDiv");
 var ulList = document.createElement("ul");
 var inpSearch = document.getElementById("filter");
 let allLiItems = document.getElementsByTagName("li");
-
-body.appendChild(ulList);
-//var frm = document.getElementsByTagName("form")[0];
+var btn = document.getElementById("btn");
+var dElement1 = document.getElementById("myDiv1");
 var frm = document.querySelector("form");
+var inpName = document.getElementById("name");
+var inpName1 = document.getElementById("fName");
+var h3 = document.createElement("h3");
+var h4 = document.createElement("h4");
 var frm1 = document.getElementById("formItems");
-var inpName = document.querySelector("#name");
+
+
+body.appendChild(h3);
+body.appendChild(ulList);
 
 inpName.addEventListener("click", inputClick);
 inpName.addEventListener("keydown", inputKeyDown);
@@ -40,7 +46,8 @@ function inputKeyUp(e) {
     let myEventKeyUpValue = e.target.value;
     console.log("e.target.value: " + myEventKeyUpValue);
     console.log("e.timeStamp: " + myEventKeyUpTime);
-    dElement.innerHTML = "<h3>" + myEventKeyUpValue + "</h3>";
+    h4.innerHTML = myEventKeyUpValue;
+    dElement.appendChild(h4);
 }
 
 function inputMouseMove(e) {
@@ -51,8 +58,9 @@ function inputMouseMove(e) {
     inpName.style.background = colorCreatePastel();
     inpName.style.color = colorCreateDark();
     //  body.style.background = "rgb(" + e.offsetX + "," + e.offsetY + ", 180";
-    body.style.background = `rgb(" ${e.offsetX} ,${e.offsetY}, 180)`;
-    body.style.color = colorCreatePastel();
+    //body.style.background = `rgb(" ${e.offsetX} ,${e.offsetY}, 180)`;
+    body.style.background = colorCreatePastel();
+    body.style.color = colorCreateDark();
 }
 
 frm.addEventListener("submit", inputSubmit);
@@ -61,7 +69,8 @@ function inputSubmit(e) {
     e.preventDefault();
     let inpSubm = e.type;
     console.log("e.type: " + inpSubm);
-    dElement.innerHTML = "<h3>" + inpSubm.value + "</h3>";
+    h4.innerHTML = inpSubm.value;
+    dElement.appendChild(h4);
 
 }
 
@@ -126,6 +135,35 @@ function filterItem(e) {
         }
     }
 }
+btn.addEventListener("click", btnClick);
+
+
+function btnClick(e) {
+    console.log(e);
+    let myEventTarget = e.target.value;
+    console.log(myEventTarget);
+    let myEventValue = e.target.tagName;
+    console.log(myEventValue);
+
+}
+
+dElement1.addEventListener("click", divClick);
+
+function divClick(e) {
+    let eCkl = e.target;
+    console.log(eCkl);
+
+}
+
+inpName1.addEventListener("keyup", inputKeyup);
+
+function inputKeyup(e) {
+    let eValue = e.target.value;
+    h3.innerHTML = eValue;
+    dElement1.appendChild(h3);
+
+}
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung

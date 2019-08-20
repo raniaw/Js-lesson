@@ -126,9 +126,9 @@ function addLst() {
         console.log(tdPrDaten);
         tdPrDaten.appendChild(txtPrDaten);
         trPrDaten.appendChild(tdPrDaten);
-        // prDaten = [];
-        table.appendChild(trPrDaten);
 
+        table.appendChild(trPrDaten);
+        //prDaten = {};
         var btnDel = document.createElement("button");
         btnDel.innerHTML = "X";
         btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
