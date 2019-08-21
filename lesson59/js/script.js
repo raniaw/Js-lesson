@@ -12,7 +12,7 @@ var inpName1 = document.getElementById("fName");
 var h3 = document.createElement("h3");
 var h4 = document.createElement("h4");
 var frm1 = document.getElementById("formItems");
-
+var h2 = document.querySelector("h2");
 
 body.appendChild(h3);
 body.appendChild(ulList);
@@ -136,7 +136,7 @@ function filterItem(e) {
     }
 }
 btn.addEventListener("click", btnClick);
-
+var dNeue = document.createElement("div");
 
 function btnClick(e) {
     console.log(e);
@@ -144,7 +144,21 @@ function btnClick(e) {
     console.log(myEventTarget);
     let myEventValue = e.target.tagName;
     console.log(myEventValue);
+    //dNeue.className = "alert alert-success";
+    dNeue.setAttribute("class", "alert alert-success");
+    var txtD = document.createTextNode("neue div, nach 2 sek verschwinde ich");
+    dNeue.appendChild(txtD);
+    //dNeue.textContent="neue div, nach 2 sek verschwinde ich";
+    body.insertBefore(dNeue, h2);
+    setTimeout(hideOut, 2000);
+}
 
+
+function hideOut() {
+    dNeue.remove();
+    //body.removeChild(dNeue);
+    dElement.style.display = "none";
+    dElement1.style.display = "none";
 }
 
 dElement1.addEventListener("click", divClick);

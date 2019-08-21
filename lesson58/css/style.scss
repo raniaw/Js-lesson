@@ -1,19 +1,17 @@
 table,
-th,
 tr {
     margin: 10px;
     border: 1px solid blue;
     padding: 10px;
 }
 
-table,
-tr {
-    width: 600px;
+table {
+    //  width: 600px;
 }
 
 td {
-    width: 25%;
-    border: 1px solid darkgreen;
+    //  width: 100%;
+    //  border: 1px solid darkgreen;
     padding: 10px;
 }
 

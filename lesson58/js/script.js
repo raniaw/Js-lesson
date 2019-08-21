@@ -1,53 +1,60 @@
 var body = document.getElementsByTagName("body")[0];
 var btnAddList = document.getElementById("addList");
 var dList = document.createElement("div");
-var attr = dList.attributes;
-console.log(attr);
+var frm = document.getElementById("frm");
+
+var txtProd = ["Product Name", "Product Description", "Product Code", "Delete"];
 var objProduct = {
     productName: "",
     productDescription: "",
-    productCode: "",
-    get getProdName() {
-        return this.productName;
-    },
-    set setProdName(name) {
-        this.productName = name;
-    },
-    get getProdDescription() {
-        return this.productDescription;
-    },
-    set setProdDescription(description) {
-        this.productDescription = description;
-    },
-    get getProdCode() {
-        return this.productCode;
-    },
-    set setProdCode(code) {
-        this.productCode = code;
-    }
+    productCode: ""
+        // ,
+        // get getProdName() {
+        //     return this.productName;
+        // },
+        // set setProdName(name) {
+        //     this.productName = name;
+        // },
+        // get getProdDescription() {
+        //     return this.productDescription;
+        // },
+        // set setProdDescription(description) {
+        //     this.productDescription = description;
+        // },
+        // get getProdCode() {
+        //     return this.productCode;
+        // },
+        // set setProdCode(code) {
+        //     this.productCode = code;
+        // }
 }
 var table = document.createElement("table");
+var thead = document.createElement("thead");
+var tbody = document.createElement("tbody");
+var tr = document.createElement("tr");
 var th = document.createElement("th");
-th.setAttribute("id", "myTh");
-var txtProd = Object.keys(objProduct);
-console.log(Object.keys(objProduct).length);
-for (let i = 0; i < txtProd.length; i++) {
-    if (i == 3) { break; }
-    var tdPr = document.createElement("td");
-    var text = document.createTextNode(txtProd[i]);
-    tdPr.appendChild(text);
-    th.appendChild(tdPr);
-}
-// txtProd.forEach((txt) => {
+th.setAttribute("scope", "col");
+//var txtProd = ;
+//var txtProd = Object.keys(objProduct);
+
+// console.log(Object.keys(objProduct).length);
+// for (let i = 0; i < txtProd.length; i++) {
+//     //  if (i == 3) { break; }
 //     var tdPr = document.createElement("td");
-//     var text = document.createTextNode(txt);
+//     var text = document.createTextNode(txtProd[i]);
 //     tdPr.appendChild(text);
 //     th.appendChild(tdPr);
-// });
-
-table.setAttribute("id", "myTable");
-table.appendChild(th);
-
+// }
+txtProd.forEach((txt) => {
+    var tdPr = document.createElement("td");
+    var text = document.createTextNode(txt);
+    tdPr.appendChild(text);
+    th.appendChild(tdPr);
+});
+thead.appendChild(th);
+table.setAttribute("class", "table table-striped table-hover table-bordered mt-5");
+table.appendChild(thead);
+table.appendChild(tbody);
 dList.appendChild(table);
 body.appendChild(dList);
 var pName = document.getElementById("pName");
@@ -60,8 +67,9 @@ btnAddList.addEventListener("click", function() {
 //var prDaten=new Array();
 var prDaten = new Object();
 
-
 function addLst() {
+
+
     inpPrName = document.getElementById("prName");
     console.log(inpPrName);
     inpPrDescription = document.getElementById("prDescription");
@@ -109,31 +117,39 @@ function addLst() {
         //prDaten.push(inpPrCode);
         prDaten.productCode = inpPrCode.value;
     }
-    //prDaten.push("x");
+    //prDaten.push = "x";
     var trPrDaten = document.createElement("tr");
     //trPrDaten.style.width = "600px";
     var prDatenArrDescr = Object.keys(prDaten);
     console.log("prDatenArr:");
     console.log(prDatenArrDescr);
+    console.log(Object.keys(prDaten).length);
+    if (Object.keys(prDaten).length == 3) {
 
-    for (let date in prDaten) {
-        console.log(date + " -> " + prDaten[date]); // this loop through all properties including the prototype
+        for (let date in prDaten) {
+            console.log(date + " -> " + prDaten[date]); // this loop through all properties including the prototype
 
-        var txtPrDaten = document.createTextNode(prDaten[date]);
-        var tdPrDaten = document.createElement("td");
-        tdPrDaten.style.border = "1px solid red";
-        //tdPrDaten.style.width = "50px";
-        console.log(tdPrDaten);
-        tdPrDaten.appendChild(txtPrDaten);
-        trPrDaten.appendChild(tdPrDaten);
+            var txtPrDaten = document.createTextNode(prDaten[date]);
 
-        table.appendChild(trPrDaten);
-        //prDaten = {};
-        var btnDel = document.createElement("button");
-        btnDel.innerHTML = "X";
-        btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
+            console.log(txtPrDaten);
 
+            // if(prDatenArrDescr[])
+            var tdPrDaten = document.createElement("td");
+            tdPrDaten.style.border = "1px solid red";
+            //tdPrDaten.style.width = "50px";
+            console.log(tdPrDaten);
+            //tdPrDaten.textContent = txtPrDaten.nodeValue;
+            tdPrDaten.appendChild(txtPrDaten);
+            trPrDaten.appendChild(tdPrDaten);
+            //tr.appendChild(tdPrDaten);
 
+            var btnDel = document.createElement("button");
+            btnDel.innerHTML = "X";
+            btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
+            tbody.appendChild(trPrDaten);
+
+        }
+        prDaten = {};
     }
 
 }
@@ -185,3 +201,29 @@ function colorCreatePastel() {
     console.log(color);
     return color;
 }
+// 
+// 
+// console.log(frm);
+// var text = "";
+// 
+// for (let i = 0; i < frm.length; i++) {
+// text = frm.elements[i].value;
+// console.log(text);
+// 
+// var txtPrDaten = document.createTextNode(text);
+// console.log(txtPrDaten);
+// 
+//  if(prDatenArrDescr[])
+// var tdPrDaten = document.createElement("td");
+// tdPrDaten.style.border = "1px solid red";
+//tdPrDaten.style.width = "50px";
+// console.log(tdPrDaten);
+// tdPrDaten.appendChild(txtPrDaten);
+// trPrDaten.appendChild(tdPrDaten);
+//tr.appendChild(tdPrDaten);
+// 
+// var btnDel = document.createElement("button");
+// btnDel.innerHTML = "X";
+// btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
+// tbody.appendChild(trPrDaten);
+// }
