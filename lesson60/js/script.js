@@ -6,6 +6,8 @@ var pInc1 = document.createElement("p");
 var pInc2 = document.createElement("p");
 var pInc3 = document.createElement("p");
 var pInc4 = document.createElement("p");
+var pInc5 = document.createElement("p");
+var pInc6 = document.createElement("p");
 
 body.appendChild(h2);
 body.appendChild(p);
@@ -14,6 +16,8 @@ body.appendChild(pInc1);
 body.appendChild(pInc2);
 body.appendChild(pInc3);
 body.appendChild(pInc4);
+body.appendChild(pInc5);
+body.appendChild(pInc6);
 
 function num10() {
     return 10;
@@ -34,7 +38,6 @@ function makeCounter(n) {
 }
 
 function makeCounter1(n) {
-
     function inc() {
         return n += 1;
     }
@@ -42,7 +45,6 @@ function makeCounter1(n) {
 }
 
 function makeCounter2(n) {
-
     function inc(m) {
         return n += m;
     }
@@ -52,19 +54,36 @@ function makeCounter2(n) {
 
 function makeCounter3() {
     var currentValue = 1;
-
     return function() {
         return currentValue++;
     }
 
 }
 
+function makeCounter4() {
+    function inc() {
+        return inc.currentValue++;
+    }
+    inc.currentValue = 1;
+    return inc;
+}
+
+
 function makeMult() {
     var currentValue = 2;
-
     return function() {
         return currentValue *= 2;
     }
+
+}
+
+function makeMult2() {
+    function inc() {
+        return inc.currentValue *= 2;
+    }
+    inc.currentValue = NaN; // or 'inc.currentValue;' wait for input 
+    console.log("func: " + inc.currentValue);
+    return inc;
 
 }
 
@@ -80,13 +99,26 @@ pInc2.innerHTML = "function ->  makeCounter2(5)(3): " + resInc2;
 var resInc3 = makeCounter3();
 console.log(resInc3()); //1
 console.log(resInc3()); //2
-pInc3.innerHTML = "function ->  makeCounter3(): " + resInc3();
+pInc4.innerHTML = "function ->  makeCounter3(): " + resInc3();
 
-var res4 = makeMult();
-console.log(res4()); //4
-console.log(res4()); //8
-console.log(res4()); //16
-pInc4.innerHTML = "function -> makeMult(): " + res4(); //32
+var resInc4 = makeCounter4();
+console.log(resInc4()); //1
+console.log(resInc4()); //2
+pInc4.innerHTML = "function ->  makeCounter4(): " + resInc4(); //3
+
+var resMult1 = makeMult();
+console.log(resMult1()); //4
+console.log(resMult1()); //8
+console.log(resMult1()); //16
+pInc5.innerHTML = "function -> makeMult1(): " + resMult1(); //32
+
+var resMult2 = makeMult2();
+resMult2.currentValue = 3;
+console.log(resMult2()); //6
+console.log(resMult2()); //12
+console.log(resMult2()); //24
+pInc6.innerHTML = "function -> makeMult2(): " + resMult2(); //48
+
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung

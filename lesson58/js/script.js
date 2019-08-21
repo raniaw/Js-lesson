@@ -3,6 +3,8 @@ var btnAddList = document.getElementById("addList");
 var dList = document.createElement("div");
 var frm = document.getElementById("frm");
 
+var tbody = document.getElementById("product-list");
+
 var txtProd = ["Product Name", "Product Description", "Product Code", "Delete"];
 var objProduct = {
     productName: "",
@@ -28,35 +30,7 @@ var objProduct = {
         //     this.productCode = code;
         // }
 }
-var table = document.createElement("table");
-var thead = document.createElement("thead");
-var tbody = document.createElement("tbody");
-var tr = document.createElement("tr");
-var th = document.createElement("th");
-th.setAttribute("scope", "col");
-//var txtProd = ;
-//var txtProd = Object.keys(objProduct);
 
-// console.log(Object.keys(objProduct).length);
-// for (let i = 0; i < txtProd.length; i++) {
-//     //  if (i == 3) { break; }
-//     var tdPr = document.createElement("td");
-//     var text = document.createTextNode(txtProd[i]);
-//     tdPr.appendChild(text);
-//     th.appendChild(tdPr);
-// }
-txtProd.forEach((txt) => {
-    var tdPr = document.createElement("td");
-    var text = document.createTextNode(txt);
-    tdPr.appendChild(text);
-    th.appendChild(tdPr);
-});
-thead.appendChild(th);
-table.setAttribute("class", "table table-striped table-hover table-bordered mt-5");
-table.appendChild(thead);
-table.appendChild(tbody);
-dList.appendChild(table);
-body.appendChild(dList);
 var pName = document.getElementById("pName");
 var pDescription = document.getElementById("pDescription");
 var pCode = document.getElementById("pCode");
@@ -64,18 +38,17 @@ var pCode = document.getElementById("pCode");
 btnAddList.addEventListener("click", function() {
     addLst();
 });
-//var prDaten=new Array();
+
 var prDaten = new Object();
+
+
 
 function addLst() {
 
-
     inpPrName = document.getElementById("prName");
-    console.log(inpPrName);
     inpPrDescription = document.getElementById("prDescription");
-    console.log(inpPrDescription);
     inpPrCode = document.getElementById("prCode");
-    console.log(inpPrCode);
+
 
     if (inpPrName.value == null || inpPrName.value == "") {
         //if (isLeer(inpPrName)) {
@@ -114,12 +87,11 @@ function addLst() {
 
     } else {
         pCode.innerHTML = "";
-        //prDaten.push(inpPrCode);
+
         prDaten.productCode = inpPrCode.value;
     }
-    //prDaten.push = "x";
-    var trPrDaten = document.createElement("tr");
-    //trPrDaten.style.width = "600px";
+
+    var tr = document.createElement("tr");
     var prDatenArrDescr = Object.keys(prDaten);
     console.log("prDatenArr:");
     console.log(prDatenArrDescr);
@@ -127,29 +99,44 @@ function addLst() {
     if (Object.keys(prDaten).length == 3) {
 
         for (let date in prDaten) {
-            console.log(date + " -> " + prDaten[date]); // this loop through all properties including the prototype
 
             var txtPrDaten = document.createTextNode(prDaten[date]);
-
-            console.log(txtPrDaten);
-
-            // if(prDatenArrDescr[])
-            var tdPrDaten = document.createElement("td");
-            tdPrDaten.style.border = "1px solid red";
-            //tdPrDaten.style.width = "50px";
-            console.log(tdPrDaten);
-            //tdPrDaten.textContent = txtPrDaten.nodeValue;
-            tdPrDaten.appendChild(txtPrDaten);
-            trPrDaten.appendChild(tdPrDaten);
-            //tr.appendChild(tdPrDaten);
+            var td = document.createElement("td");
 
             var btnDel = document.createElement("button");
             btnDel.innerHTML = "X";
             btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
-            tbody.appendChild(trPrDaten);
+            // var a = document.createElement("a");
+            // a.innerHTML = "X";
+            // a.setAttribute("class", "btn btn-sm btn-danger float-right delete");
+
+            td.appendChild(txtPrDaten);
+            tr.appendChild(td);
 
         }
+
+        // a.addEventListener("click", removeItem);
+        btnDel.addEventListener("click", removeItem);
+        //td.appendChild(a);
+        td.appendChild(btnDel);
+        tr.appendChild(td);
+        tbody.appendChild(tr);
         prDaten = {};
+    }
+
+}
+
+
+function removeItem(e) {
+    let eDel = e.target;
+
+    if (eDel.className == "btn btn-sm btn-danger float-right delete") {
+
+        //if (eDel.classList.contains("delete")) {
+        console.log(eDel.parentElement);
+        eDel.parentElement.parentElement.remove();
+        //btnDel.removeChild(eDel.parentElement);
+        console.log(eDel.classList);
     }
 
 }
@@ -227,3 +214,34 @@ function colorCreatePastel() {
 // btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
 // tbody.appendChild(trPrDaten);
 // }
+
+
+// var table = document.createElement("table");
+// var thead = document.createElement("thead");
+// var tbody = document.createElement("tbody");
+// var tr = document.createElement("tr");
+// var th = document.createElement("th");
+// th.setAttribute("scope", "col");
+//var txtProd = ;
+//var txtProd = Object.keys(objProduct);
+
+// console.log(Object.keys(objProduct).length);
+// for (let i = 0; i < txtProd.length; i++) {
+//     //  if (i == 3) { break; }
+//     var tdPr = document.createElement("td");
+//     var text = document.createTextNode(txtProd[i]);
+//     tdPr.appendChild(text);
+//     th.appendChild(tdPr);
+// }
+// txtProd.forEach((txt) => {
+//     var tdPr = document.createElement("td");
+//     var text = document.createTextNode(txt);
+//     tdPr.appendChild(text);
+//     th.appendChild(tdPr);
+// });
+// thead.appendChild(th);
+// table.setAttribute("class", "table table-striped table-hover table-bordered mt-5");
+// table.appendChild(thead);
+// table.appendChild(tbody);
+// dList.appendChild(table);
+// body.appendChild(dList);
