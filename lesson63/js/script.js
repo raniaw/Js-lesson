@@ -1,7 +1,7 @@
 var body = document.getElementsByTagName("body")[0];
 
 var drDiv = document.getElementById("drag");
-
+var destDiv = document.querySelectorAll(".destination");
 var pDropStart = document.createElement("p");
 var pDropEnd = document.createElement("p");
 var pDropOver = document.createElement("p");
@@ -22,19 +22,36 @@ function drag(e) {
 function drop(e) {
 
     pDropEnd.innerHTML = "drop";
-    e.preventDefault();
+
     var data = e.dataTransfer.getData("bild");
-    //e.target.append(data);
     e.target.appendChild(document.getElementById(data));
+
+    e.target.className = "destination";
+    e.preventDefault();
 }
 
-function over(e) {
+function leaveDrag(e) {
+    console.log("leave");
+    e.preventDefault();
+    e.target.classList.remove("hovering");
+}
+
+function enterDrag(e) {
+    console.log("enter");
+    e.preventDefault();
+
+    e.target.className += " hovering";
+
+}
+
+function overDrag(e) {
 
     console.log("drop over");
     e.preventDefault();
     pDropOver.innerHTML = "drop over";
-}
 
+
+}
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung

@@ -7,9 +7,7 @@
   margin: 10px;
 }
 
-#drag {
-  background-color: #d0ff00;
-  width: 200px;
-  height: 200px;
+.hovering {
+  border: 1px dotted red;
 }
 /*# sourceMappingURL=style.css.map */
