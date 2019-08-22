@@ -1,0 +1,15 @@
+.destination {
+  float: left;
+  border: 1px solid aqua;
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: 10px;
+}
+
+#drag {
+  background-color: #d0ff00;
+  width: 200px;
+  height: 200px;
+}
+/*# sourceMappingURL=style.css.map */
