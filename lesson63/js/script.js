@@ -14,14 +14,10 @@ body.appendChild(pDropEnd);
 
 
 function drag(e) {
-
-    pDropStart.innerHTML = "drop start"
     e.dataTransfer.setData("bild", e.target.id);
 }
 
 function drop(e) {
-
-    pDropEnd.innerHTML = "drop";
 
     var data = e.dataTransfer.getData("bild");
     e.target.appendChild(document.getElementById(data));
@@ -48,7 +44,6 @@ function overDrag(e) {
 
     console.log("drop over");
     e.preventDefault();
-    pDropOver.innerHTML = "drop over";
 
 
 }
