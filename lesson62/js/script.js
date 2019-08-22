@@ -5,28 +5,12 @@ var destDivCl = document.querySelectorAll(".destination");
 var pDropStart = document.createElement("p");
 var pDropEnd = document.createElement("p");
 var pDropOver = document.createElement("p");
-// var pInc2 = document.createElement("p");
-// var pInc3 = document.createElement("p");
-// var pInc4 = document.createElement("p");
-// var pInc5 = document.createElement("p");
-// var pInc6 = document.createElement("p");
-// var pInc7 = document.createElement("p");
-// var pInc8 = document.createElement("p");
-// var pInc9 = document.createElement("p");
+
 
 body.appendChild(h2);
 body.appendChild(pDropStart);
 body.appendChild(pDropOver);
 body.appendChild(pDropEnd);
-
-// body.appendChild(pInc2);
-// body.appendChild(pInc3);
-// body.appendChild(pInc4);
-// body.appendChild(pInc5);
-// body.appendChild(pInc6);
-// body.appendChild(pInc7);
-// body.appendChild(pInc8);
-// body.appendChild(pInc9);
 
 
 function startDrop() {
@@ -39,10 +23,6 @@ function stopDrop() {
     pDropEnd.innerHTML = "drop end"
 }
 
-
-
-//destDiv.addEventListener("drop", destDrop);
-//destDiv.addEventListener("drop", destDrop);
 
 function destDrop() {
     destDiv.append(drDiv);
