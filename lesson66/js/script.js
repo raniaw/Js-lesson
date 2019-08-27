@@ -2,23 +2,52 @@ var body = document.getElementsByTagName("body")[0];
 var fTask = document.getElementById("task-form");
 var dTaskList = document.getElementById("task-list");
 var inpTask = document.getElementById("task");
-
+var pErr = document.getElementById("pErr");
 fTask.addEventListener("submit", addTask);
 
+function loadEventListner() {
+
+}
+
+function storeToLocalStorage(task) {
+    let tasks;
+    if (localStorage.getItem("tasks") === null) {
+        console.log("localStorage" + task);
+        tasks = [];
+
+    } else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+
+    tasks.push(task);
+    console.log(tasks);
+    // store the tasks in localStorage
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+
 function addTask(e) {
-    e.preventDefault();
-    let h5 = document.createElement("h5");
-    let txtNode = document.createTextNode(inpTask.value);
-    h5.appendChild(txtNode);
-    dTaskList.appendChild(h5);
+    if (inpTask.value == null || inpTask.value == "") {
+        e.preventDefault();
+        pErr.style.color = "red";
+        pErr.innerHTML = "input is empty";
+    } else {
+        e.preventDefault();
+        pErr.innerHTML = "";
+        let h5 = document.createElement("h5");
+        let txtNode = document.createTextNode(inpTask.value);
+        h5.appendChild(txtNode);
+        dTaskList.appendChild(h5);
+        var btnDel = document.createElement("button");
+        btnDel.innerHTML = "X";
+        btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
+        btnDel.addEventListener("click", removeItem);
+        h5.appendChild(btnDel);
+        storeToLocalStorage(inpTask.value);
+        dTaskList.appendChild(h5);
+
+    }
     inpTask.value = "";
-    var btnDel = document.createElement("button");
-    btnDel.innerHTML = "X";
-    btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
-    btnDel.addEventListener("click", removeItem);
-    //td.appendChild(a);
-    h5.appendChild(btnDel);
-    dTaskList.appendChild(td);
 }
 
 function removeItem(e) {

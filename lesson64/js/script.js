@@ -74,7 +74,6 @@ function calculate(e) {
     if (Object.keys(interestLoan).length == 4) {
         console.log(interestLoan);
         for (let date in interestLoan) {
-
             var txtInterestDaten = document.createTextNode(interestLoan[date]);
             var td = document.createElement("td");
             var btnDel = document.createElement("button");
