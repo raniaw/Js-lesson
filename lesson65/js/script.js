@@ -74,6 +74,11 @@ function getSelection() {
     // }
 
     switch (i) {
+        case "0":
+            clearInput();
+            lab1.innerHTML = "";
+            lab2.innerHTML = "";
+            break;
         case "1":
             clearInput();
             calc(rechnBar);

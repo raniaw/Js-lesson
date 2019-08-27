@@ -13,7 +13,7 @@
 <body class="bg-info">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-8 mx-auto">
                 <div id="main" class="card">
                     <div class="card card-body text-center mt-5">
                         <h3 class="heading display-5 pb-3">Tasks List </h3>
@@ -23,6 +23,7 @@
                                     <label for="task">new task</label>
                                     <input type="text" name="task" id="task">
                                     <input type="submit" class="btn btn-outline-info" value="add task">
+                                    <button id="addstorage" class="btn btn-outline-info" value="add taskStorage">add Storage</button>
                                     <p id="pErr"></p>
                                 </div>
                             </form>
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 mx-auto">
+            <div class="col-md-8 mx-auto">
                 <div class="content card">
                     <div id="task-list" class="card card-body text-center mt-5">
                         <h5 class="heading display-5 pb-3">New task </h5>
@@ -41,7 +42,9 @@
             </div>
         </div>
         <div class="row">
-
+            <div class="col-md-8 mx-auto">
+                <div id="storage" class="card"></div>
+            </div>
         </div>
     </div>
 

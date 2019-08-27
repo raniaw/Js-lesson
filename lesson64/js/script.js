@@ -4,11 +4,7 @@ var fLoan = document.getElementById("loan");
 var pAmount = document.getElementById("pAmount");
 var pInterest = document.getElementById("pInterest");
 var pYears = document.getElementById("pYears");
-
 var tbody = document.getElementById("rate-list");
-// body.appendChild(pDropStart);
-// body.appendChild(pDropOver);
-// body.appendChild(pDropEnd);
 
 interestLoan = new Object();
 
@@ -23,32 +19,26 @@ function calculate(e) {
 
 
     if (isNaN(amount.value) || amount.value == null || amount.value == "") {
-        pAmount.style.color = "red";
-        pAmount.innerHTML = "Please, check yours Input";
-        amount.focus();
+        pInputCheck(pAmount, amount);
     } else {
-        interestLoan.kapital = parseFloat(amount.value);
+        kapital = parseFloat(amount.value);
+        interestLoan.kapital = "$" + kapital;
         console.log(interestLoan.kapital);
         pAmount.innerHTML = "";
-
     }
 
     if (isNaN(inpInterest.value) || inpInterest.value == null || inpInterest.value == "") {
-        pInterest.style.color = "red";
-        pInterest.innerHTML = "Please, check yours Input";
-        inpInterest.focus();
+        pInputCheck(pInterest, inpInterest);
     } else {
-        interestLoan.interest = parseFloat(inpInterest.value);
+
         interest = parseFloat(inpInterest.value) / 100 / 12;
+        interestLoan.interest = "%" + parseFloat(inpInterest.value);
         console.log("interest: " + interest);
         pInterest.innerHTML = "";
-
     }
 
     if (isNaN(years.value) || years.value == "" || years.value == null) {
-        pYears.style.color = "red";
-        pYears.innerHTML = "Please, check yours Input";
-        years.focus();
+        pInputCheck(pYears, years);
 
     } else {
         payments = parseFloat(years.value) * 12;
@@ -60,13 +50,13 @@ function calculate(e) {
     // compute the monthly payment figure
     var x = Math.pow(1 + interest, payments); //Math.pow computes powers
     console.log("x: " + x);
-    monthly = (interestLoan.kapital * x * interest) / (x - 1);
-    interestLoan.monthly = monthly.toFixed(2);
+    monthly = (kapital * x * interest) / (x - 1);
+    interestLoan.monthly = "$" + monthly.toFixed(2);
     console.log("monthly: " + interestLoan.monthly); // zwei zahlen nach komma
 
     let totalPayment = interestLoan.monthly + payments;
     console.log("totalPayment: " + totalPayment);
-    let totalInterest = totalPayment - interestLoan.kapital;
+    let totalInterest = totalPayment - kapital;
     console.log("totalInterest: " + totalInterest);
 
     var tr = document.createElement("tr");
@@ -76,6 +66,7 @@ function calculate(e) {
         for (let date in interestLoan) {
             var txtInterestDaten = document.createTextNode(interestLoan[date]);
             var td = document.createElement("td");
+            td.setAttribute("class", "text-center");
             var btnDel = document.createElement("button");
             btnDel.innerHTML = "X";
             btnDel.setAttribute("class", "btn btn-sm btn-danger float-right delete");
@@ -92,6 +83,12 @@ function calculate(e) {
         interestLoan = {};
     }
 
+}
+
+function pInputCheck(value, input) {
+    value.style.color = "red";
+    value.innerHTML = "Please, check yours Input";
+    input.focus();
 }
 
 function removeItem(e) {
