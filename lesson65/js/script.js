@@ -66,6 +66,12 @@ function getSelection() {
     //     lab1.innerHTML = "Meile:";
     //     lab2.innerHTML = "Km:";
     // }
+    // if (i == 4) {
+    //     clearInput();
+    //     calcCelsFahr();
+    // lab1.innerHTML = "Celsius:";
+    // lab2.innerHTML = "Fahrenheit:";
+    // }
 
     switch (i) {
         case "1":
