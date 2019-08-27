@@ -38,8 +38,9 @@ function calculate(e) {
         pInterest.innerHTML = "Please, check yours Input";
         inpInterest.focus();
     } else {
-        interestLoan.interest = parseFloat(inpInterest.value) / 100 / 12;
-        console.log(interestLoan.interest);
+        interestLoan.interest = parseFloat(inpInterest.value);
+        interest = parseFloat(inpInterest.value) / 100 / 12;
+        console.log("interest: " + interest);
         pInterest.innerHTML = "";
 
     }
@@ -50,18 +51,20 @@ function calculate(e) {
         years.focus();
 
     } else {
-        interestLoan.payments = parseFloat(years.value) * 12;
-        console.log(interestLoan.payments);
+        payments = parseFloat(years.value) * 12;
+        interestLoan.years = years.value;
+        console.log("payments:" + payments);
         pYears.innerHTML = "";
     }
 
     // compute the monthly payment figure
-    var x = Math.pow(1 + interestLoan.interest, interestLoan.payments); //Math.pow computes powers
-    console.log(x);
-    interestLoan.monthly = (interestLoan.kapital * x * interestLoan.interest) / (x - 1);
-    console.log("monthly: " + interestLoan.monthly.toFixed(2)); // zwei zahlen nach komma
+    var x = Math.pow(1 + interest, payments); //Math.pow computes powers
+    console.log("x: " + x);
+    monthly = (interestLoan.kapital * x * interest) / (x - 1);
+    interestLoan.monthly = monthly.toFixed(2);
+    console.log("monthly: " + interestLoan.monthly); // zwei zahlen nach komma
 
-    let totalPayment = interestLoan.monthly.toFixed(2) + interestLoan.payments;
+    let totalPayment = interestLoan.monthly + payments;
     console.log("totalPayment: " + totalPayment);
     let totalInterest = totalPayment - interestLoan.kapital;
     console.log("totalInterest: " + totalInterest);
@@ -81,9 +84,7 @@ function calculate(e) {
             tr.appendChild(td);
         }
 
-        // a.addEventListener("click", removeItem);
         btnDel.addEventListener("click", removeItem);
-        //td.appendChild(a);
         td.appendChild(btnDel);
         tr.appendChild(td);
         tbody.appendChild(tr);
