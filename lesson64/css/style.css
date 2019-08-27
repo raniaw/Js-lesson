@@ -1,0 +1,17 @@
+.destination {
+  float: left;
+  border: 1px solid aqua;
+  width: 226px;
+  height: 226px;
+  display: block;
+  margin: 10px;
+}
+
+.hovering {
+  border: 1px dotted red;
+}
+
+img {
+  margin: 10px;
+}
+/*# sourceMappingURL=style.css.map */
