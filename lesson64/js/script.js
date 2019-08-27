@@ -30,7 +30,6 @@ function calculate(e) {
     if (isNaN(inpInterest.value) || inpInterest.value == null || inpInterest.value == "") {
         pInputCheck(pInterest, inpInterest);
     } else {
-
         interest = parseFloat(inpInterest.value) / 100 / 12;
         interestLoan.interest = "%" + parseFloat(inpInterest.value);
         console.log("interest: " + interest);
