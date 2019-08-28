@@ -43,7 +43,7 @@ function addTask(e) {
         createH5(inpTask.value);
         // getTask(inpTask.value);
         storeToLocalStorage(inpTask.value);
-        getTask(inpTask.value);
+        //  getTask(inpTask.value);
     }
     inpTask.value = "";
 }
