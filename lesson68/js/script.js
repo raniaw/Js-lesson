@@ -28,7 +28,6 @@ function selectChange(e) {
             console.log(section[indImg]);
             console.log(section);
         }
-
     } else {
         e.target.classList.remove("selected");
     }
@@ -38,7 +37,6 @@ function removeAllClasses() {
     liS.forEach((list, index) => {
         list.classList.remove("selected");
         section[index].classList.remove("active");
-        console.log(section[index]);
     });
 }
 
@@ -47,15 +45,11 @@ function findInd(value, txt) {
     value.forEach((item, index) => {
         if (value[index].textContent == txt) {
             indI = index;
-            console.log(indI);
             console.log(txt + " " + index);
-
         } else {
             console.log("nicht gefunden");
-
         }
     })
-    console.log(indI)
     return indI;
 }
 
