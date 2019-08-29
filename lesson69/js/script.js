@@ -4,9 +4,7 @@ var pAmount = document.getElementById("pAmount");
 var dCol = document.getElementById("dCol");
 var inpColor = document.getElementById("inpColor");
 
-
 btnAddColor.addEventListener("click", addDivColor);
-
 
 function addDivColor(e) {
     e.preventDefault();
