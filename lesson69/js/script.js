@@ -23,6 +23,7 @@ function addDivColor(e) {
             dCols.style.width = "120px";
             dCols.style.height = "100px";
             dCols.style.margin = "10px";
+            dCols.className = "align-self-centers ";
             dCols.style.textAlign = "center";
             dCols.textContent = colorCreateHexColor();
             dCols.style.backgroundColor = colorCreateHexColor();
@@ -57,6 +58,10 @@ function removeItem(e) {
     }
 
 }
+
+/**
+ * Funktion für die zufällige hexedezimalige Farbeerstellung
+ */
 
 
 function colorCreateHexColor() {
