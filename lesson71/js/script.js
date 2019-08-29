@@ -1,16 +1,12 @@
 var body = document.getElementsByTagName("body")[0];
 var hTitle = document.createElement("h2");
 var dImg = document.createElement("div");
-var br = document.createElement("br");
 var img = document.createElement("img");
 
 var dLeft = document.createElement("div");
 var dRight = document.createElement("div");
 var sLeft = document.createElement("span");
 var sRight = document.createElement("span");
-
-var btnLeft = document.createElement("button");
-var btnRight = document.createElement("button");
 
 hTitle.style.color = colorCreateDark();
 hTitle.innerHTML = "JS Caroussel";
@@ -19,31 +15,6 @@ var color = colorCreateDark();
 var bgColor = colorCreatePastel();
 
 dImg.style.width = "600px";
-
-btnLeft.style.color = color;
-btnLeft.style.backgroundColor = bgColor;
-btnLeft.style.fontWeight = "bold";
-btnLeft.style.borderRadius = "20px";
-btnLeft.style.padding = "10px";
-btnLeft.style.margin = "10px";
-
-btnRight.style.color = color;
-btnRight.style.backgroundColor = bgColor;
-btnRight.style.fontWeight = "bold";
-btnRight.style.borderRadius = "20px";
-btnRight.style.padding = "10px";
-btnRight.style.margin = "10px";
-
-var txtPrv = document.createTextNode('previous');
-btnLeft.appendChild(txtPrv);
-btnLeft.style.width = "100px";
-
-var txtNxt = document.createTextNode('next');
-btnRight.appendChild(txtNxt);
-btnRight.style.width = "100px";
-
-btnLeft.setAttribute('id', 'btnPrv');
-btnRight.setAttribute('id', 'btnNxt');
 
 dImg.style.position = "relative";
 dImg.style.left = "100px;"
@@ -71,7 +42,6 @@ dRight.appendChild(sRight);
 dImg.appendChild(img);
 dImg.appendChild(dLeft);
 dImg.appendChild(dRight);
-dImg.appendChild(br);
 
 body.appendChild(hTitle);
 body.appendChild(dImg);
