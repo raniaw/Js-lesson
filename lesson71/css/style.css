@@ -1,0 +1,66 @@
+h1,
+h2,
+h3,
+span {
+  font-family: 'Syncopate', sans-serif;
+}
+
+p,
+li,
+div {
+  font-family: 'Jura', sans-serif;
+}
+
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+span {
+  font-size: 30px;
+  margin: 10px;
+  color: white;
+}
+
+span.left::before {
+  content: " \0276C";
+}
+
+span.right::before {
+  content: " \0276D";
+}
+
+/* Fading animation */
+.einblenden {
+  -webkit-animation-name: einblenden;
+          animation-name: einblenden;
+  -webkit-animation-duration: 4.5s;
+          animation-duration: 4.5s;
+}
+
+@-webkit-keyframes einblenden {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes einblenden {
+  from {
+    opacity: .3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

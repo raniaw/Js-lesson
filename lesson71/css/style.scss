@@ -1,0 +1,48 @@
+    h1,
+    h2,
+    h3,
+    span {
+        font-family: 'Syncopate', sans-serif;
+    }
+    
+    p,
+    li,
+    div {
+        font-family: 'Jura', sans-serif;
+    }
+    
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    span {
+        font-size: 30px;
+        margin: 10px;
+        color: white;
+    }
+    
+    span.left::before {
+        content: " \0276C";
+    }
+    
+    span.right::before {
+        content: " \0276D";
+    }
+    /* Fading animation */
+    
+    .einblenden {
+        animation-name: einblenden;
+        animation-duration: 4.5s;
+    }
+    
+    @keyframes einblenden {
+        from {
+            opacity: .3
+        }
+        to {
+            opacity: 1
+        }
+    }
