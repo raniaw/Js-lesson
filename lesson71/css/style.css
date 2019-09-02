@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -11,7 +16,27 @@ div {
   font-family: 'Jura', sans-serif;
 }
 
-div {
+img.sl {
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+div.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50vw;
+  background: rgba(0, 0, 0, 0.7);
+  margin: 5vw auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.lDiv,
+.rDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,6 +49,34 @@ div {
   height: 100%;
 }
 
+.dLt,
+.dRt {
+  width: 10%;
+  height: 100%;
+  background: rgba(180, 176, 176, 0.752);
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  font-size: 4vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dLt {
+  left: 0;
+}
+
+.dRt {
+  right: 0;
+}
+
 span {
   font-size: 30px;
   margin: 10px;
@@ -32,6 +85,11 @@ span {
 
 span.left::before {
   content: " \0276C";
+}
+
+span:hover {
+  color: #272929;
+  cursor: pointer;
 }
 
 span.right::before {

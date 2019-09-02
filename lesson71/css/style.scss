@@ -1,3 +1,7 @@
+    * {
+        box-sizing: border-box;
+    }
+    
     h1,
     h2,
     h3,
@@ -11,11 +15,49 @@
         font-family: 'Jura', sans-serif;
     }
     
-    div {
+    img.sl {
+        width: 100%;
+        // height: 45vh;
+        transition: transform 0.4s ease-in-out;
+    }
+    
+    div.container {
+        display: flex;
+        width: 50vw;
+        background: rgba(0, 0, 0, 0.7);
+        margin: 5vw auto;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .lDiv,
+    .rDiv {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+    }
+    
+    .dLt,
+    .dRt {
+        width: 10%;
+        height: 100%;
+        background: rgba(180, 176, 176, 0.752);
+        position: absolute;
+        top: 0;
+        z-index: 5;
+        font-size: 4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .dLt {
+        left: 0;
+    }
+    
+    .dRt {
+        right: 0;
     }
     
     span {
@@ -26,6 +68,11 @@
     
     span.left::before {
         content: " \0276C";
+    }
+    
+    span:hover {
+        color: rgb(39, 41, 41);
+        cursor: pointer;
     }
     
     span.right::before {

@@ -1,5 +1,14 @@
 var body = document.getElementsByTagName("body")[0];
 var hTitle = document.createElement("h2");
+
+var imgSl = document.querySelectorAll(".sl");
+console.log(imgSl);
+let dLAr = document.querySelector(".dLt");
+let dRAr = document.querySelector(".dRt");
+console.log(dLAr);
+console.log(dRAr);
+
+var dContainer = document.createElement("div");
 var dImg = document.createElement("div");
 var img = document.createElement("img");
 
@@ -9,7 +18,7 @@ var sLeft = document.createElement("span");
 var sRight = document.createElement("span");
 
 hTitle.style.color = colorCreateDark();
-hTitle.innerHTML = "JS Caroussel";
+hTitle.innerHTML = "JS Carousel";
 
 var color = colorCreateDark();
 var bgColor = colorCreatePastel();
@@ -19,6 +28,7 @@ dImg.style.width = "600px";
 dImg.style.position = "relative";
 dImg.style.left = "100px;"
 
+dLeft.className = "lDiv"
 dLeft.style.backgroundColor = "grey";
 dLeft.style.opacity = "0.7";
 dLeft.width = "50px";
@@ -28,6 +38,7 @@ dLeft.style.left = "0";
 dLeft.style.top = "0";
 sLeft.setAttribute("class", "left");
 
+dRight.className = "rDiv";
 dRight.style.backgroundColor = "grey";
 dRight.style.opacity = "0.7";
 dRight.width = "50px";
@@ -42,9 +53,10 @@ dRight.appendChild(sRight);
 dImg.appendChild(img);
 dImg.appendChild(dLeft);
 dImg.appendChild(dRight);
+dContainer.appendChild(dImg);
 
 body.appendChild(hTitle);
-body.appendChild(dImg);
+body.appendChild(dContainer);
 
 var imgs = [{
         img: "img1",
@@ -78,44 +90,87 @@ img.src = imgs[i].src;
 
 function imgPrv() {
     i--;
+    dImg.className = "einblenden";
+    console.log(img);
+
     if (i < 0) {
         i = 5;
     }
+
     img.src = imgs[i].src;
+    dImg.classList.remove();
 }
 
 function imgNxt() {
     i++;
+    dImg.className = "einblenden";
+
     if (i >= imgs.length) {
         i = 0;
     }
+
     img.src = imgs[i].src;
+    console.log(img);
 }
 
-setInterval(imgNxt, 3000);
+//setInterval(imgNxt, 3000);
+//setInterval(moveLeft, 3000);
 
 dLeft.addEventListener("click", imgPrv);
 dRight.addEventListener("click", imgNxt);
 
-
-
-
-
-
-
-function removeClass(imgs) {
-    img.src = imgs[i].src;
-    img.removeAttribute('class', 'einblenden');
+function removeClass() {
+    img.classList.remove("einblenden");
     console.log(img);
 }
 
-function addClass(imgs) {
-    img.src = imgs[i].src;
-    img.setAttribute('class', 'einblenden');
-    console.log(img);
+function addClass() {
+    let y;
+    y++;
+    dImg.classList = "einblenden";
+}
+displNone(imgSl);
+let counter = 0;
+imgSl[counter].style.display = "block";
+
+dLAr.addEventListener("click", moveLeft);
+dRAr.addEventListener("click", moveRight);
+
+function moveLeft() {
+    displNone(imgSl);
+    counter--;
+    if (counter != 0) {
+        if (counter < 0) {
+            counter = imgSl.length - 1;
+            imgSl[counter].style.display = "block";
+        } else {
+            imgSl[counter].style.display = "block";
+        }
+    } else {
+        imgSl[counter].style.display = "block";
+    }
 }
 
+function moveRight() {
+    displNone(imgSl);
+    counter++;
+    if (counter != imgSl.length) {
+        if (counter > imgSl.length) {
+            imgSl[counter].style.display = "block";
+        } else {
+            imgSl[counter].style.display = "block";
+        }
+    } else {
+        counter = 0;
+        imgSl[counter].style.display = "block";
+    }
+}
 
+function displNone(value) {
+    value.forEach((item) => {
+        item.style.display = "none";
+    });
+}
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
