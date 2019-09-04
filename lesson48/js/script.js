@@ -542,8 +542,8 @@ patt9();
 
 function patt10() {
     var str = "test_0 test_1 test_2 test_3 test_7"
-        //var patt = /test_[^023]/g; //global
-    var patt = /test_[^0-6]/g; //global
+        //var patt = /test_[^023]/g; // g -> global
+    var patt = /test_[^0-6]/g; // g -> global
     var result = str.match(patt);
     console.log(result);
     pTxt10.innerHTML = "Text: " + str;

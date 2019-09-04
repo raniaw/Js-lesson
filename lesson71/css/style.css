@@ -18,10 +18,12 @@ div {
 
 img.sl {
   width: 100%;
-  -webkit-transition: -webkit-transform 0.4s ease-in-out;
-  transition: -webkit-transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+  -webkit-animation-name: einblenden;
+          animation-name: einblenden;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 div.container {

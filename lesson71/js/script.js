@@ -143,11 +143,14 @@ function moveLeft() {
         if (counter < 0) {
             counter = imgSl.length - 1;
             imgSl[counter].style.display = "block";
+            imgSl[counter].style.transition = "display 2s easy-in-out";
         } else {
             imgSl[counter].style.display = "block";
+            imgSl[counter].style.transition = "display 2s easy-in-out";
         }
     } else {
         imgSl[counter].style.display = "block";
+        imgSl[counter].style.transition = "display 2s easy-in-out";
     }
 }
 
