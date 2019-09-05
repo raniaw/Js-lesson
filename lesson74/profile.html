@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <h2 class="text-center text-info m-5">JS Registration</h2>
+
+    <div class="card">
+        <h3 class="text-center text-secondary">Profile Info</h3>
+        <form id="fProfil" action="finish.html" class="m-5">
+            <div class="form-group m-3 row">
+                <label for="user" class="col-sm-2 col-form-label">User Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="user" placeholder="user name">
+                    <p id="pUser"></p>
+                </div>
+
+            </div>
+            <div class="form-group m-3 row">
+                <label for="passw" class="col-sm-2 col-form-label">Password:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="passw" placeholder="">
+                    <p id="pPassw"></p>
+                </div>
+
+            </div>
+            <div class="form-group m-3 row">
+                <label for="passwR" class="col-sm-2 col-form-label">Password:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="passwR" placeholder="">
+                    <p id="pPasswR"></p>
+                </div>
+
+            </div>
+
+            <div class="form-group m-3 row">
+                <label for="file" class="col-sm-2 col-form-label">Photo: </label>
+                <div class="col-sm-10">
+                    <input type="file" id="file" name="files[]" placeholder="" multiple/>
+                    <div id="outImg"></div>
+                    <p id="pFile"></p>
+                </div>
+            </div>
+            <button id="prev" onclick="history.back()" class="btn btn-outline-info">Previous</button>
+            <!-- <button id="next" class="btn btn-outline-info">Next</button> -->
+            <button id="next" class="btn btn-outline-info"><a href="finish.html">Next</a></button>
+        </form>
+
+    </div>
+
+    <script src="js/profilData.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
