@@ -15,46 +15,55 @@
     <h2 class="text-center text-info m-5">JS Registration</h2>
 
     <div class="card">
-        <h3 class="text-center text-secondary">Personal Info</h3>
+        <h3 id="title" class="text-center text-secondary">Personal Info</h3>
         <h5></h5>
-        <form id="fPers" action="address.html" class="m-5">
+        <form id="frm" action="" class="m-5">
             <div class="form-group m-3 row">
-                <label for="fName" class="col-sm-2 col-form-label">First Name:</label>
+                <label for="inp1" id="lbl1" class="col-sm-2 col-form-label">First Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fName" placeholder="first name">
-                    <p id="pFName"></p>
+                    <input type="text" class="form-control" id="inp1" placeholder="first name">
+                    <p id="pErr1"></p>
                 </div>
 
             </div>
             <div class="form-group m-3 row">
-                <label for="lName" class="col-sm-2 col-form-label">Last Name:</label>
+                <label for="inp2" id="lbl2" class="col-sm-2 col-form-label">Last Name:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="lName" placeholder="last name">
-                    <p id="pLName"></p>
+                    <input type="text" class="form-control" id="inp2" placeholder="last name">
+                    <p id="pErr2"></p>
                 </div>
 
             </div>
             <div class="form-group m-3 row">
-                <label for="brtDate" class="col-sm-2 col-form-label">Birth Date:</label>
+                <label for="inp3" id="lbl3" class="col-sm-2 col-form-label">Birth Date:</label>
                 <div class="col-sm-10">
-                    <input type="date" class="form-control" id="brtDate" placeholder="%">
-                    <p id="pBrtDate"></p>
+                    <input type="date" class="form-control" id="inp3" placeholder="%">
+                    <p id="pErr3"></p>
                 </div>
             </div>
             <div class="form-group m-3 row">
-                <label for="nationality" class="col-sm-2 col-form-label">Nationality: </label>
+                <label for="inp4" id="lbl4" class="col-sm-2 col-form-label">Nationality: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nationality" placeholder="">
-                    <p id="pNationality"></p>
+                    <input type="text" class="form-control" id="inp4" placeholder="">
+                    <p id="pErr4"></p>
                 </div>
             </div>
+
+            <!-- <div class="form-group m-3 row">
+                <label for="file" id="" class="col-sm-2 col-form-label">Photo: </label>
+                <div class="col-sm-10">
+                    <input type="file" id="file" name="files[]" placeholder="" multiple/>
+                    <div id="outImg"></div>
+                    <p id="pFile"></p>
+                </div>
+            </div> -->
             <!-- <button id="next" class="btn  btn-outline-info">Next</button> -->
-            <input type="submit" id="next" class="btn  btn-outline-info"></input>
+            <input type="submit" id="next" class="btn col-5  btn-outline-info" value="Next"></input>
         </form>
 
     </div>
 
-    <script src="js/personData.js"></script>
+    <script src="js/script.js"></script>
 
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 </body>

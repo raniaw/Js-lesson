@@ -4,7 +4,7 @@ console.log(count);
 // console.log(localStorage.getItem("address"));
 let storage = localStorage;
 //console.log(storage);
-let caption = ["First name", "Last name", "Birth Date", "Address", "Zip Code", "House Number", "User", "Password", "Photo"]
+let caption = ["First name", "Last name", "Birth Date", "Address", "Zip Code", "House Number", "User Name", "Password", "Photo"]
     // console.log(caption);
     // console.log(Object.keys(storage));
 caption.forEach(element => {
