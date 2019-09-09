@@ -77,6 +77,7 @@ function typeChange() {
     var btn = document.getElementsByTagName("INPUT")[0];
     btn.attributes.removeNamedItem("type");
     btn.setAttribute("type", "date");
+    // btn.setAttribute("value", setInputDate());
     btn.setAttribute("value", "2017-10-24");
 }
 
