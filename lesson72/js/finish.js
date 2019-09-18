@@ -10,35 +10,41 @@ let caption = ["First name", "Last name", "Birth Date", "Address", "Zip Code", "
 caption.forEach(element => {
     console.log(element);
     console.log(storage[element]);
-    let trCaption = document.createElement("tr");
-    let tdCaption = document.createElement("td");
-    let trData = document.createElement("tr");
-    let txtCaption = document.createTextNode(element);
-    let tdData = document.createElement("td");
-
     if (element != "Photo") {
 
+        let trCaption = document.createElement("tr");
+        let tdCaption = document.createElement("td");
+        let trData = document.createElement("tr");
+        let txtCaption = document.createTextNode(element);
+        let tdData = document.createElement("td");
         let txtData = document.createTextNode(storage[element]);
-
+        tdCaption.appendChild(txtCaption);
+        trCaption.appendChild(tdCaption);
         tdData.appendChild(txtData);
-
+        trData.appendChild(tdData);
+        tbody.appendChild(trCaption);
+        tbody.appendChild(trData);
     } else {
         // let img = document.createElement("img");
         let img = new Image();
 
-        var res = storage[element].replace(/\\/g, "/");
-        img.src = res.slice(-5);
-        console.log(img.src);
+        // var res = storage[element].replace(/\\/g, "/");
+        //img.src = res.slice(-5);
+        img.src = storage[element];
+        console.log(img);
 
+        let trCaption = document.createElement("tr");
+        let tdCaption = document.createElement("td");
+        let trData = document.createElement("tr");
+        let txtCaption = document.createTextNode(element);
+        let tdData = document.createElement("td");
+        tdCaption.appendChild(txtCaption);
+        trCaption.appendChild(tdCaption);
         tdData.appendChild(img);
-
-
+        trData.appendChild(tdData);
+        tbody.appendChild(trCaption);
+        tbody.appendChild(trData);
     }
-    tdCaption.appendChild(txtCaption);
-    trCaption.appendChild(tdCaption);
-    trData.appendChild(tdData);
-    tbody.appendChild(trCaption);
-    tbody.appendChild(trData);
 });
 
 for (let value of Object.values(storage)) {

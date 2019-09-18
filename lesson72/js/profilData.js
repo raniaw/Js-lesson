@@ -44,76 +44,105 @@ function collectDataProfil(e) {
     }
     console.log(inpUser.value);
     console.log(inpPassw.value);
-    console.log("inpfile " + inpFile.value);
+
     if (inpFile.value == null || inpFile.value == "No file selected" || inpFile.value == "") {
         pInputCheck(pFile, inpFile);
     } else {
         pFile.innerHTML = "";
-        // inpFile.addEventListener('change', dateiauswahl, false);
     }
+
+    console.log(inpFile.value);
+    let nameImg = inpFile.value;
+    if (nameImg.match(/fakepath/)) {
+        nameImg = nameImg.replace(/C:\\fakepath\\/i, 'file:///home/rania/Pictures/');
+    }
+    console.log("nameImg: " + nameImg);
+    console.log("inpfile " + inpFile.value);
     inpFile.addEventListener('change', dateiauswahl, false);
     localStorage.setItem("User Name", inpUser.value);
     localStorage.setItem("Password", inpPassw.value);
-    localStorage.setItem("Photo", inpFile.value);
+    localStorage.setItem("Photo", nameImg);
 
-    // person.user = inpUser.value;
-    // person.passw = inpPassw.value;
-    // // person.file = inpFile.value;
-    // console.log(person);
-}
 
-function dateiauswahl(evt) {
-    var dateien = evt.target.files; // FileList object
-    console.log(dateien);
-    // Auslesen der gespeicherten Dateien durch Schleife
-    //for (var i = 0, f; f = dateien[i]; i++) {
-    for (var i = 0, f; f = dateien[i]; i++) {
+    // let name = dateiName();
+    // console.log("name: " + name);
 
-        // nur Bild-Dateien
-        if (!f.type.match('image.*')) {
-            continue;
+
+    function dateiName() {
+        var input = document.getElementById("file");
+        var fReader = new FileReader();
+        fReader.onloadend = function(event) {
+            fReader.onload = imageIsLoaded;
+            fReader.readAsDataURL(input.files[0]);
+            //fReader.readAsDataURL(img.files[0]);
+            return function() {
+                var imgP = document.createElement("img");
+                imgP.setAttribute("id", "imgP");
+                imgP.src = event.target.result;
+                dOutImg.insertBefore(imgP, null);
+
+                console.log("datei name: " + imgP.src);
+            }
+
         }
-        var reader = new FileReader();
-        reader.onload = (function(file) {
-            return function(e) {
-                // erzeuge Thumbnails.
-                var imgShow = document.createElement('img');
-                imgShow.className = 'showImg';
-                imgShow.src = e.target.result;
-                alert(file.name);
-                imgShow.title = file.name;
-                dOutImg.insertBefore(imgShow, null);
-            };
-        })(f);
-        // Bilder als Data URL auslesen.
-        reader.readAsDataURL(f);
+
+
+    }
+
+    function dateiauswahl(evt) {
+        ///
+
+        var dateien = evt.target.files; // FileList object
+        console.log("datei:" + dateien);
+        // Auslesen der gespeicherten Dateien durch Schleife
+        //for (var i = 0, f; f = dateien[i]; i++) {
+        for (var i = 0, f; f = dateien[i]; i++) {
+
+            // nur Bild-Dateien
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+            var reader = new FileReader();
+            reader.onload = (function(file) {
+                return function(e) {
+                    // erzeuge Thumbnails.
+                    var imgShow = document.createElement('img');
+                    imgShow.className = 'showImg';
+                    imgShow.src = e.target.result;
+                    imgShow.title = file.name;
+                    dOutImg.insertBefore(imgShow, null);
+                };
+            })(f);
+            // Bilder als Data URL auslesen.
+            reader.readAsDataURL(f);
+        }
+    }
+
+
+    function pInputCheck(value, input) {
+        value.style.color = "red";
+        value.innerHTML = "Please, check yours Input";
+        input.focus();
     }
 }
-
-
-function pInputCheck(value, input) {
-    value.style.color = "red";
-    value.innerHTML = "Please, check yours Input";
-    input.focus();
-}
-
 
 
 /**
  * Funktion für die zufällige dunkle Farbeerstellung
  */
 
+
 function colorCreateDark() {
     var color;
-    var min = Math.ceil(0);
-    var max = Math.floor(160);
+    var max = 160;
+    var min = 0;
 
     var colRed = Math.floor(Math.random() * (max - min)) + min;
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
 
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
-
+    console.log(color);
     return color;
 }
 /**
@@ -122,14 +151,14 @@ function colorCreateDark() {
 
 function colorCreatePastel() {
     var color;
-    var min = Math.ceil(180);
-    var max = Math.floor(256);
+    var max = 256;
+    var min = 180;
 
     var colRed = Math.floor(Math.random() * (max - min)) + min;
     var colBlue = Math.floor(Math.random() * (max - min)) + min;
     var colGreen = Math.floor(Math.random() * (max - min)) + min;
 
     color = "rgb(" + colRed + "," + colGreen + "," + colBlue + ")";
-
+    console.log(color);
     return color;
 }
