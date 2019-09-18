@@ -28,17 +28,18 @@ function closeSesion() {
 }
 
 function run() {
-    const promise = checkUser().then(
-        function(value) {
-            console.log(value);
-            return downloadFile();
-        }
-    ).then(
-        function(value) {
-            console.log(value);
-            return closeSesion();
-        }
-    )
+    const promise = checkUser()
+        .then(
+            function(value) {
+                console.log(value);
+                return downloadFile();
+            })
+        .then(
+            function(value) {
+                console.log(value);
+                return closeSesion();
+            }
+        )
 }
 
 run();
