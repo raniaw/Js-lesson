@@ -7,7 +7,6 @@ function checkUser() {
             resolve("success check the user");
         }, 3000);
     });
-
 }
 
 function downloadFile() {
@@ -40,41 +39,6 @@ function run() {
             return closeSesion();
         }
     )
-
-
 }
+
 run();
-
-// the same with callback
-
-// function checkUser(callback) {
-//     setTimeout(function() {
-//         console.log("Checking user...");
-//         callback();
-//     }, 3000)
-// }
-
-// function downloadFile(callback) {
-//     setTimeout(function() {
-//         console.log("Downloading file...");
-//         callback();
-//     }, 2000)
-// }
-
-// function closeSesion(callback) {
-//     setTimeout(function() {
-//         console.log("Closing session...");
-//         callback();
-//     }, 1000)
-// }
-
-// function run() {
-//     checkUser(function() {
-//         downloadFile(function() {
-//             closeSesion(function() {
-
-//             });
-//         });
-//     });
-// }
-// run();
