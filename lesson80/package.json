@@ -1,0 +1,21 @@
+{
+    "name": "lesson80",
+    "version": "1.0.0",
+    "main": "index.js",
+    "dependencies": {
+        "node": "^12.10.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.6.0",
+        "@babel/core": "^7.6.0",
+        "@babel/preset-env": "^7.6.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "babel js/index.js -d output"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
