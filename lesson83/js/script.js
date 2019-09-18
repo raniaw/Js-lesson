@@ -8,7 +8,7 @@ function checkUser(callback) {
 
 function downloadFile(callback) {
     setTimeout(function() {
-        console.log("Downoloading file...");
+        console.log("Downloading file...");
         callback();
     }, 2000)
 }
@@ -40,7 +40,7 @@ run();
 
 // function downloadFile() {
 //     setTimeout(function() {
-//         console.log("Downoloading file...")
+//         console.log("Downloading file...")
 //     }, 2000)
 // }
 
