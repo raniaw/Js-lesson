@@ -1,11 +1,13 @@
 var body = document.getElementsByTagName("body")[0];
 var btnTxt = document.getElementById("txtBtn");
 var btnJson = document.getElementById("jsBtn");
+var btnApiJson = document.getElementById("jsApiBtn");
 
-var dOut = document.getElementById("output")
+var ulOut = document.getElementById("output")
 
 btnTxt.addEventListener("click", getText);
 btnJson.addEventListener("click", getJson);
+btnApiJson.addEventListener("click", getJsonHttp);
 
 function getText() {
     console.log(fetch("fetch-txt"));
@@ -16,7 +18,7 @@ function getText() {
         }).then(
             function(res) {
                 console.log(res);
-                dOut.innerHTML = res;
+                ulOut.innerHTML = res;
                 return res;
             })
         .catch(function(err) {
@@ -26,17 +28,29 @@ function getText() {
 
 }
 
-//dOut.innerHTML = getText();
+//ulOut.innerHTML = getText();
 
 function getJsonHttp() {
-    const promise = fetch("https://raw.githubusercontent.com/Mansour-Tumeh/FBW3-Lessons/master/Javascript/fetch/users.json");
-    promise
-        .then(response => {
-            return response.json(); //parsing
-        }).then(data => {
+    fetch("https://api.github.com/users")
+
+    .then(function(data) {
             console.log(data);
-            dOut.innerHTML = JSON.stringify(data);
+            return data.json();
+        }).then(
+            function(res) {
+                console.log(res);
+                ulOut.innerText = "";
+                res.forEach(element => {
+                    //dOut.innerHTML += element.title + " ";// inline
+                    ulOut.innerHTML += "<li>" + element.login + " <img src='" + element.avatar_url + "'></li>"; //list
+                });
+                // dOut.innerHTML = JSON.stringify(res);
+                return res;
+            })
+        .catch(function(err) {
+            console.log(err);
         })
+
 }
 
 function getJson() {
@@ -48,7 +62,12 @@ function getJson() {
         }).then(
             function(res) {
                 console.log(res);
-                dOut.innerHTML = JSON.stringify(res);
+                ulOut.innerText = "";
+                res.forEach(element => {
+                    //dOut.innerHTML += element.title + " ";// inline
+                    ulOut.innerHTML += "<li>" + element.title + "</li>"; //list
+                });
+                // dOut.innerHTML = JSON.stringify(res);
                 return res;
             })
         .catch(function(err) {
