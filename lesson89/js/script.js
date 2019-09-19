@@ -7,10 +7,6 @@ var btnApiJson = document.getElementById("jsApiBtn");
 
 var ulOut = document.getElementById("output")
 
-btnTxt.addEventListener("click", getText);
-btnJson.addEventListener("click", getJson);
-btnApiJson.addEventListener("click", getJsonHttp);
-
 let getText = () => {
     console.log(fetch("fetch-txt"));
     fetch("text.txt")
@@ -26,11 +22,11 @@ let getText = () => {
             console.log("error, txt-file don't open");
             console.log(err + "error, txt-file don't open");
         })
-
 }
 
+btnTxt.addEventListener("click", getText);
 
-getJsonHttp = () => {
+let getJsonHttp = () => {
     fetch("https://api.github.com/users")
 
     .then(data => {
@@ -41,7 +37,7 @@ getJsonHttp = () => {
             ulOut.innerText = "";
             res.forEach(element => {
                 //dOut.innerHTML += element.title + " ";// inline
-                ulOut.innerHTML += "<li>" + element.login + " <img src='" + element.avatar_url + "'></li>"; //list
+                ulOut.innerHTML += "<li>" + element.login + " <a href='" + element.html_url + "'> link</a></li>"; //list
             });
             // dOut.innerHTML = JSON.stringify(res);
             return res;
@@ -49,8 +45,8 @@ getJsonHttp = () => {
         .catch(err => {
             console.log(err);
         })
-
 }
+btnApiJson.addEventListener("click", getJsonHttp);
 
 let getJson = () => {
     console.log(fetch("fetch-txt"));
@@ -71,5 +67,5 @@ let getJson = () => {
         .catch(err => {
             console.log(err);
         })
-
 }
+btnJson.addEventListener("click", getJson);
