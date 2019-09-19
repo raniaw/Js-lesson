@@ -40,7 +40,7 @@ function getPosts() {
                 li.innerHTML = item.title;
                 ulPost.appendChild(li);
                 // output += `<li>${item.title}</li>`
-            })
+            }, 1000)
 
             // ulPost.innerHTML += output;
             resolve("data added");
@@ -48,9 +48,6 @@ function getPosts() {
 
     })
 };
-
-
-
 
 createPost({
         title: "Post N4",
