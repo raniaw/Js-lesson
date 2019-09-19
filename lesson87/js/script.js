@@ -63,3 +63,9 @@ createPost({
         })
 
 console.log(posts);
+
+async function async_run() {
+    const promise1 = await checkUser();
+    const promise2 = await downloadFile(); //waits for checkUser()
+    const promise3 = await closeSession(); //waits for downloadFile()
+}

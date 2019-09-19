@@ -1,0 +1,15 @@
+/***
+variablen
+**/
+/*** 
+css
+**/
+body {
+  background: -webkit-gradient(linear, right bottom, left top, from(#3cff00), to(#ebff77)) no-repeat;
+  background: linear-gradient(to left top, #3cff00, #ebff77) no-repeat;
+}
+
+p {
+  color: green;
+}
+/*# sourceMappingURL=style.css.map */
