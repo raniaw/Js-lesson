@@ -3,23 +3,24 @@ var body = document.getElementsByTagName("body")[0];
 var dCard = document.querySelector(".card");
 console.log(dCard);
 
+//form Personal Info
 var frmPers = document.getElementById("personId");
 var h3Title = document.getElementById("title");
 var lbl1 = document.getElementById("lbl1");
 var lbl2 = document.getElementById("lbl2");
 var lbl3 = document.getElementById("lbl3");
 var lbl4 = document.getElementById("lbl4");
-var inp1 = document.getElementById("inp1");
-var inp2 = document.getElementById("inp2");
-var inp3 = document.getElementById("inp3");
-var select = document.getElementById("nat");
-var pErr1 = document.getElementById("pErr1");
-var pErr2 = document.getElementById("pErr2");
-var pErr3 = document.getElementById("pErr3");
-var pErr4 = document.getElementById("pErr4");
+var inpFName = document.getElementById("inpFName");
+var inpLName = document.getElementById("inpLName");
+var inpBrtDate = document.getElementById("inpBrtDate");
+var inpNationality = document.getElementById("inpNat");
+var pErrFName = document.getElementById("pErrFName");
+var pErrLName = document.getElementById("pErrLName");
+var pErrBDate = document.getElementById("pErrBDate");
+var pErrNat = document.getElementById("pErr4");
 var btnNextAdd = document.getElementById("btnNextAddr");
 
-
+// form Address Info
 var frmAddress = document.createElement("form");
 frmAddress.className = "m-5";
 frmAddress.setAttribute("id", "addressId")
@@ -49,7 +50,6 @@ lblAddress.innerHTML = "Address street:";
 lblNumber.innerHTML = "House Number:";
 lblZip.innerHTML = "Zip Code:"
 
-
 var inpAddress = document.createElement("input");
 inpAddress.setAttribute("class", "form-control");
 var inpNumber = document.createElement("input");
@@ -58,11 +58,14 @@ var inpZip = document.createElement("input");
 inpZip.setAttribute("class", "form-control");
 inpZip.setAttribute("type", "number");
 inpAddress.setAttribute("placeholder", "street name");
+
+var pErrAddr = document.createElement("p");
+var pErrNum = document.createElement("p");
+var pErrZip = document.createElement("p");
+
 var btnPrevPers = document.createElement("input");
 var btnNextProfile = document.createElement("input");
-var pAddress = document.createElement("p");
-var pNumber = document.createElement("p");
-var pZipCode = document.createElement("p");
+
 var btnNextProfile = document.createElement("input");
 btnNextProfile.setAttribute("id", "btnNextProfile");;
 btnNextProfile.setAttribute("value", "Next");
@@ -74,19 +77,18 @@ btnPrev.setAttribute("value", "Previous");
 btnPrev.setAttribute("type", "submit");
 btnPrev.className = "btn col-5 previous btn-outline-info mx-3";
 
-
 dAddInp.appendChild(inpAddress);
-dAddInp.appendChild(pAddress);
+dAddInp.appendChild(pErrAddr);
 dAdd.appendChild(lblAddress);
 dAdd.appendChild(dAddInp);
 
 dNumInp.appendChild(inpNumber);
-dNumInp.appendChild(pNumber);
+dNumInp.appendChild(pErrNum);
 dNum.appendChild(lblNumber);
 dNum.appendChild(dNumInp);
 
 dZipInp.appendChild(inpZip);
-dZipInp.appendChild(pZipCode);
+dZipInp.appendChild(pErrZip);
 dZip.appendChild(lblZip);
 dZip.appendChild(dZipInp);
 
@@ -97,6 +99,7 @@ frmAddress.appendChild(dZip);
 frmAddress.appendChild(btnPrev);
 frmAddress.appendChild(btnNextProfile);
 
+//form Profile info
 var frmProfile = document.createElement("form");
 frmProfile.setAttribute("id", "profileId");
 frmProfile.className = "m-5"
@@ -112,6 +115,7 @@ var dPasswR = document.createElement("div");
 var dPasswRInp = document.createElement("div");
 var dFile = document.createElement("div");
 var dFileInp = document.createElement("div");
+
 dUser.className = "form-group m-3 row";
 dUserInp.className = "col-sm-10 col-12";
 dPassw.className = "form-group m-3 row";
@@ -120,6 +124,7 @@ dPasswR.className = "form-group m-3 row";
 dPasswRInp.className = "col-sm-10";
 dFile.className = "form-group m-3 row";
 dFileInp.className = "col-sm-10";
+
 var lblUser = document.createElement("label");
 var lblPass = document.createElement("label");
 var lblPassR = document.createElement("label");
@@ -141,12 +146,17 @@ var inpPasswR = document.createElement("input");
 inpPasswR.setAttribute("class", "form-control");
 inpPasswR.setAttribute("required", "");
 var inpFile = document.createElement("input");
-var pUser = document.createElement("p");
-var pPassw = document.createElement("p");
-var pPasswR = document.createElement("p");
-var pFile = document.createElement("p");
+var pErrUser = document.createElement("p");
+var pErrPassw = document.createElement("p");
+var pErrPasswR = document.createElement("p");
+var pErrFile = document.createElement("p");
 var btnPrevAdd = document.createElement("input");
-inpFile.setAttribute("type", "file")
+
+inpFile.setAttribute("type", "file");
+inpFile.setAttribute("id", "file");
+inpFile.setAttribute("multiple", "");
+inpFile.setAttribute("data-min-file-count", "1");
+inpFile.setAttribute("accept", "image/*");
 btnPrevAdd.setAttribute("id", "btnPrevAdd");
 btnPrevAdd.setAttribute("value", "Previous");
 btnPrevAdd.setAttribute("type", "submit");
@@ -158,22 +168,22 @@ btnNextFinish.setAttribute("type", "submit");
 btnNextFinish.className = "btn next col-5 btn-outline-info mx-3";
 
 dUserInp.appendChild(inpUser);
-dUserInp.appendChild(pUser);
+dUserInp.appendChild(pErrUser);
 dUser.appendChild(lblUser);
 dUser.appendChild(dUserInp);
 
 dPasswInp.appendChild(inpPassw);
-dPasswInp.appendChild(pPassw);
+dPasswInp.appendChild(pErrPassw);
 dPassw.appendChild(lblPass);
 dPassw.appendChild(dPasswInp);
 
 dPasswRInp.appendChild(inpPasswR);
-dPasswRInp.appendChild(pPasswR);
+dPasswRInp.appendChild(pErrPasswR);
 dPasswR.appendChild(lblPassR);
 dPasswR.appendChild(dPasswRInp);
 
 dFileInp.appendChild(inpFile);
-dFileInp.appendChild(pFile);
+dFileInp.appendChild(pErrFile);
 dFile.appendChild(lblPhoto);
 dFile.appendChild(dFileInp);
 
@@ -182,30 +192,41 @@ frmProfile.appendChild(dUser);
 frmProfile.appendChild(dPassw);
 frmProfile.appendChild(dPasswR);
 frmProfile.appendChild(dFile);
-
-
 frmProfile.appendChild(btnPrevAdd);
 frmProfile.appendChild(btnNextFinish);
 
-
+//form Finish
 var frmFinish = document.createElement("form");
 frmFinish.setAttribute("id", "finishId");
+frmFinish.className = "m-5";
+var h3FinishTitle = document.createElement("h3");
+h3FinishTitle.className = "-textcenter text-secondary";
+h3FinishTitle.textContent = "Finish";
+
 var table = document.createElement("table");
-table.className = "table table-striped mt-5";
+table.className = "table table-striped m-5";
 var thead = document.createElement("thead");
 var tbody = document.createElement("tbody");
 var trTh = document.createElement("tr");
 var txt = document.createTextNode("Data");
+txt.className = "text-center text-secondary p-5";
+
 trTh.appendChild(txt);
 thead.appendChild(trTh);
 table.appendChild(thead);
 table.appendChild(tbody);
+
 var dOutImg = document.createElement("div");
+dOutImg.setAttribute("id", "outImg");
 var btnPrevProfile = document.createElement("input");
 btnPrevProfile.setAttribute("id", "btnPrevProfile");
 btnPrevProfile.setAttribute("value", "Previous");
 btnPrevProfile.setAttribute("type", "submit");
 btnPrevProfile.className = "btn previous col-5 btn-outline-info mx-5";
+
+frmFinish.appendChild(h3FinishTitle);
+frmFinish.appendChild(table);
+frmFinish.appendChild(btnPrevProfile);
 
 dCard.appendChild(frmAddress);
 dCard.appendChild(frmProfile);
@@ -213,48 +234,8 @@ dCard.appendChild(frmFinish);
 
 var fName, lName, brtDate, nationality, address, number, zip, user, passw, passwR, photo, storage;
 
-function load(e) {
-    frmShow(frmPers, e);
-    frmHidden(frmAddress, e);
-    frmHidden(frmProfile, e);
-    frmHidden(frmFinish, e);
-}
-
-function loadAddresse(e) {
-    frmHidden(frmPers, e);
-    frmShow(frmAddress, e);
-    frmHidden(frmProfile, e);
-    frmHidden(frmFinish, e);
-    h3Title.innerHTML = "Address Info";
-}
-
 storage = localStorage;
-//frmPers.addEventListener("submit", datenSenden);
 
-function datenSenden(e) {
-    e.preventDefault();
-    //createAddress();
-    btnNext.addEventListener("click", function(e) {
-        e.preventDefault();
-        persInfo();
-        console.log(storage.length);
-
-        // if (storage.length == 4) {
-        //     createAddress();
-        //     let inpCount = document.querySelectorAll("#prev");
-        //     console.log(inpCount);
-        //     if (inpCount.length === 0) {
-        //         frmPers.insertBefore(btnPrev, btnNext);
-        //     }
-        // }
-    })
-
-}
-// btnPrev.addEventListener("click", function() {
-//     window.onload = load;
-// });
-//
-//btnNextAdd.addEventListener("click", collectDataAddress);
 
 function previousDiv(e) {
     var parentID = e.target.parentElement.id;
@@ -262,40 +243,37 @@ function previousDiv(e) {
     switch (parentID) {
         case 'addressId':
             e.target.parentElement.style.display = "none";
+            frmAddress.display = "none";
+            frmPers.display = "block";
             frmFinish.display = "none";
             frmProfile.display = "none";
-            frmPers.display = "block";
-            // document.getElementById("finishId").display = "none";
-            // document.getElementById("profileId").display = "none";
-            // document.getElementById("personId").display = "block";
             break;
+
         case 'profileId':
             e.target.parentElement.style.display = "none";
+            frmProfile.display = "none";
+            frmAddress.display = "block";
             frmFinish.display = "none";
             frmPers.display = "none";
-            frmAddress.display = "block";
-            // document.getElementById("addressId").display = "block";
-            // document.getElementById("profileId").display = "none";
-            // document.getElementById("personId").display = "none";
+
             break;
+
         case 'finishId':
             e.target.parentElement.style.display = "none";
             frmFinish.display = "none";
-            frmProfile.display = "block";
+            frmAddress.display = "none";
             frmPers.display = "none";
-            // document.getElementById("personId").display = "none";
-            // document.getElementById("addressId").display = "none";
-            // document.getElementById("profileId").display = "block";
+            frmProfile.display = "block";
             break;
     }
 }
 
 function nextDiv(e) {
     e.preventDefault();
-    var checkFName = document.getElementsByName("fname")[0].checkValidity();
-    var checkLName = document.getElementsByName("lname")[0].checkValidity();
+    //  var checkFName = document.getElementsByName("fname")[0].checkValidity();
+    //var checkLName = document.getElementsByName("lname")[0].checkValidity();
     //var checkPassw = document.getElementsByName("passw")[0].checkValidity() === document.getElementsByName("passwR")[0].checkValidity();
-    console.log(checkFName);
+    //console.log(checkFName);
 
     var parentID = e.target.parentElement.id;
     console.log(parentID);
@@ -303,41 +281,32 @@ function nextDiv(e) {
         case 'personId':
             // if(checkFName && checkLName){}
             e.target.parentElement.style.display = "none";
+            persInfo(e);
+            frmPers.display = "none";
             frmFinish.display = "none";
             frmProfile.display = "none";
             frmAddress.display = "block";
-            // document.getElementById("addressId").display = "block";
-            // document.getElementById("profileId").display = "none";
-            // document.getElementById("finishId").display = "none";
+
             break;
 
         case 'addressId':
+            collectDataAddress();
             e.target.parentElement.style.display = "none";
+            frmAddress.display = "none";
             frmFinish.display = "none";
             frmProfile.display = "block";
             frmPers.display = "none";
-            // document.getElementById("personId").display = "none";
-            // document.getElementById("profileId").display = "block";
-            // document.getElementById("finishId").display = "none";
             break;
 
         case 'profileId':
+            collectDataProfil();
+            //createFinish();
             e.target.parentElement.style.display = "none";
+            frmProfile.display = "none";
             frmFinish.display = "block";
             frmPers.display = "none";
             frmAddress.display = "none";
-            // document.getElementById("personId").display = "none";
-            // document.getElementById("finishId").display = "block";
-            // document.getElementById("addressId").display = "none";
-
             break;
-            // case 'finishDiv':
-            //     e.target.parentElement.style.display = "none";
-            //     //document.getElementById("finishlDiv").display="block";
-            //     //document.getElementById("personalDiv").display="none";
-            //     //document.getElementById("addressDiv").display="none";
-            //     //document.getElementById("profileDiv").display="none";
-            //     break;
 
         default:
             break;
@@ -351,10 +320,10 @@ let btns = document.querySelectorAll("input[type='submit']");
 btns.forEach(item => {
     if (item.classList.contains("next")) {
         item.addEventListener("click", nextDiv);
-        console.log(item);
+        // console.log(item);
     } else if (item.classList.contains("previous")) {
         item.addEventListener("click", previousDiv);
-        console.log(item);
+        //    console.log(item);
     }
 })
 
@@ -366,144 +335,325 @@ function pInputCheck(value, input) {
 }
 
 //collect Person data
-function persInfo() {
-    if (inp1.value == "null" || inp1.value == "") {
-        pInputCheck(pErr1, inp1);
+function persInfo(e) {
+    e.preventDefault();
+    if (inpFName.value == "null" || inpFName.value == "") {
+        pInputCheck(pErrFName, inpFName);
     } else {
-        storage.setItem("First name", inp1.value);
-        pErr1.innerHTML = "";
+        storage.setItem("First name", inpFName.value);
+        pErrFName.innerHTML = "";
     }
-    if (inp2.value == "null" || inp2.value == "") {
-        pInputCheck(pErr2, inp2);
+    if (inpLName.value == "null" || inpLName.value == "") {
+        pInputCheck(pErrLName, inpLName);
     } else {
-        storage.setItem("Last name", inp2.value);
-        pErr2.innerHTML = "";
+        storage.setItem("Last name", inpLName.value);
+        pErrLName.innerHTML = "";
     }
-    if (inp3.value == "null" || inp3.value == "") {
-        pInputCheck(pErr3, inp3);
+    if (inpBrtDate.value == "null" || inpBrtDate.value == "") {
+        pInputCheck(pErrBDate, inpBrtDate);
     } else {
-        storage.setItem("Birth Date", inp3.value);
-        pErr3.innerHTML = "";
+        storage.setItem("Birth Date", inpBrtDate.value);
+        pErrBDate.innerHTML = "";
     }
-    if (inp4.value == "null" || inp4.value == "") {
-        pInputCheck(pErr4, inp4);
+    if (inpNationality.value == "null" || inpNationality.value == "") {
+        pInputCheck(pErrNat, inpNationality);
     } else {
-        storage.setItem("Nationality", select.value);
-        pErr4.innerHTML = "";
+        storage.setItem("Nationality", inpNationality.value);
+        pErrNat.innerHTML = "";
     }
+    storage.setItem("First name", inpFName.value);
+    storage.setItem("Last name", inpLName.value);
+    storage.setItem("Birth Date", inpBrtDate.value);
+    storage.setItem("Nationality", inpNationality.value);
+}
+
+
+function collectDataAddress() {
+
+
+    if (inpAddress.value == null || inpAddress.value == "") {
+        pInputCheck(pErrAddr, inpAddress);
+    } else {
+        pErrAddr.innerHTML = "";
+    }
+    if (inpNumber.value == null || inpNumber.value == "") {
+        pInputCheck(pErrNum, inpNumber);
+    } else {
+        pErrNum.innerHTML = "";
+    }
+    if (inpZip.value == null || inpZip.value == "") {
+        pInputCheck(pErrZip, inpZip);
+    } else {
+        pErrZip.innerHTML = "";
+    }
+
+    storage.setItem("Address", inpAddress.value);
+    storage.setItem("House Number", inpNumber.value);
+    storage.setItem("Zip Code", inpZip.value);
 
 }
 
-// form visible
-function frmShow(frm, event) {
-    frm.removeAttribute('hidden');
+
+function collectDataProfil() {
+
+    if (inpUser.value == null || inpUser.value == "") {
+        pInputCheck(pErrUser, inpUser);
+    } else {
+        pErrUser.innerHTML = "";
+    }
+    if (inpPassw.value == null || inpPassw.value == "") {
+        pInputCheck(pErrPassw, inpPassw);
+    } else {
+        pErrPassw.innerHTML = "";
+        if (inpPassw.value !== inpPasswR.value) {
+            pErrPasswR.style.color = "red";
+            pErrPasswR.innerHTML = "Please, check yours Input. Your Pass don't the same";
+            inpPasswR.focus();
+        } else {
+            pErrPasswR.innerHTML = "";
+            inpFile.focus();
+        }
+    }
+    console.log(inpUser.value);
+    console.log(inpPassw.value);
+
+    if (inpFile.value == null || inpFile.value == "No file selected" || inpFile.value == "") {
+        pInputCheck(pErrFile, inpFile);
+    } else {
+        pErrFile.innerHTML = "";
+    }
+
+    console.log(inpFile.value);
+
+    inpFile.addEventListener("change", dateiauswahl, false);
+
+    console.log(dOutImg);
+
+    // let nameImg = inpFile.value;
+    let data = new Object();
+    data.imagePath = inpFile.files[0].name;
+    let nameImg = data.imagePath;
+    if (nameImg.match(/fakepath/)) {
+        nameImg = nameImg.replace(/C:\\fakepath\\/i, 'C:/home/rania/Pictures/');
+    }
+    let img = new Image;
+    console.log("img: ", img);
+    // img.setAttribute("src",
+    let int = inpFile.addEventListener("change", dateiauswahl, true);
+    console.log("int: " + int);
+    // function(event) {
+
+    //     fReader.readAsDataURL(document.getElementById("file").files[0]);
+    //     fReader.onloadend = function(event) {
+    //         console.log(inpFile.files[0]);
+    //         // var img = document.getElementById("yourImgTag");
+    //         console.log("event: " + event.target.result);
+    //         return event.target.result;
+    //     }
+    // })
+    // )
+    console.log("data: " + data.imagePath);
+    console.log("nameImg: " + nameImg);
+    console.log(img);
+    // inpFile.addEventListener('change', dateiauswahl, false);
+    storage.setItem("User Name", inpUser.value);
+    storage.setItem("Password", inpPassw.value);
+    storage.setItem("Photo", int);
+    createFinish();
+
+    // let name = dateiName();
+    // console.log("name: " + name);
+
 }
 
-// form hidden
-function frmHidden(frm, event) {
-    frm.setAttribute('hidden', '');
-    event.preventDefault();
+function dateiName(file) {
+    var input = document.getElementById("file");
+    var fReader = new FileReader();
+    fReader.onloadend = function(event) {
+        fReader.onload = imageIsLoaded;
+        fReader.readAsDataURL(input.files[0]);
+        //fReader.readAsDataURL(img.files[0]);
+        return function() {
+            var imgP = document.createElement("img");
+            imgP.setAttribute("id", "imgP");
+            imgP.src = file;
+            dOutImg.insertBefore(imgP, null);
+
+            console.log("datei name: " + imgP.src);
+        }
+    }
 }
+
+function dateiauswahl(evt) {
+    var dateien = evt.target.files; // FileList object
+    // Auslesen der gespeicherten Dateien durch Schleife
+    for (var i = 0, f; f = dateien[i]; i++) {
+        console.log("dateiauswahl");
+        // nur Bild-Dateien
+        if (!f.type.match('image.*')) {
+            continue;
+        }
+        var reader = new FileReader();
+        reader.onload = (function(file) {
+            return function(e) {
+                console.log("return: ", e.target.result);
+                // erzeuge Thumbnails.
+                frmFinish.style.display = "block";
+                var imgShow = document.createElement('img');
+                imgShow.className = 'showImg';
+                imgShow.src = e.target.result;
+                imgShow.title = file.name;
+                dOutImg.insertBefore(imgShow, null);
+                console.log(dOutImg);
+                console.log("imgshow: " + imgShow.src);
+            };
+        })(f);
+        // Bilder als Data URL auslesen.
+        reader.readAsDataURL(f);
+    }
+}
+// Auf neue Auswahl reagieren und gegebenenfalls Funktion dateiauswahl neu ausführen.
+
+
+
+function createFinish() {
+    // e.preventDefault();
+    console.log("finish");
+    title.innerHTML = "Finish";
+
+    dCard.appendChild(table);
+
+    let count = storage.length;
+    console.log(count);
+    // console.log(localStorage.getItem("address"));
+    console.log(storage);
+    let caption = ["First name", "Last name", "Birth Date", "Address", "Zip Code", "House Number", "User Name", "Password", "Photo"]
+    console.log(caption);
+    // console.log(Object.keys(storage));
+    caption.forEach(element => {
+        console.log(element);
+        console.log(storage[element]);
+        if (element != "Photo") {
+
+            let trCaption = document.createElement("tr");
+            let tdCaption = document.createElement("td");
+            let trData = document.createElement("tr");
+            let txtCaption = document.createTextNode(element);
+            let tdData = document.createElement("td");
+            let txtData = document.createTextNode(storage[element]);
+            tdCaption.appendChild(txtCaption);
+            trCaption.appendChild(tdCaption);
+            tdData.appendChild(txtData);
+            trData.appendChild(tdData);
+            tbody.appendChild(trCaption);
+            tbody.appendChild(trData);
+
+        } else {
+            // let img = document.createElement("img");
+            let img = new Image();
+
+            // var res = storage[element].replace(/\\/g, "/");
+            //img.src = res.slice(-5);
+            console.log(storage[element].src);
+            img.src = storage[element].src;
+
+            console.log(inpFile);
+            dOutImg.style.display = "block";
+            dOutImg.appendChild(img);
+            console.log(dOutImg);
+            // inpFile.addEventListener("load", dateiauswahl, false);
+            let trCaption = document.createElement("tr");
+            let tdCaption = document.createElement("td");
+            let trData = document.createElement("tr");
+            let txtCaption = document.createTextNode(element);
+            let tdData = document.createElement("td");
+            tdCaption.appendChild(txtCaption);
+            trCaption.appendChild(tdCaption);
+            tdData.appendChild(dOutImg);
+            trData.appendChild(tdData);
+            tbody.appendChild(trCaption);
+            tbody.appendChild(trData);
+
+        }
+
+
+    });
+}
+
+
+
+// function dateiauswahl(e) {
+//     ///
+//     e.preventDefault();
+//     console.log(e);
+//     var dateien = e.target.files; // FileList object
+//     console.log("datei:" + dateien);
+//     // Auslesen der gespeicherten Dateien durch Schleife
+//     //for (var i = 0, f; f = dateien[i]; i++) {
+//     for (var i = 0, f; f = dateien[i]; i++) {
+
+//         // nur Bild-Dateien
+//         if (!f.type.match('image.*')) {
+//             continue;
+//         }
+//         var reader = new FileReader();
+//         reader.onload = (function(file) {
+//             return function(e) {
+//                 // erzeuge Thumbnails.
+//                 var imgShow = document.createElement('img');
+//                 imgShow.className = 'showImg';
+//                 imgShow.src = e.target.result;
+//                 imgShow.title = file.name;
+//                 dOutImg.insertBefore(imgShow, null);
+
+//             };
+//         })(f);
+//         // Bilder als Data URL auslesen.
+//         reader.readAsDataURL(f);
+//     }
+// }
+
+
+// // form visible
+// function frmShow(frm, event) {
+//     frm.removeAttribute('hidden');
+// }
+
+// // form hidden
+// function frmHidden(frm, event) {
+//     frm.setAttribute('hidden', '');
+//     event.preventDefault();
+// }
 
 // function persSite(e) {
 //     e.preventDefault();
 //     window.history.back();
 // }
 
-function createAddress() {
-    ///document.open();
-    // document.write("<h1>Hello World</h1>");
 
 
+// function datenSenden(e) {
+//     e.preventDefault();
+//     //createAddress();
+//     btnNext.addEventListener("click", function(e) {
+//         e.preventDefault();
+//         persInfo();
+//         console.log(storage.length);
+//     })
 
-    h3Title.innerHTML = "Address Info";
-    lbl1.innerHTML = "Address street:";
-    inp1.value = "";
-    inp1.placeholder = "address street";
-    lbl2.innerHTML = "Number:";
-    inp2.value = "";
-    inp2.placeholder = "Number";
-    lbl3.innerHTML = "Zip Code";
-    inp3.setAttribute("type", "number");
-    inp3.value = "";
-    inp3.placeholder = "";
-    lbl4.style.display = "none";
-    inp4.style.display = "none";
-    pErr4.style.display = "none";
+// }
 
-    //btnNextAdd = btnNext;
-    ;
-    // btnNext.style.display = "none";
-    // document.close();
-}
+// function load(e) {
+//     frmShow(frmPers, e);
+//     frmHidden(frmAddress, e);
+//     frmHidden(frmProfile, e);
+//     frmHidden(frmFinish, e);
+// }
 
-
-function createBtn() {
-    frmPers.insertBefore(btnPrev, btnNext);
-
-}
-
-function createProfile() {
-    //  e.preventDefault();
-    title.innerHTML = "Profil Info";
-    lbl1.innerHTML = "User Name:";
-    inp1.value = "";
-    inp1.placeholder = "username";
-    lbl2.innerHTML = "Password:";
-    inp2.value = "";
-    inp2.setAttribute("type", "password");
-    lbl3.innerHTML = "Password repeat:";
-    inp3.value = "";
-    inp3.setAttribute("type", "password");
-    inp4.style.display = "block";
-    inp4.setAttribute("type", "file");
-    console.log(btnNext);
-    frm.insertAfter(btnNextAdd, btnPrev)
-
-}
-
-function collectDataAddress(e) {
-    e.preventDefault();
-
-    if (inp1.value == null || inp1.value == "") {
-        pInputCheck(pErr1, inp1);
-    } else {
-        pErr1.innerHTML = "";
-    }
-    if (inp2.value == null || inp2.value == "") {
-        pInputCheck(pErr2, inp2);
-    } else {
-        pErr2.innerHTML = "";
-    }
-    if (inp3.value == null || inp3.value == "") {
-        pInputCheck(pErr3, inp3);
-    } else {
-        pErr3.innerHTML = "";
-    }
-
-    localStorage.setItem("Address", inp1.value);
-    localStorage.setItem("House Number", inp2.value);
-    localStorage.setItem("Zip Code", inp3.value);
-
-}
-
-function createFinish() {
-    title.innerHTML = "Finish";
-    inp1.style.display = "none";
-    inp2.style.display = "none";
-    inp3.style.display = "none";
-    inp4.style.display = "none";
-
-    pErr1.style.display = "none";
-    pErr2.style.display = "none";
-    pErr3.style.display = "none";
-    pErr4.style.display = "none";
-    card.appendChild(table);
-}
-
-
-
-
-
-
-//winterkopf
+// function loadAddresse(e) {
+//     frmHidden(frmPers, e);
+//     frmShow(frmAddress, e);
+//     frmHidden(frmProfile, e);
+//     frmHidden(frmFinish, e);
+//     h3Title.innerHTML = "Address Info";
+// }

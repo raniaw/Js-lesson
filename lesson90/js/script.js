@@ -56,7 +56,6 @@ function getJson() {
     fetch("data.json")
         .then(function(res) {
             return res.json();
-            // return res.json();
             // return res.text();
         })
         .then(function(data) {
@@ -79,7 +78,7 @@ function getJsonHttp() {
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then(function(res) {
             return res.json();
-            // return res.json();
+
             // return res.text();
         })
         .then(function(data) {

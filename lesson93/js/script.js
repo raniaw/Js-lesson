@@ -3,9 +3,6 @@ var degr = document.getElementById("degr");
 var descr = document.getElementById("descr");
 var btnSearch = document.getElementById("btnSearch");
 var inpCity = document.getElementById("inpCity");
-console.log(inpCity);
-// console.log(degr)
-// console.log(descr)
 
 const appKey = "a54fee1878380e9147f7f7180644f6c8";
 console.log(appKey)

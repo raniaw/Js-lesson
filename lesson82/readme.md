@@ -204,8 +204,10 @@ npm install moment --save
 
 24.
 const moment =requiry("moment");
+
 25
 npm install --save-dev moment-locales-webpack-plugin
+
 26.
 add to webpack.config.js
 

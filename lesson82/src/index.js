@@ -6,116 +6,117 @@ import 'bootstrap';
 var $ = require("jquery");
 const moment = require("moment");
 
-
-let today = moment().format();
-console.log("today: " + today);
-let yearNow = moment().format("YYYY");
-console.log("year: " + yearNow);
-let monatNow = moment().format("M");
-console.log("monat: " + monatNow);
-let dayNow = moment().format("D");
-console.log("days: " + dayNow);
-let hourNow = moment().format("hh");
-console.log("h: " + hourNow);
-let minuteNow = moment().format("m");
-console.log("h: " + minuteNow);
-
-
-
-let dat = moment("2020-04-30T23:59:59+02:00");
-let endYears = moment("2020-04-30T22:59:59+02:00").fromNow();
-
-var b = moment([2019, 8, 17, 22, 0, 0]);
-var bMon = b.daysInMonth();
-console.log("bmonth:" + bMon);
-var a = moment([2020, 3, 30, 23, 59, 59]);
-var aMon = a.daysInMonth();
-console.log("aMonth:" + aMon);
-var years = a.diff(b, 'years');
-console.log("years: " + years);
-var months = a.diff(b, 'months');
-console.log("months: " + months);
-var we = a.diff(b, 'week');
-console.log("we: " + we);
-var day = a.diff(b, 'day');
-console.log("day: " + day);
-var hours = a.diff(b, 'hours');
-console.log("hours: " + hours);
-var minutes = a.diff(b, 'minutes');
-console.log("minutes: " + minutes);
-
-// var a = moment([2020, 04, 30, 23, 59, 59]);
-// var b = moment([2019, 09, 17, 21, 58, 05]);
-var res1 = b.to(a);
-console.log("res1: " + res1);
-let endWeek = dat.endOf('hours').fromNow();
-dat.utc();
-let hour = dat.hours();
-let hours1 = dat.fromNow();
-//let hour = moment().endOf(dat.hours()).fromNow();
-let dienst = moment().format('dddd');
-let week = moment.duration().asWeeks();
-console.log(endYears, ", ", endWeek, ", ", hour, ",", hours1, ", ", dat, ",", week, ", ", dienst);
-console.log();
-console.log(hello("User ;), Wie geht's dir?)) "));
-console.log("mir geht's fabelhaft");
-
 var body = document.getElementsByTagName("body")[0];
+
 var dContent = $("<div></div>");
 var dCard = $("<div></div>");
 var dRow = $("<div></div>");
 var dRes = $("<div></div>");
 var dInp = $("<div></div>");
-$(dContent).addClass("container");
-$(dCard).addClass("card ");
-$(dRow).addClass("container");
-$(dInp).addClass("col");
-$(dRes).addClass("col");
+var h3 = $("<h3></h3>");
+var pM = $("<p></p>");
+var pD = $("<p></p>");
+var pH = $("<p></p>");
+var pMin = $("<p></p>");
+var pSec = $("<p></p>");
 
+$(dContent).addClass("container-fluid border rounded d-flex justify-content-center m-auto ");
+$(dCard).addClass("card m-auto p-5");
+$(dRow).addClass("row col m-auto shadow rounded");
 
+$(dInp).css({
+    "background": "linear-gradient( to left top, rgb(7, 29, 0), rgb(156, 168, 89)",
+    "color": "#fff",
+    "height": "100%",
+    "width": "100%",
+    "font-family": "Syncopate"
+
+})
+$(dInp).addClass("col p-5 d-flex align-self-center justify-content-center ");
+$(dRes).css({
+
+    "height": "100%",
+    "width": "100%",
+    "margin": "0",
+    "font-family": "Poiret One"
+
+})
+$(dRes).addClass("col p-5");
+
+$(dInp).append($(h3));
+$(dRes).append($(pM));
+$(dRes).append($(pD));
+$(dRes).append($(pH));
+$(dRes).append($(pMin));
+$(dRes).append($(pSec));
+
+$(dRow).append($(dInp));
+$(dRow).append($(dRes));
+$(dCard).append($(dRow));
+$(dContent).append($(dCard));
+$(dContent).css("height", "100vh");
 
 $(body).append($(dContent));
 
-// let dImg = $("<div></div>");
-// let dContent = $("<div></div>");
-// let dRequest = $("<div></div>");
-// let dInfo = $("<div></div>");
-// $(dImg).addClass("col-10 m-auto col-sm-8 d-flex col-md-8  align-items-center col-lg-6");
-// $(dImg).css("border", "1px solid red");
-// $(dImg).css("border-radius", "30px");
-// let pUs = document.getElementById("user");
-// let pMe = document.getElementById("me");
-// let pMyAnim = document.createElement("p");
-// pMyAnim.textContent = "Meine Haustiere ;)";
-// console.log(pMyAnim);
-// let imgAnim = document.createElement("img");
-// imgAnim.src = "src/img/tiere-braunbaeren.jpg";
-// imgAnim.style.borderRadius = "50%";
-// imgAnim.className = "";
-// console.log(imgAnim);
-// pUs.innerHTML = hello("User ;), Wie geht's dir?)) ");
-// pMe.innerHTML = "mir geht's fabelhaft!!";
+h3.addClass("d-flex align-self-center justify-content-center text-center");
+$(h3).css({
 
-// //body.appendChild(pMyAnim);
-// //body.after(pMe, pMyAnim);
-// //body.after(pMyAnim, imgAnim);
-// //body.after(imgAnim, pMyAnim);
-// $(body).append($(dImg));
-// $(dImg).before($(pMe));
-// $(dImg).append($(pMyAnim));
-// $(dImg).append($(imgAnim));
-// $(imgAnim).before($(pMyAnim));
-// console.log($(dImg));
+    "font-size": "38px"
 
-// $(pMe).css("color", "blue");
-
-// jQuery(document).ready(function(f) {
-//     // $("audio").src = src;
-// });
+})
+h3.html("comming soon")
 
 class CommingSoon {
-    constructor(selector, endDate) {
+    constructor(selector, endDate, timeUnit) {
         this.selector = selector;
         this.endDate = endDate;
+        this.timeUnit = timeUnit;
     }
+    showDiffData() {
+        return this.selector.html("<span>" + this.endDate + "</span> " + this.timeUnit);
+    }
+}
+let date = moment();
+let today = date.format();
+
+var endYears = moment("2020-04-30T23:59:59+02:00").fromNow();
+var endD = moment("2020-04-30T23:59:59+02:00");
+
+var nowDate = {
+    data: today,
+    year: date.format("YYYY"),
+    months: date.format("M"),
+    days: date.format("D"),
+    hours: date.format("H"),
+    min: date.format("m"),
+    sec: date.format("s")
+}
+
+var endDate = {
+    data: endD,
+    year: endD.format("YYYY"),
+    months: endD.format("M"),
+    days: endD.format("D"),
+    hours: endD.format("H"),
+    min: endD.format("m"),
+    sec: endD.format("s")
+}
+
+let pMon = new CommingSoon(pM, endYears, "");
+pMon.showDiffData();
+let pDay = new CommingSoon(pD, diffData(nowDate.days, endDate.days), "days");
+pDay.showDiffData();
+
+let pHours = new CommingSoon(pH, diffData(nowDate.hours, endDate.hours), "hours");
+pHours.showDiffData();
+let pMinutes = new CommingSoon(pMin, diffData(nowDate.min, endDate.min), "minutes");
+pMinutes.showDiffData();
+let pSeconds = new CommingSoon(pSec, diffData(nowDate.sec, endDate.sec), "seconds");
+pSeconds.showDiffData();
+
+
+//different between the nowtime and the endtime
+function diffData(nowDate, endDate) {
+    console.log(endDate, ", ", nowDate)
+    return endDate - nowDate;
 }

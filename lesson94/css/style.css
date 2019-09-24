@@ -1,1 +1,21 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.width {
+  width: 135px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Syncopate';
+}
+
+.my-text {
+  font-family: 'Didact Gothic';
+  font-size: 1.5em;
+}
+
+.my-text-select {
+  font-family: 'Didact Gothic';
+  background-color: aliceblue;
+  font-size: 1em;
+  color: blue;
+}
+/*# sourceMappingURL=style.css.map */

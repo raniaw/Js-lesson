@@ -5,11 +5,64 @@ variablen
 css
 **/
 body {
-  background: -webkit-gradient(linear, right bottom, left top, from(#3cff00), to(#ebff77)) no-repeat;
-  background: linear-gradient(to left top, #3cff00, #ebff77) no-repeat;
+  background: -webkit-gradient(linear, left top, right bottom, from(#3cff00), to(#edfd91)) no-repeat fixed;
+  background: linear-gradient(to right bottom, #3cff00, #edfd91) no-repeat fixed;
 }
 
 p {
-  color: green;
+  color: darkgreen;
+  font-size: 30px;
+}
+
+span {
+  font-weight: bold;
+  font-size: 35px;
+}
+
+@media (max-width: 450x) and (orientation: portrait) {
+  .container {
+    width: 80vw;
+    height: 100vh;
+  }
+  .container .card {
+    height: 100vh;
+  }
+  .container .card .row {
+    height: 100vh;
+  }
+  .container .card .row .col {
+    width: 60vw;
+  }
+  .container .card .row .col h3 {
+    font-size: 10px;
+  }
+  .container .card .row .col p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 840x) and (orientation: landscape) {
+  .container {
+    margin: 0 auto;
+    width: 80vw;
+    height: 100vh;
+  }
+  .container .card {
+    height: 50vh;
+  }
+  .container .card .row {
+    height: 60vh;
+    width: 50vw;
+  }
+  .container .card .row .col {
+    height: 15vh;
+    width: 50vw;
+  }
+  .container .card .row .col h3 {
+    font-size: 10px;
+  }
+  .container .card .row .col p {
+    font-size: 10px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
