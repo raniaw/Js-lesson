@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="p-5 bg-primary">
+        <div class="container rounded bg-white m-3 p-5 ">
+            <div class="card shadow-lg  rounded m-5 ">
+                <div class="col">
+                    <h2 class="text-center text-info m-3">Cripto-Rate</h2>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text text-white bg-primary" for="inpSel1">Cripto-currency</label>
+                        </div>
+                        <select class="custom-select" id="inpSel1">
+                      <option selected>Choose...</option>
+                      
+                      <option value="USD">Dollar (USD)</option>
+                      <option value="EUR">Euro (EUR)</option>
+                      <option value="RUR">Ruble (RUR)</option>
+                      <option value="EOS">EOS (EOS)</option>
+                      <option value="BTC">Bitcoin (BTC)</option>
+                      <option value="GBP">Britisch Pound Sterlimg (GBP)</option>
+                      <option value="LTC">Litcoin(LTC)</option>
+                      <option value="SUMO">SUMO (SUMO)</option>
+                      <option value="BRL">Brazilian Real(BRL))</option>
+                    </select> </div>
+                    <div class="input-group mb-3">
+                        <input class="input-group " id="inpVal1" type="text">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text text-white bg-danger" for="inpSel2">Currency</label>
+                        </div>
+                        <select class="custom-select" id="inpSel2">
+                                <option value="USD">Dollar (USD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="RUR">Ruble (RUR)</option>
+                                <option value="EOS">EOS (EOS)</option>
+                                <option value="BTC">Bitcoin (BTC)</option>
+                                <option value="GBP">Britisch Pound Sterlimg (GBP)</option>
+                                <option value="LTC">Litcoin(LTC)</option>
+                                <option value="SUMO">SUMO (SUMO)</option>
+                                <option value="BRL">Brazilian Real(BRL))</option>
+                            </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input class="input-group " id="inpVal2" type="text">
+                    </div>
+                    <div class="input-group mb-3">
+                        <button id="btnConvert" class="btn btn-outline-info">Convert</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+</body>
+
+</html>
