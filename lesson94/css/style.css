@@ -17,5 +17,7 @@ h2 {
   background-color: aliceblue;
   font-size: 1em;
   color: blue;
+  border-radius: 5px;
+  padding: 4px;
 }
 /*# sourceMappingURL=style.css.map */
