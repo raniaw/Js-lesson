@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS API Google Map</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div>
+        <p>Latitude
+            <input id="inpLat" type="text"></p>
+        <p>Longitude
+            <input type="text" id="inpLng"></p>
+        <input type="range" min="1" max="25" value="10" class="slider" id="slZoom"> <br><br>
+        <button id="btnChnCoord">Update coordinates</button>
+        <br><br>
+    </div>
+    <div id="map"></div>
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeeHNxifnRroqUkhO2BgSbpaJlYVYeGO0&callback=initMap">
+    </script>
+</body>
+
+</html>
