@@ -15,7 +15,7 @@ div {
 }
 
 li:before {
-  content: "\02766 \1F60C \027BA";
+  content: "\02766 \1F60C \027BA \02303";
   margin-left: -35px;
   /* Insert content that looks like bullets */
   padding-right: 10px;
@@ -23,7 +23,7 @@ li:before {
 }
 
 li:after {
-  content: "\027BA \1F61E \02766";
+  content: "\027BA \1F61E \02766 \02766 \1F61E ";
   /* Insert content that looks like bullets */
   padding-left: 10px;
   /* Or a color you prefer */
