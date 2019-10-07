@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JS Cors Fetch</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Didact+Gothic|Jura|Syncopate&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- <img src="http://192.168.8.137:3000/hamburg.png" crossorigin="anonymous" alt="" srcset=""> -->
+    <img class="" src="http://localhost:4000/img/hamburg.png" crossorigin="anonymous" alt="" srcset="">
+    <div class="container ">
+        <div class="card  p-4">
+            <table id="table" class="table shadow-lg m-auto table-striped table-bordered table-sm ">
+                <thead id="thead" class="my-text-tr text-info">
+                    <tr class="">
+                        <th data_attr="state" id="st" class="col-4 py-3 text-center">State</th>
+                        <th data_attr="capital" id="cap" class="col-3 py-3 text-center">Capital</th>
+                        <th data_attr="population" id="pop" class="col-3 py-3 text-center">Population</th>
+                        <th class="col-2 py-3 text-center">Flagge</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+
+</html>

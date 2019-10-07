@@ -1,0 +1,27 @@
+.my-text-tr {
+  font-family: 'Syncopate';
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.my-text-td {
+  font-family: 'Didact Gothic';
+  font-size: 1em;
+  color: #050542;
+}
+
+th[data_asc="asc"]::after {
+  content: "\02303";
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1px solid red;
+}
+
+th:not([data_asc="asc"])::after {
+  content: "\02304";
+  margin-left: 10px;
+  border: 1px solid blue;
+  margin-bottom: 160px;
+  height: 50px;
+}
+/*# sourceMappingURL=style.css.map */

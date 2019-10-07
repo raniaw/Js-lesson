@@ -1,0 +1,39 @@
+.my-text-tr {
+    font-family: 'Syncopate';
+    // font-family: 'Great Vibes';
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.my-text-td {
+    font-family: 'Didact Gothic';
+    font-size: 1em;
+    color: rgb(5, 5, 66);
+}
+
+// .my-text-tr::after {
+//     content: "\02304";
+//     padding-top: 0px
+// }
+// th::after {
+//     content: "\02304";
+//     padding-top: 60px
+// }
+th[data_asc="asc"]::after {
+    content: "\02303";
+    //margin: auto 0;
+    margin-left: 10px;
+    vertical-align: middle;
+    //margin-top: 10px;
+    border: 1px solid red;
+    // padding-top: 160px;
+    // padding-right: 20px;
+}
+
+th:not([data_asc="asc"])::after {
+    content: "\02304";
+    margin-left: 10px;
+    border: 1px solid blue;
+    margin-bottom: 160px;
+    height: 50px;
+}
